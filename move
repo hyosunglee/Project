@@ -1,27 +1,45 @@
+//
+//  GameScene.swift
+//  character
+//
+//  Created by 공사떼 on 2024/12/12.
+//
+
 import SpriteKit
+import GameplayKit
+
 
 class GameScene: SKScene {
     // 캐릭터 노드 선언
     var character: SKSpriteNode!
 
+    
     override func didMove(to view: SKView) {
-        // 배경 색상 설정
-        backgroundColor = .white
+        print("GameScene loaded") // 확인용 메시지
+        backgroundColor = .blue
         
-        // 캐릭터 노드 초기화
-        character = SKSpriteNode(imageNamed: "walk1") // 기본 캐릭터 이미지
-        character.position = CGPoint(x: size.width / 2, y: size.height / 2) // 화면 중앙에 위치
-        character.size = CGSize(width: 100, height: 100) // 크기 조정
+        character = SKSpriteNode(imageNamed: "walk1")
         
-        // 캐릭터 추가
+        // 이미지 로드 상태 확인
+        if character.texture == nil {
+            print("Error: Image not found!") // 이미지 로드 실패 확인 메시지
+        } else {
+            print("Image loaded successfully!") // 이미지 로드 성공 메시지
+        }
+        character.position = CGPoint(x: size.width / 3, y: size.height / 3)
+        character.anchorPoint = CGPoint(x: 0.5, y: 0.5) // 중앙 기준으로 배치
+        character.size = CGSize(width: 300, height: 300)
         addChild(character)
-        
+        print("Character added to the scene")
         // 걷기 애니메이션 실행
         startWalkingAnimation()
         
         // 캐릭터 움직임 테스트
         moveCharacter(direction: "right", distance: 200, duration: 2)
+        moveCharacter(direction: "up", distance: 200, duration: 2)
     }
+    
+   
     
     // 걷기 애니메이션 구현
     func startWalkingAnimation() {
@@ -54,6 +72,16 @@ class GameScene: SKScene {
             character.xScale = -1 // 캐릭터 반전
         }
         
+        if direction == "up" {
+            // 오른쪽 이동 액션
+            moveAction = SKAction.moveBy(x: 0, y: distance, duration: duration)
+            character.yScale = 1 // 방향 유지
+        } else if direction == "down" {
+            // 왼쪽 이동 액션
+            moveAction = SKAction.moveBy(x: 0, y: -distance, duration: duration)
+            character.yScale = -1 // 캐릭터 반전
+        }
+        
         // 이동 액션 실행
         character.run(moveAction)
     }
@@ -68,6 +96,12 @@ class GameScene: SKScene {
             moveCharacter(direction: "right", distance: 200, duration: 2)
         } else {
             moveCharacter(direction: "left", distance: 200, duration: 2)
+        }
+        
+        if location.y > character.position.y {
+            moveCharacter(direction: "up", distance: 200, duration: 2)
+        } else {
+            moveCharacter(direction: "down", distance: 200, duration: 2)
         }
     }
 }

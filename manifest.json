@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Browser Cat",
+  "version": "1.0",
+  "description": "A cute cat that walks around your browser!",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["images/cat_walk.png", "sounds/meow.mp3"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

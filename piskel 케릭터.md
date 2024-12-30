@@ -4,5 +4,5 @@
 
 
 <p align='center'>
-<img src='![walk2-0](https://github.com/user-attachments/assets/cf893d4b-f95c-4631-bbee-dfbcf9a30783)'>
+<img src='https://github.com/user-attachments/assets/cf893d4b-f95c-4631-bbee-dfbcf9a30783'>
 </p>

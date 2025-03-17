@@ -8,18 +8,18 @@
 📌 1단계: 프로젝트 초기 설정 & 환경 구축 ✅ (완료)
 
 📌 목표: FastAPI + PostgreSQL + Docker 기반 AI 개발 환경 설정
-✔ docker-compose.yml 설정 및 FastAPI 컨테이너 실행
-✔ PostgreSQL (db-1) 정상 실행 확인
-✔ FastAPI (app-1) 정상 실행 확인 (http://localhost:8000/status 응답 확인)
+- docker-compose.yml 설정 및 FastAPI 컨테이너 실행
+- PostgreSQL (db-1) 정상 실행 확인
+- FastAPI (app-1) 정상 실행 확인 (http://localhost:8000/status 응답 확인)
 
 ⸻
 
 📌 2단계: AI 코딩 에이전트 개발 (LangChain 기반) ✅ (완료)
 
 📌 목표: GPT-4 기반의 AI 코딩 도우미 (coder.py) 구현
-✔ agents/coder.py 생성 → Flutter 및 FastAPI 코드 자동 생성 기능 추가
-✔ FastAPI API (/generate_code) 추가 → AI에게 코드 생성 요청 가능
-✔ .env 파일로 OpenAI API 키 관리
+- agents/coder.py 생성 → Flutter 및 FastAPI 코드 자동 생성 기능 추가
+- FastAPI API (/generate_code) 추가 → AI에게 코드 생성 요청 가능
+- .env 파일로 OpenAI API 키 관리
 
 ✅ 테스트 완료: /generate_code API 요청 → Flutter & FastAPI 코드 자동 생성 🎉
 

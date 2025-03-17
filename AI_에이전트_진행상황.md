@@ -28,9 +28,9 @@
 📌 3단계: AI가 만든 코드를 Flutter 프로젝트에 적용 ⏳ (진행 중)
 
 📌 목표: AI가 생성한 Flutter 코드를 실제 프로젝트에서 사용 가능하도록 적용
-🔲 Flutter 프로젝트 (flutter_app/) 생성
-🔲 AI가 만든 Flutter UI/기능 코드 적용
-🔲 FastAPI와 Flutter 연동 (백엔드 API 호출)
+- Flutter 프로젝트 (flutter_app/) 생성
+- AI가 만든 Flutter UI/기능 코드 적용
+- FastAPI와 Flutter 연동 (백엔드 API 호출)
 
 🔹 테스트 시나리오
 ✅ FastAPI에서 Flutter 로그인 화면 코드 생성 (/generate_code)

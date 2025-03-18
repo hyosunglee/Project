@@ -85,9 +85,9 @@
 1. 시스템 기획 및 설계	✅ 완료	AI 에이전트 협업 시스템 기획 완료
 2. 개발 환경 구축 (Docker)	✅ 완료	Dockerfile + docker-compose 구축 성공
 3. FastAPI 기본 서버 구축	✅ 완료	API 라우팅, DB 초기 설계 완료
-4. GPT-4 OpenAI 연결	✅ 완료	/generate_quote API에서 GPT-4로 실시간 명언 생성
-5. Flutter 앱 설계	✅ 완료	화면 구조, 폴더 구조, 광고 전략 설계 완료
-6. Flutter → FastAPI API 연동 예시 제공	✅ 완료	http 요청으로 AI 명언 받아오는 코드 작성 완료
+4. GPT-4 OpenAI 연결	 진행중	/generate_quote API에서 GPT-4로 실시간 명언 생성
+5. Flutter 앱 설계	진행중	화면 구조, 폴더 구조, 광고 전략 설계 완료
+6. Flutter → FastAPI API 연동 예시 제공	 진행중 http 요청으로 AI 명언 받아오는 코드 작성 완료
 
 
 

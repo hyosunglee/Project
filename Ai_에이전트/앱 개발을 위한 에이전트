@@ -7,3 +7,18 @@
    ├── API / Backend Agent
    ├── Testing / QA Agent
    └── Deployment Agent
+
+
+
+Agent
+주요 기능
+세부 구조
+Flutter Frontend Agent
+- Flutter UI/UX 위젯 생성- API 요청 Service 생성- 상태관리 구조 설계
+- UI Generator Module- API Service Generator- State Management Module
+API / Backend Agent
+- FastAPI 기반 API 생성- DB 모델링 / ORM- API 문서화 (Swagger)
+- Router Generator- Model/Schema Generator- DB CRUD Generator- Doc Generator
+Shared Spec Generator (옵션)
+- API 스펙 정의(JSON)- 데이터 모델 정의- 양쪽 Agent 전달
+- OpenAPI / Swagger Spec Generator- Data Model Mapper

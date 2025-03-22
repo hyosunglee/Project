@@ -3,3 +3,34 @@
 	3.	상태 모니터링 및 로그 누적 (1~2개월)
 	4.	강화학습 구조 설계 및 reward 정책 설계 (1개월)
 	5.	데이터 기반 강화학습 적용 및 테스트 (3~6개월)
+
+
+
+
+
+
+
+
+/ai_dev_system
+├── /agents         # AI 역할별 에이전트 코드 (LangChain)
+│   ├── planner.py  # 기획 AI (요구사항 분석)
+│   ├── coder.py    # 코딩 AI (코드 생성)
+│   ├── tester.py   # 테스트 AI (테스트 코드 생성)
+│   ├── debugger.py # 디버깅 AI (코드 검토 및 수정)
+│   └── reviewer.py # 코드 리뷰 AI
+├── /api            # FastAPI API 서버
+│   ├── main.py     # API 엔드포인트 및 라우팅
+│   ├── database.py # PostgreSQL 연결
+│   ├── models.py   # DB 모델 정의
+│   └── routes.py   # API 엔드포인트 라우트
+├── /db             # PostgreSQL 초기 설정 및 마이그레이션
+│   ├── init.sql    # 초기 테이블 생성 SQL
+├── Dockerfile      # Docker 컨테이너 설정
+├── docker-compose.yml  # Docker Compose 설정
+├── requirements.txt  # 필요한 Python 라이브러리 목록
+└── README.md       # 프로젝트 설명
+
+
+
+
+

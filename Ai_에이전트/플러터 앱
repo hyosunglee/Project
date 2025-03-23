@@ -9,3 +9,13 @@
 1️⃣ 전체 서비스 구조 및 의존성 분석 (아키텍처 시각화)
 2️⃣ API 서버부터 맥북용으로 완벽하게 실행 (venv, 테스트 포함)
 3️⃣ AI 모델, DB, 프론트엔드 서비스 순으로 로컬 포팅 로드맵 작성 및 실행
+
+[ Flutter / React ]
+          │
+          ▼
+[ API Gateway (FastAPI) ]
+ ├─────────────► [ AI Model (Huggingface / GPT) ]
+ ├─────────────► [ DB (MySQL / SQLite) ]
+ ├─────────────► [ Auth (JWT) ]
+ ├─────────────► [ Notification (Optional) ]
+ └─────────────► [ File/Storage (Optional) ]

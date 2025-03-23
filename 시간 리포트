@@ -93,5 +93,76 @@ PRO	월 $5~8	AI 집중 분석, 개선 가이드, 장기 리포트
 
 ⸻
 
-혹시 기획서 / UI 목업 / 상세 기능 구조도 바로 만들어볼까?
-아니면 시장 조사 자료까지 붙여서 줄까?
+좋은 질문이야! Android는 iOS보다 스크린 타임/앱 사용 시간 추적에 더 개방적이고, 실제로 외부 앱이 접근할 수 있는 API도 존재해. 아래 정리해줄게.
+
+⸻
+
+✅ Android의 ‘스크린 타임’ 시스템
+	•	Android에서는 ‘스크린 타임’과 같은 기능을 Digital Wellbeing(디지털 웰빙) 앱과 Usage Stats API를 통해 제공
+	•	스마트폰 전체 사용 시간, 앱별 사용 시간, 화면 켜짐 시간 등을 기록하고 추적 가능
+
+⸻
+
+✅ 외부 앱용 공식 API - UsageStatsManager
+
+사용 목적
+	•	앱 사용 시간 추적
+	•	앱별 사용 횟수, 포그라운드 상태 시간 등 조회 가능
+	•	예시: “오늘 YouTube 3시간 사용”, “Slack 30분 사용”
+
+공식 문서
+
+https://developer.android.com/reference/android/app/usage/UsageStatsManager
+
+핵심 기능
+
+기능	설명
+queryUsageStats()	앱별 사용 시간 데이터 조회
+queryEvents()	앱 열림/닫힘 이벤트 조회
+앱 카테고리화	게임/생산성/비생산성 분류 가능
+
+필수 권한
+
+<uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" tools:ignore="ProtectedPermissions" />
+
+	•	설정 → 앱 권한 → ‘사용 기록 액세스’에서 직접 사용자 허용 필요
+
+⸻
+
+✅ 제약 사항
+
+항목	설명
+권한 획득 과정 필요	사용자에게 명시적 승인 받아야 함 (앱 설정 화면 이동 유도 필요)
+일부 제조사 커스텀 OS 제한	중국폰 등에서 제한될 수 있음
+Android 5.0 이상 지원	거의 모든 최신 폰 커버 가능
+
+
+
+⸻
+
+✅ 활용 사례 (이미 시장에 있는 앱들)
+	•	ActionDash
+	•	StayFree
+	•	Digital Wellbeing (구글 기본 앱)
+→ 전부 UsageStatsManager로 구현
+
+⸻
+
+✅ 결론 - 안드로이드는 완벽히 API로 구현 가능
+	•	✅ 앱별 사용 시간 수집 → 생산성 / 비생산성 자동 분류
+	•	✅ 시간/이벤트 로그 기반으로 AI 분석 가능
+	•	✅ Flutter + Native Android로 연동 설계 완벽히 가능
+	•	✅ iOS보다 개발 난이도 낮고, 정확도 높음
+
+⸻
+
+✅ 추천 개발 전략
+	1.	Android MVP에선 반드시 UsageStatsManager 활용
+	2.	사용 시간 수집 → AI 분석 → 몰입 시간 리포트 생성
+	3.	iOS는 수동 입력 + 캡쳐 → 향후 대안 연구
+	4.	B2B 확장 시 macOS, Windows 데이터 수집 병행
+
+⸻
+
+혹시 바로 UsageStatsManager 코드 샘플 원해?
+아니면 AI 분석 로직 설계로 넘어가볼까?

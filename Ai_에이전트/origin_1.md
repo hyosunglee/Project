@@ -1,4 +1,13 @@
-좋습니다. 리서치 기반으로 다음 단계에서 바로 구현해야 할 핵심 코드를 정리하고 제공드립니다.
+
+
+✅ design/gpt_design.py → GPT 설계 자동화 API 호출
+✅ nlu/gemini_nlu.py → Gemini Pro API 연동 (NLU 분석)
+✅ generator/code_generator.py → GPT로 코드 생성
+✅ tester/claude_tester.py → Claude로 코드 테스트
+✅ utils/helpers.py → API 키 로드 및 공통 유틸 함수
+✅ main.py → 전체 실행 예시
+
+
 
 ✅ 현재 진행해야 할 우선 구현 모듈
 

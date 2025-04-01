@@ -1,3 +1,5 @@
+
+```
 ai_agent/
 │
 ├── main.py                     # 전체 실행 컨트롤러 (FastAPI or CLI)
@@ -29,3 +31,4 @@ ai_agent/
 │
 └── tests/
     └── test_pipeline.py        # 핵심 파이프라인 테스트
+```

@@ -1,6 +1,6 @@
 
 
-
+```
 /mcp_agent/
 ├── main.py             # 루프 컨트롤러 진입점
 ├── goal_manager.py     # 목표 관리
@@ -11,3 +11,5 @@
 │   └── history.json    # 이전 작업 로그
 └── tools/
     └── mcp_client.py   # MCP 서버 인터페이스
+
+```

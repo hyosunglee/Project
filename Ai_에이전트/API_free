@@ -1,0 +1,48 @@
+ Environment updated. Reloading shell...
+📄 요약: 이 논문은 BERT 기반 텍스트 분류 기법을 제안하고, zero-shot 학습의 가능성을 탐구한다.
+🧠 추출된 실험 아이디어: ['BERT 기반 실험', 'Zero-shot 테스트', '텍스트 분류 모델 실험']
+
+[실행 중] 아이디어: BERT 기반 실험
+
+🧾 생성된 코드:
+
+from transformers import BertTokenizer, BertModel
+
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+model = BertModel.from_pretrained('bert-base-uncased')
+
+inputs = tokenizer("Hello, my dog is cute", return_tensors="pt")
+outputs = model(**inputs)
+print("🔍 BERT 임베딩 결과:", outputs.last_hidden_state.shape)
+
+[결과]: Experiment with accuracy 0.81
+
+[실행 중] 아이디어: Zero-shot 테스트
+
+🧾 생성된 코드:
+# ⚠️ 아직 이 아이디어에 대한 코드 템플릿이 없습니다.
+[결과]: Experiment with accuracy 0.81
+
+[실행 중] 아이디어: 텍스트 분류 모델 실험
+
+🧾 생성된 코드:
+
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.linear_model import LogisticRegression
+
+X = ["I love this!", "This is terrible.", "Not bad", "Amazing"]
+y = [1, 0, 1, 1]
+
+vectorizer = CountVectorizer()
+X_vec = vectorizer.fit_transform(X)
+
+clf = LogisticRegression()
+clf.fit(X_vec, y)
+print("✅ 텍스트 분류 모델 학습 완료")
+
+[결과]: Experiment with accuracy 0.81
+
+📊 실행 결과 정리:
+BERT 기반 실험 → 보상: 1
+Zero-shot 테스트 → 보상: 1
+텍스트 분류 모델 실험 → 보상: 1

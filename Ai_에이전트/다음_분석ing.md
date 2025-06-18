@@ -86,5 +86,82 @@ def recent_logs():
 
 ⸻
 
-필요하시면 위 설계에 맞는 전체 통합 코드도 드릴 수 있습니다.
-어느 부분부터 구현해볼까요? ✨
+좋습니다! 현재 상황과 프로젝트 목표(로그 기반 AI 분석기 자동화)를 기준으로 우선순위를 정리하고, 1번부터 차례로 구현을 도와드릴게요.
+
+⸻
+
+🧭 전체 목표 요약
+	•	로그로부터 AI가 학습
+	•	학습된 모델을 외부에서 활용 가능
+	•	API로 예측/재학습/모니터링 지원
+
+⸻
+
+✅ 우선순위별 설계 로드맵
+
+🔹 1순위. /train – 모델 재학습 API
+
+수집된 로그를 기반으로 언제든 학습을 다시 시작할 수 있어야 함.
+
+역할:
+	•	모델이 필요할 때 재학습되도록 트리거
+	•	사용자 개입 없이 백그라운드에서 실행
+
+⸻
+
+🔹 2순위. /status – 모델/서버 상태 확인 API
+
+현재 학습된 모델 유무, 서버 상태 등을 알려줌
+
+역할:
+	•	서버 정상 여부
+	•	로그 수량
+	•	학습된 모델 여부
+
+⸻
+
+🔹 3순위. /predict – 로그 또는 텍스트 분석 예측 API
+
+훈련된 모델을 사용해 로그 설명 또는 논문 요약 등을 자동 분류 또는 해석
+
+역할:
+	•	학습된 모델을 실제 활용하는 부분
+
+⸻
+
+🔹 4순위. /logs/recent – 최근 로그 확인 API
+
+최근 실험 데이터나 논문 로그 확인용
+
+역할:
+	•	디버깅 및 데이터 모니터링 용도
+
+⸻
+
+🔧 다음 작업: 1번 API 구현
+
+파일 위치:
+	•	server.py 안에 아래 코드 추가
+
+from flask import Flask, jsonify, request
+import threading
+from utils.model_trainer import train_model_from_logs
+
+app = Flask(__name__)
+
+@app.route("/train", methods=["POST"])
+def trigger_training():
+    threading.Thread(target=train_model_from_logs).start()
+    return jsonify({"message": "Training started in background"}), 200
+
+✅ 이미 train_model_from_logs() 가 작동 준비되어 있다면 바로 작동 가능!
+
+⸻
+
+🧩 다음 단계
+	•	1번 적용 후 정상 작동 확인
+	•	이후 status → predict → logs 순서로 차례차례 확장
+
+⸻
+
+위 코드 위치는 sever.py

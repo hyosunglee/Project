@@ -1,0 +1,57 @@
+[
+    {
+        "title": "Multivariate Fields of Experts",
+        "summary": "We introduce the multivariate fields of experts, a new framework for the\nlearning of image priors. Our model generalizes existing fields of experts\nmethods by incorporating multivariate potential functions constructed via\nMoreau envelopes of the $\\ell_\\infty$-norm. We demonstrate the effectiveness of\nour proposal across a range of inverse problems that include image denoising,\ndeblurring, compressed-sensing magnetic-resonance imaging, and computed\ntomography. The proposed approach outperforms comparable univariate models and\nachieves performance close to that of deep-learning-based regularizers while\nbeing significantly faster, requiring fewer parameters, and being trained on\nsubstantially fewer data. In addition, our model retains a relatively high\nlevel of interpretability due to its structured design.",
+        "keywords": [
+            "reinforcement learning"
+        ],
+        "idea": "\uac15\ud654\ud559\uc2b5 \uc2e4\ud5d8 \uc2dc\ubbac\ub808\uc774\uc158",
+        "code": "\nimport random\nstate = 0\ntotal_reward = 0\nfor step in range(5):\n    action = random.choice([\"\uc67c\ucabd\", \"\uc624\ub978\ucabd\"])\n    reward = 1 if action == \"\uc624\ub978\ucabd\" else 0\n    total_reward += reward\nprint(\"\ucd1d \ubcf4\uc0c1:\", total_reward)\n",
+        "result": "Experiment with accuracy 0.81",
+        "reward": 1
+    },
+    {
+        "title": "WGAST: Weakly-Supervised Generative Network for Daily 10 m Land Surface Temperature Estimation via Spatio-Temporal Fusion",
+        "summary": "Urbanization, climate change, and agricultural stress are increasing the\ndemand for precise and timely environmental monitoring. Land Surface\nTemperature (LST) is a key variable in this context and is retrieved from\nremote sensing satellites. However, these systems face a trade-off between\nspatial and temporal resolution. While spatio-temporal fusion methods offer\npromising solutions, few have addressed the estimation of daily LST at 10 m\nresolution. In this study, we present WGAST, a Weakly-Supervised Generative\nNetwork for Daily 10 m LST Estimation via Spatio-Temporal Fusion of Terra\nMODIS, Landsat 8, and Sentinel-2. WGAST is the first end-to-end deep learning\nframework designed for this task. It adopts a conditional generative\nadversarial architecture, with a generator composed of four stages: feature\nextraction, fusion, LST reconstruction, and noise suppression. The first stage\nemploys a set of encoders to extract multi-level latent representations from\nthe inputs, which are then fused in the second stage using cosine similarity,\nnormalization, and temporal attention mechanisms. The third stage decodes the\nfused features into high-resolution LST, followed by a Gaussian filter to\nsuppress high-frequency noise. Training follows a weakly supervised strategy\nbased on physical averaging principles and reinforced by a PatchGAN\ndiscriminator. Experiments demonstrate that WGAST outperforms existing methods\nin both quantitative and qualitative evaluations. Compared to the\nbest-performing baseline, on average, WGAST reduces RMSE by 17.18% and improves\nSSIM by 11.00%. Furthermore, WGAST is robust to cloud-induced LST and\neffectively captures fine-scale thermal patterns, as validated against 33\nground-based sensors. The code is available at\nhttps://github.com/Sofianebouaziz1/WGAST.git.",
+        "keywords": [
+            "reinforcement learning"
+        ],
+        "idea": "\uac15\ud654\ud559\uc2b5 \uc2e4\ud5d8 \uc2dc\ubbac\ub808\uc774\uc158",
+        "code": "\nimport random\nstate = 0\ntotal_reward = 0\nfor step in range(5):\n    action = random.choice([\"\uc67c\ucabd\", \"\uc624\ub978\ucabd\"])\n    reward = 1 if action == \"\uc624\ub978\ucabd\" else 0\n    total_reward += reward\nprint(\"\ucd1d \ubcf4\uc0c1:\", total_reward)\n",
+        "result": "Experiment with accuracy 0.81",
+        "reward": 1
+    },
+    {
+        "title": "A variational approach to dimension-free self-normalized concentration",
+        "summary": "We study the self-normalized concentration of vector-valued stochastic\nprocesses. We focus on bounds for sub-$\\psi$ processes, a tail condition that\nencompasses a wide variety of well-known distributions (including\nsub-exponential, sub-Gaussian, sub-gamma, and sub-Poisson distributions). Our\nresults recover and generalize the influential bound of Abbasi-Yadkori et al.\n(2011) and fill a gap in the literature between determinant-based bounds and\nthose based on condition numbers. As applications we prove a Bernstein\ninequality for random vectors satisfying a moment condition (which is more\ngeneral than boundedness), and also provide the first dimension-free,\nself-normalized empirical Bernstein inequality. Our techniques are based on the\nvariational (PAC-Bayes) approach to concentration.",
+        "keywords": [
+            "reinforcement learning"
+        ],
+        "idea": "\uac15\ud654\ud559\uc2b5 \uc2e4\ud5d8 \uc2dc\ubbac\ub808\uc774\uc158",
+        "code": "\nimport random\nstate = 0\ntotal_reward = 0\nfor step in range(5):\n    action = random.choice([\"\uc67c\ucabd\", \"\uc624\ub978\ucabd\"])\n    reward = 1 if action == \"\uc624\ub978\ucabd\" else 0\n    total_reward += reward\nprint(\"\ucd1d \ubcf4\uc0c1:\", total_reward)\n",
+        "result": "Experiment with accuracy 0.81",
+        "reward": 1
+    },
+    {
+        "title": "Post-training for Efficient Communication via Convention Formation",
+        "summary": "Humans communicate with increasing efficiency in multi-turn interactions, by\nadapting their language and forming ad-hoc conventions. In contrast, prior work\nshows that LLMs do not naturally show this behavior. We develop a post-training\nprocess to develop this ability through targeted fine-tuning on heuristically\nidentified demonstrations of convention formation. We evaluate with two new\nbenchmarks focused on this capability. First, we design a focused,\ncognitively-motivated interaction benchmark that consistently elicits strong\nconvention formation trends in humans. Second, we create a new\ndocument-grounded reference completion task that reflects in-the-wild\nconvention formation behavior. Our studies show significantly improved\nconvention formation abilities in post-trained LLMs across the two evaluation\nmethods.",
+        "keywords": [
+            "reinforcement learning"
+        ],
+        "idea": "\uac15\ud654\ud559\uc2b5 \uc2e4\ud5d8 \uc2dc\ubbac\ub808\uc774\uc158",
+        "code": "\nimport random\nstate = 0\ntotal_reward = 0\nfor step in range(5):\n    action = random.choice([\"\uc67c\ucabd\", \"\uc624\ub978\ucabd\"])\n    reward = 1 if action == \"\uc624\ub978\ucabd\" else 0\n    total_reward += reward\nprint(\"\ucd1d \ubcf4\uc0c1:\", total_reward)\n",
+        "result": "Experiment with accuracy 0.81",
+        "reward": 1
+    },
+    {
+        "title": "Intuition emerges in Maximum Caliber models at criticality",
+        "summary": "Whether large predictive models merely parrot their training data or produce\ngenuine insight lacks a physical explanation. This work reports a primitive\nform of intuition that emerges as a metastable phase of learning that\ncritically balances next-token prediction against future path-entropy. The\nintuition mechanism is discovered via mind-tuning, the minimal principle that\nimposes Maximum Caliber in predictive models with a control temperature-like\nparameter $\\lambda$. Training on random walks in deterministic mazes reveals a\nrich phase diagram: imitation (low $\\lambda$), rule-breaking hallucination\n(high $\\lambda$), and a fragile in-between window exhibiting strong\nprotocol-dependence (hysteresis) and multistability, where models spontaneously\ndiscover novel goal-directed strategies. These results are captured by an\neffective low-dimensional theory and frame intuition as an emergent property at\nthe critical balance between memorizing what is and wondering what could be.",
+        "keywords": [
+            "reinforcement learning"
+        ],
+        "idea": "\uac15\ud654\ud559\uc2b5 \uc2e4\ud5d8 \uc2dc\ubbac\ub808\uc774\uc158",
+        "code": "\nimport random\nstate = 0\ntotal_reward = 0\nfor step in range(5):\n    action = random.choice([\"\uc67c\ucabd\", \"\uc624\ub978\ucabd\"])\n    reward = 1 if action == \"\uc624\ub978\ucabd\" else 0\n    total_reward += reward\nprint(\"\ucd1d \ubcf4\uc0c1:\", total_reward)\n",
+        "result": "Experiment with accuracy 0.81",
+        "reward": 1
+    }
+]

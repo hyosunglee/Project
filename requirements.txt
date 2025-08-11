@@ -1,4 +1,10 @@
-Flask
-scikit-learn
+flask
+requests
+beautifulsoup4
+pydantic>=2
+apscheduler
 numpy
-arxiv
+scipy
+pandas
+scikit-learn
+joblib

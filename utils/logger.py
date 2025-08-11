@@ -1,47 +1,35 @@
-import json
-import os
+import os, json
 
-LOG_FILE = "logs/experiment_logs.json"
+LOG_PATH = "logs/experiment_log.json"
+os.makedirs("logs", exist_ok=True)
+if not os.path.exists(LOG_PATH):
+    with open(LOG_PATH, "w") as f:
+        json.dump([], f)
+
+def _load():
+    with open(LOG_PATH, "r") as f:
+        return json.load(f)
+
+def _save(data):
+    with open(LOG_PATH, "w") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+def is_duplicate(title: str) -> bool:
+    try:
+        logs = _load()
+        return any(item.get("paper_title") == title for item in logs)
+    except Exception:
+        return False
 
 def log_experiment(title, summary, keywords, idea, code, result, reward):
-    """Appends a new experiment log to the log file."""
-    log_entry = {
-        "title": title,
-        "summary": summary,
+    logs = _load()
+    logs.append({
+        "paper_title": title,
+        "paper_summary": summary,
         "keywords": keywords,
         "idea": idea,
         "code": code,
         "result": result,
-        "reward": reward,
-    }
-
-    logs = []
-    if os.path.exists(LOG_FILE):
-        with open(LOG_FILE, "r") as f:
-            try:
-                logs = json.load(f)
-            except json.JSONDecodeError:
-                logs = []
-
-    logs.append(log_entry)
-
-    with open(LOG_FILE, "w") as f:
-        json.dump(logs, f, indent=4)
-
-
-def is_duplicate(title):
-    """Checks if a log with the given title already exists."""
-    if not os.path.exists(LOG_FILE):
-        return False
-
-    with open(LOG_FILE, "r") as f:
-        try:
-            logs = json.load(f)
-        except json.JSONDecodeError:
-            return False
-
-    for log in logs:
-        if log.get("title") == title:
-            return True
-
-    return False
+        "reward": reward
+    })
+    _save(logs)

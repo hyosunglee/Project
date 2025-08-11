@@ -1,0 +1,6 @@
+2025-08-11 05:20:20,939 - INFO - 🔧 서버 실행 중... http://0.0.0.0:3000
+2025-08-11 05:20:20,941 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3000
+ * Running on http://192.168.0.2:3000
+2025-08-11 05:20:20,941 - INFO - [33mPress CTRL+C to quit[0m

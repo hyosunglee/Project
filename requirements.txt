@@ -1,0 +1,10 @@
+flask
+requests
+beautifulsoup4
+pydantic>=2
+apscheduler
+numpy
+scipy
+pandas
+scikit-learn
+joblib

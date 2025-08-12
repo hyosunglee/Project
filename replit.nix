@@ -18,5 +18,4 @@
     PYTHON_BIN = "${pkgs.python311}/bin/python3.11";
   };
 }
-조치 방법:
 

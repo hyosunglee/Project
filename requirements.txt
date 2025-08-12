@@ -3,7 +3,7 @@ requests
 beautifulsoup4
 pydantic>=2
 apscheduler
-numpy
+numpy==1.26.4
 scipy
 pandas
 scikit-learn

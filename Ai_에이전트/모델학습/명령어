@@ -1,0 +1,5 @@
+curl -X POST "http://localhost:3000/seed?n=30"
+curl -X POST http://localhost:3000/train
+curl -X POST http://localhost:3000/predict \
+  -H "Content-Type: application/json" \
+  -d '{"text":"새로운 RL 아이디어와 실험 요약...", "target":"reward", "explain":true}'

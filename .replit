@@ -1,1 +1,10 @@
 run = "python3.11 server.py"
+modules = ["python-3.12", "nodejs-20", "nix", "web"]
+
+[nix]
+channel = "stable-25_05"
+packages = ["glibcLocales", "libxcrypt", "pkg-config", "xsimd"]
+
+[[ports]]
+localPort = 3000
+externalPort = 80

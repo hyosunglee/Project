@@ -48,7 +48,10 @@ def run_loop_once():
     papers = []
     if fetch_arxiv_papers:
         try:
-            papers = fetch_arxiv_papers("reinforcement learning", max_results=1)
+
+            papers = fetch_arxiv_papers("reinforcement learning",
+                                        max_results=1)
+
         except Exception as e:
             print(f"⚠️ fetch_arxiv_papers 실패: {e}")
 
@@ -71,9 +74,12 @@ def trigger_training():
 
 
 def start_scheduler():
+
     def scheduled_loop():
         with app.app_context():
+
             run_loop_once()
+
     scheduler = BackgroundScheduler()
     scheduler.add_job(scheduled_loop, 'interval', minutes=1)
     scheduler.start()

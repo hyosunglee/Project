@@ -48,3 +48,5 @@
 - `POST /seed?n=N` 더미 로그 N건 생성(개발용)
 - `POST /train` 로그 기반 모델 학습(버저닝+latest)
 - `POST /predict` 예측(JSON 스키마 검증/확률/버전/설명 스텁)
+
+

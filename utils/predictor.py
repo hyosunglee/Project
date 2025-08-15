@@ -1,5 +1,8 @@
+# utils/predictor.py
+
 import pickle
 import os
+import joblib
 
 def load_model():
     model_path = "models/reward_latest.pkl"
@@ -24,5 +27,21 @@ def predict_reward(text):
 
     return {
         "prediction": int(pred_label),
+
+
+
+
+def predict_reward(text):
+    with open("models/reward_latest.pkl", "rb") as f:
+        pipeline = joblib.load(f)
+
+    X = [text]
+    prob = pipeline.predict_proba(X)
+    pred = pipeline.predict(X)
+    confidence = max(prob[0])
+
+    return {
+        "prediction": int(pred[0]),
+
         "confidence": round(float(confidence), 4)
     }

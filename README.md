@@ -49,4 +49,10 @@
 - `POST /train` 로그 기반 모델 학습(버저닝+latest)
 - `POST /predict` 예측(JSON 스키마 검증/확률/버전/설명 스텁)
 
+### 명령어
+curl -X POST "http://localhost:3000/seed?n=30"
+curl -X POST http://localhost:3000/train
+curl -X POST http://localhost:3000/predict \
+  -H "Content-Type: application/json" \
+  -d '{"text":"새로운 RL 아이디어와 실험 요약...", "target":"reward", "explain":true}'
 

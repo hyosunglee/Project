@@ -1,4 +1,4 @@
-# Project — Predict API Bootstrap
+ㅣ# Project — Predict API Bootstrap
 
 
 핵심 역할
@@ -55,4 +55,8 @@ curl -X POST http://localhost:3000/train
 curl -X POST http://localhost:3000/predict \
   -H "Content-Type: application/json" \
   -d '{"text":"새로운 RL 아이디어와 실험 요약...", "target":"reward", "explain":true}'
+
+
+
+### 폴더 정리 및 ingent 진행 
 

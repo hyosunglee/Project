@@ -26,6 +26,7 @@ from utils.predictor import predict_reward
 
 bp = Blueprint("predict", __name__)
 
+
 class PredictIn(BaseModel):
     text: str = Field(..., min_length=5)
     # The user's snippet had target and explain, I will keep them for now
@@ -39,21 +40,22 @@ class PredictOut(BaseModel):
     confidence: float
 
 
-
-
 @bp.route("/predict", methods=["POST"])
 def predict():
     try:
-        data = request.get_json()
-        if "text" not in data:
+        payload = request.get_json(force=True)
+        if "text" not in payload:
             return jsonify({"error": "Missing 'text' field"}), 400
 
+        # payload["text"]로 접근해야 안전
+        result = predict_reward(payload["text"])
+        return jsonify(result)
 
-    result = predict_reward(payload.text)
+    except Exception as e:
+        # 에러 발생 시 예쁘게 응답
+        return jsonify({"error": f"inference error: {str(e)}"}), 500
 
     if result["prediction"] == -1:
         return jsonify({"error": "model not ready"}), 503
 
     return jsonify(PredictOut(**result).dict()), 200
-
-

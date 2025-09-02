@@ -4,6 +4,7 @@ import pickle
 import os
 import joblib
 
+
 def load_model():
     model_path = "models/reward_latest.pkl"
     if not os.path.exists(model_path):
@@ -12,11 +13,12 @@ def load_model():
         model, vectorizer = pickle.load(f)
     return model, vectorizer
 
+
 def predict_reward(text):
     model, vectorizer = load_model()
     if model is None or vectorizer is None:
         return {
-            "prediction": -1, # Or some other indicator of no model
+            "prediction": -1,  # Or some other indicator of no model
             "confidence": 0.0
         }
 
@@ -25,10 +27,7 @@ def predict_reward(text):
     pred_label = model.predict(X)[0]
     confidence = max(prob)
 
-    return {
-        "prediction": int(pred_label),
-
-
+    return {"prediction": int(pred_label)}
 
 
 def predict_reward(text):
@@ -42,6 +41,5 @@ def predict_reward(text):
 
     return {
         "prediction": int(pred[0]),
-
         "confidence": round(float(confidence), 4)
     }

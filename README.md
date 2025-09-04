@@ -1,4 +1,4 @@
-ㅣ# Project — Predict API Bootstrap
+### Project — Predict API Bootstrap
 
 
 핵심 역할
@@ -58,5 +58,5 @@ curl -X POST http://localhost:3000/predict \
 
 
 
-### 폴더 정리 및 ingent 진행 
+### ingest 진행중
 

@@ -58,7 +58,7 @@ curl -X POST http://localhost:3000/predict \
 
 
 
-### (운영 요령)
+### 운영 요령
 
 데이터 쌓기: /ingest(수집기에서 자동 호출)
 
@@ -70,3 +70,4 @@ curl -X POST http://localhost:3000/predict \
 
 임계치 예시: LOW_CONF_THRESHOLD=0.6 잡으면 0.6 미만은 “재학습 후보”
 
+### 다음 작업은 기존에 만든 수집 프로그램을 같이 실행시키고 수집된 데이터를 ingest 에 보내기

@@ -8,3 +8,6 @@ packages = ["glibcLocales", "libxcrypt", "pkg-config", "xsimd"]
 [[ports]]
 localPort = 3000
 externalPort = 80
+
+[agent]
+expertMode = true

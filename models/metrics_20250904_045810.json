@@ -1,0 +1,5 @@
+{
+  "model": "models/reward_cls_20250904_045810.pkl",
+  "accuracy": 0.8,
+  "f1_score": 0.875
+}

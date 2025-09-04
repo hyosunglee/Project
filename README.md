@@ -58,5 +58,15 @@ curl -X POST http://localhost:3000/predict \
 
 
 
-### ingest 진행중
+### (운영 요령)
+
+데이터 쌓기: /ingest(수집기에서 자동 호출)
+
+주기 학습: 하루 1회 /train (또는 GitHub Actions/cron으로 밤마다)
+
+예측 API: /predict
+
+사람 교정: /feedback → 다음 학습 때 자동 반영
+
+임계치 예시: LOW_CONF_THRESHOLD=0.6 잡으면 0.6 미만은 “재학습 후보”
 

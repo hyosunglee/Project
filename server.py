@@ -9,12 +9,12 @@ from utils.logger import log_experiment
 from utils.loop_logic import loop_logic
 from api_predict import bp as predict_bp
 
+
+
 try:
     from utils.paper_fetcher import fetch_arxiv_papers
 except Exception:
     fetch_arxiv_papers = None  # 없는 환경 대비
-
-
 
 app = Flask(__name__)
 app.register_blueprint(predict_bp)

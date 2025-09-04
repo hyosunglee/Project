@@ -1,61 +1,55 @@
-# api_predict.py 상단
-import joblib
-
-
-def predict_reward(text):
-    with open("models/reward_latest.pkl", "rb") as f:
-        pipeline = joblib.load(f)
-
-    X = [text]
-    prob = pipeline.predict_proba(X)
-    pred = pipeline.predict(X)
-    confidence = max(prob[0])
-
-    return {
-        "prediction": int(pred[0]),
-        "confidence": round(float(confidence), 4)
-    }
-
-
-from utils.predictor import predict_reward
+# api_predict.py  ── Flask Blueprint 라우트 모음
 from flask import Blueprint, request, jsonify
-
-from pydantic import BaseModel, Field, ValidationError
-from typing import Optional, Literal
 from utils.predictor import predict_reward
+import json
 
-bp = Blueprint("predict", __name__)
+bp = Blueprint("predict_bp", __name__)
 
-
-class PredictIn(BaseModel):
-    text: str = Field(..., min_length=5)
-    # The user's snippet had target and explain, I will keep them for now
-    # but the new predict_reward function doesn't use them.
-    target: Literal["reward"] = "reward"
-    explain: bool = False
-
-
-class PredictOut(BaseModel):
-    prediction: int
-    confidence: float
-
-
+# ─────────────────────────────────────────
+# 1) 예측 API (/predict)
+# ─────────────────────────────────────────
 @bp.route("/predict", methods=["POST"])
 def predict():
     try:
-        payload = request.get_json(force=True)
-        if "text" not in payload:
+        payload = request.get_json(force=True) or {}
+        text = (payload.get("text") or "").strip()
+        if not text:
             return jsonify({"error": "Missing 'text' field"}), 400
 
-        # payload["text"]로 접근해야 안전
-        result = predict_reward(payload["text"])
+        result = predict_reward(text)
         return jsonify(result)
-
     except Exception as e:
-        # 에러 발생 시 예쁘게 응답
         return jsonify({"error": f"inference error: {str(e)}"}), 500
 
-    if result["prediction"] == -1:
-        return jsonify({"error": "model not ready"}), 503
 
-    return jsonify(PredictOut(**result).dict()), 200
+# ─────────────────────────────────────────
+# 2) 리서치 → 학습 연결용 인입 API (/ingest)
+#    요청: {"text": "...", "label": 0|1(옵션, 기본 1)}
+#    저장: 프로젝트 루트의 logs.jsonl (JSON Lines)
+# ─────────────────────────────────────────
+LOG_PATH = "logs.jsonl"
+
+@bp.route("/ingest", methods=["POST"])
+def ingest():
+    try:
+        data = request.get_json(force=True) or {}
+        text = (data.get("text") or "").strip()
+        label_raw = data.get("label", 1)
+
+        # label 정규화 (0/1 정수)
+        try:
+            label = int(label_raw)
+        except Exception:
+            label = 1
+        label = 1 if label else 0
+
+        if not text:
+            return jsonify({"error": "text required"}), 400
+
+        entry = {"text": text, "label": label}
+        with open(LOG_PATH, "a", encoding="utf-8") as f:
+            f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+
+        return jsonify({"message": "ingested", "n": 1}), 200
+    except Exception as e:
+        return jsonify({"error": f"ingest error: {str(e)}"}), 500

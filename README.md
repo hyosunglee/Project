@@ -48,6 +48,15 @@
 - `POST /seed?n=N` 더미 로그 N건 생성(개발용)
 - `POST /train` 로그 기반 모델 학습(버저닝+latest)
 - `POST /predict` 예측(JSON 스키마 검증/확률/버전/설명 스텁)
+- `POST /ingest` 외부에서 수집된 데이터를 시스템에 기록
+
+### 데이터 수집
+`collector.py` 스크립트를 사용하여 ArXiv에서 논문을 수집하고, 서버의 `/ingest` 엔드포인트로 전송할 수 있습니다.
+
+1. 서버 실행: `python server.py`
+2. 새 터미널에서 수집기 실행: `python collector.py`
+
+이 스크립트는 "reinforcement learning"을 주제로 최신 논문 5개를 수집하여 서버에 로깅합니다.
 
 ### 명령어
 curl -X POST "http://localhost:3000/seed?n=30"
@@ -55,12 +64,14 @@ curl -X POST http://localhost:3000/train
 curl -X POST http://localhost:3000/predict \
   -H "Content-Type: application/json" \
   -d '{"text":"새로운 RL 아이디어와 실험 요약...", "target":"reward", "explain":true}'
-
+curl -X POST http://localhost:3000/ingest \
+  -H "Content-Type: application/json" \
+  -d '{"text":"수동으로 추가하는 데이터 샘플", "label": 1}'
 
 
 ### 운영 요령
 
-데이터 쌓기: /ingest(수집기에서 자동 호출)
+데이터 쌓기: `python collector.py` 실행 또는 `/ingest` 엔드포인트로 직접 데이터 전송
 
 주기 학습: 하루 1회 /train (또는 GitHub Actions/cron으로 밤마다)
 
@@ -69,5 +80,3 @@ curl -X POST http://localhost:3000/predict \
 사람 교정: /feedback → 다음 학습 때 자동 반영
 
 임계치 예시: LOW_CONF_THRESHOLD=0.6 잡으면 0.6 미만은 “재학습 후보”
-
-### 다음 작업은 기존에 만든 수집 프로그램을 같이 실행시키고 수집된 데이터를 ingest 에 보내기

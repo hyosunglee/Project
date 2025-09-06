@@ -26,39 +26,9 @@ def predict():
 
 
 # ─────────────────────────────────────────
-# 2) 리서치 → 학습 연결용 인입 API (/ingest)
-#    요청: {"text": "...", "label": 0|1(옵션, 기본 1)}
-#    저장: 프로젝트 루트의 logs.jsonl (JSON Lines)
+# 2) 피드백 API (/feedback)
+#    사용자가 예측 결과를 교정하고 피드백을 보내는 API
 # ─────────────────────────────────────────
-LOG_PATH = "logs.jsonl"
-
-
-@bp.route("/ingest", methods=["POST"])
-def ingest():
-    try:
-        data = request.get_json(force=True) or {}
-        text = (data.get("text") or "").strip()
-        label_raw = data.get("label", 1)
-
-        # label 정규화 (0/1 정수)
-        try:
-            label = int(label_raw)
-        except Exception:
-            label = 1
-        label = 1 if label else 0
-
-        if not text:
-            return jsonify({"error": "text required"}), 400
-
-        entry = {"text": text, "label": label}
-        with open(LOG_PATH, "a", encoding="utf-8") as f:
-            f.write(json.dumps(entry, ensure_ascii=False) + "\n")
-
-        return jsonify({"message": "ingested", "n": 1}), 200
-    except Exception as e:
-        return jsonify({"error": f"ingest error: {str(e)}"}), 500
-
-
 @bp.route("/feedback", methods=["POST"])
 def feedback():
     try:

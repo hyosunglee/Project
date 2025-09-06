@@ -75,6 +75,26 @@ def trigger_training():
     return jsonify({"message": "Training started in background"}), 200
 
 
+@app.route("/ingest", methods=["POST"])
+def ingest_data():
+    """외부 소스로부터 데이터를 받아 로깅"""
+    data = request.get_json()
+    if not data or "text" not in data:
+        return jsonify({"error": "Invalid payload, 'text' field is required"}), 400
+
+    text = data["text"]
+    # 클라이언트에서 레이블을 제공하지 않으면 기본값 1 사용
+    label = data.get("label", 1)
+
+    try:
+        log_experiment(text, label)
+        print(f"📥 [INGEST] 데이터 수신 및 저장 완료: {text[:50]}...")
+        return jsonify({"message": "Data ingested successfully"}), 200
+    except Exception as e:
+        print(f"🔥 [INGEST] 데이터 저장 실패: {e}")
+        return jsonify({"error": "Failed to ingest data"}), 500
+
+
 def start_scheduler():
 
     def scheduled_loop():

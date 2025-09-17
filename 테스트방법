@@ -1,0 +1,10 @@
+./run.sh                      # 서버 기동(+healthz 대기)
+curl -s :3000/healthz         # {"service":"predict-api","ok":true}
+
+# 수집/학습/예측
+curl -sX POST :3000/ingest  -H 'Content-Type: application/json' -d '{"text":"샘플","label":1}'
+curl -sX POST :3000/train
+curl -sX POST :3000/predict -H 'Content-Type: application/json' -d '{"text":"이 논문 요약은 유익했다"}'
+
+# 피드백
+curl -sX POST :3000/feedback -H 'Content-Type: application/json' -d '{"text":"…","prediction":1,"correct":true}'

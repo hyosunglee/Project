@@ -82,9 +82,8 @@ curl -X POST http://localhost:3000/ingest \
 임계치 예시: LOW_CONF_THRESHOLD=0.6 잡으면 0.6 미만은 “재학습 후보”
 
 
-explain 1.0
 
-Self-Learning Feedback Loop API
+### Self-Learning Feedback Loop API
 “논문 요약 수집 → 학습 → 예측 → 피드백 → 재학습”까지 이어지는 자율 학습 파이프라인
 <img width="583" height="614" alt="Image" src="https://github.com/user-attachments/assets/9f737634-0d0d-4d60-a7c7-843784351885" />
 ⸻

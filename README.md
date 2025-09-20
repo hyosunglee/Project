@@ -82,19 +82,14 @@ curl -X POST http://localhost:3000/ingest \
 임계치 예시: LOW_CONF_THRESHOLD=0.6 잡으면 0.6 미만은 “재학습 후보”
 
 
-좋은 생각이다 👍 지금까지 우리가 만든 걸 정리하면 충분히 “자율 학습 기반 ML 파이프라인 + 피드백 루프” 포트폴리오로 보여줄 수 있어. 보여주기용은 아키텍처 다이어그램 + 핵심 기능 데모 코드/스크린샷 + 짧은 설명 이 3종 세트면 된다.
-
-⸻
-
-1. 프로젝트 제목 (예시)
+explain 1.0
 
 Self-Learning Feedback Loop API
 “논문 요약 수집 → 학습 → 예측 → 피드백 → 재학습”까지 이어지는 자율 학습 파이프라인
 
 ⸻
 
-
-3. 핵심 기능
+핵심 기능
 	•	/ingest : 새로운 데이터 수집 및 저장 (논문 요약 + 레이블)
 	•	/train : 수집된 데이터 기반 모델 학습, 버전 관리(reward_cls_*.pkl)
 	•	/predict : 텍스트 입력 시 예측 결과 + 신뢰도 반환
@@ -102,16 +97,14 @@ Self-Learning Feedback Loop API
 	•	자동화 루프 : 일정 주기마다 /loop 실행 → 신뢰도 낮은 샘플 수집 후 재학습
 
 ⸻
-
-4. 기술 스택
+기술 스택
 	•	Backend: Python, Flask/FastAPI, scikit-learn, joblib
 	•	Data: JSONL 로그 저장, versioned models
 	•	Infra: Replit/Jules Sandbox, GitHub 저장소, Gunicorn (배포 안정화)
 	•	DevOps: .gitignore, run.sh, metrics.json 자동 기록
 
 ⸻
-
-5. 스크린샷/결과 예시
+결과 예시
 	•	학습 후 예측 결과:
 
 {"prediction": 1, "confidence": 0.7262}
@@ -127,8 +120,7 @@ models/reward_latest.pkl
 
 
 ⸻
-
-6. 포트폴리오 어필 포인트
+어필 포인트
 	•	단순한 모델 학습이 아니라 자율 학습 루프 구현 경험
 	•	버전 관리 + 신뢰도 기반 자동 재학습 → 실무 적용 가능한 구조
 	•	API 기반 확장성: Flutter, Slack Bot, Agent Framework와 쉽게 연동 가능

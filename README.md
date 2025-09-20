@@ -80,3 +80,93 @@ curl -X POST http://localhost:3000/ingest \
 사람 교정: /feedback → 다음 학습 때 자동 반영
 
 임계치 예시: LOW_CONF_THRESHOLD=0.6 잡으면 0.6 미만은 “재학습 후보”
+
+
+좋은 생각이다 👍 지금까지 우리가 만든 걸 정리하면 충분히 “자율 학습 기반 ML 파이프라인 + 피드백 루프” 포트폴리오로 보여줄 수 있어. 보여주기용은 아키텍처 다이어그램 + 핵심 기능 데모 코드/스크린샷 + 짧은 설명 이 3종 세트면 된다.
+
+⸻
+
+1. 프로젝트 제목 (예시)
+
+Self-Learning Feedback Loop API
+“논문 요약 수집 → 학습 → 예측 → 피드백 → 재학습”까지 이어지는 자율 학습 파이프라인
+
+⸻
+
+2. 아키텍처 다이어그램 (보여주기용)
+
+ ┌──────────┐       ┌─────────────┐
+ │ Collector│──→───│   Ingest API │──┐
+ └──────────┘       └─────────────┘  │
+                                      ▼
+                               ┌─────────────┐
+                               │    Logger    │──→ logs.jsonl
+                               └─────────────┘
+                                      │
+                                      ▼
+                               ┌─────────────┐
+                               │   Trainer    │──→ models/*.pkl
+                               └─────────────┘
+                                      │
+                           ┌──────────┴───────────┐
+                           ▼                      ▼
+                  ┌─────────────────┐     ┌─────────────────┐
+                  │   Predict API   │     │  Feedback API    │
+                  └─────────────────┘     └─────────────────┘
+                           │                      │
+                           ▼                      │
+                  {"prediction":1, "confidence"}  │
+                                                  ▼
+                                          feedback.jsonl
+
+
+⸻
+
+3. 핵심 기능
+	•	/ingest : 새로운 데이터 수집 및 저장 (논문 요약 + 레이블)
+	•	/train : 수집된 데이터 기반 모델 학습, 버전 관리(reward_cls_*.pkl)
+	•	/predict : 텍스트 입력 시 예측 결과 + 신뢰도 반환
+	•	/feedback : 사용자의 정/오답 피드백을 기록하여 재학습 반영
+	•	자동화 루프 : 일정 주기마다 /loop 실행 → 신뢰도 낮은 샘플 수집 후 재학습
+
+⸻
+
+4. 기술 스택
+	•	Backend: Python, Flask/FastAPI, scikit-learn, joblib
+	•	Data: JSONL 로그 저장, versioned models
+	•	Infra: Replit/Jules Sandbox, GitHub 저장소, Gunicorn (배포 안정화)
+	•	DevOps: .gitignore, run.sh, metrics.json 자동 기록
+
+⸻
+
+5. 스크린샷/결과 예시
+	•	학습 후 예측 결과:
+
+{"prediction": 1, "confidence": 0.7262}
+
+	•	피드백 기록:
+
+{"text":"도움이 거의 되지 않았다","prediction":1,"correct":false,"label":0}
+
+	•	모델 버전 관리:
+
+models/reward_cls_20250904_060918.pkl
+models/reward_latest.pkl
+
+
+⸻
+
+6. 포트폴리오 어필 포인트
+	•	단순한 모델 학습이 아니라 자율 학습 루프 구현 경험
+	•	버전 관리 + 신뢰도 기반 자동 재학습 → 실무 적용 가능한 구조
+	•	API 기반 확장성: Flutter, Slack Bot, Agent Framework와 쉽게 연동 가능
+	•	환경 이슈까지 디버깅 & 안정화 (Gunicorn, run.sh, health check 도입) → 프로덕션 마인드셋 강조 가능
+
+⸻
+
+👉 이거 PPT나 Notion에 올리면 딱 좋아.
+내가 원하면 1장짜리 간단 PPT 템플릿(아키텍처+기능+결과)도 만들어줄 수 있어.
+
+포트폴리오는 코드보다 그림+스토리가 먹히니까, 보여주기용은 시각화 + 시연 위주로 가져가면 된다.
+
+원해? 내가 바로 PPT 뼈대 만들어줄까?

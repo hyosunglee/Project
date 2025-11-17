@@ -4,7 +4,7 @@ from utils.paper_fetcher import fetch_arxiv_papers
 import os
 
 # 서버 엔드포인트 URL 정의 (환경 변수 또는 기본값 사용)
-PORT = os.getenv("PORT", 3100)
+PORT = os.getenv("PORT", 3000)
 BASE_URL = f"http://localhost:{PORT}"
 INGEST_URL = f"{BASE_URL}/ingest"
 CHECK_DUPLICATES_URL = f"{BASE_URL}/check_duplicates"

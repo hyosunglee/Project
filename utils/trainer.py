@@ -24,9 +24,10 @@ def load_logs(file_path):
 def update_symlink(new_model_path):
     symlink_path = os.path.join(MODEL_DIR, "reward_latest.pkl")
     try:
-        if os.path.exists(symlink_path):
+        if os.path.exists(symlink_path) or os.path.islink(symlink_path):
             os.remove(symlink_path)
-        os.symlink(new_model_path, symlink_path)
+        model_basename = os.path.basename(new_model_path)
+        os.symlink(model_basename, symlink_path)
         print(f"[symlink] Updated to {new_model_path}")
     except Exception as e:
         print(f"[symlink] Failed: {e}")
@@ -70,8 +71,8 @@ def train_model():
     y_pred = model.predict(X_test_vec)
     metrics = {
         "model": model_path,
-        "accuracy": round(accuracy_score(y_test, y_pred), 4),
-        "f1_score": round(f1_score(y_test, y_pred), 4)
+        "accuracy": round(float(accuracy_score(y_test, y_pred)), 4),
+        "f1_score": round(float(f1_score(y_test, y_pred)), 4)
     }
     metrics_path = os.path.join(MODEL_DIR, f"metrics_{ts}.json")
     with open(metrics_path, "w") as f:

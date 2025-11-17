@@ -84,3 +84,7 @@ logs/
 logs.jsonl
 server.log
 feedback.jsonl
+
+# Runtime state files
+.keyword_index.json
+retrain_buffer.jsonl

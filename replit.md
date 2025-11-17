@@ -4,10 +4,11 @@
 This project is an AI-powered self-learning feedback loop system that automatically collects research papers from ArXiv, trains machine learning models, and makes predictions. The system continuously improves itself through a feedback loop.
 
 ## Recent Changes (November 17, 2025)
-- Installed Python 3.11 environment
-- Set up all dependencies (Flask, scikit-learn, arxiv, etc.)
-- Configured workflow to run server on port 3000
-- Server is operational and accessible
+- ✅ 다양한 논문 수집 시스템 구축 완료
+- ✅ 10개 AI 주제 키워드 순환 시스템 (reinforcement learning, deep learning, computer vision 등)
+- ✅ 논문 수집량 증가: 10개 → 30개 (3배 증가)
+- ✅ 실제 ArXiv 논문: 7개 → 33개로 증가
+- ✅ 자동화 스케줄러 작동 중 (1시간마다 다른 주제로 수집)
 
 ## Project Architecture
 - **Backend**: Flask-based REST API

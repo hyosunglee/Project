@@ -19,3 +19,7 @@
 {"timestamp": "2025-11-17T12:07:58.844372", "type": "collection", "data": {"collected_count": 0, "papers": []}}
 {"timestamp": "2025-11-17T12:47:58.183472", "type": "training", "data": {"model": "models/reward_cls_20251117_124758.pkl", "timestamp": "20251117_124758", "data_count": 73, "train_size": 58, "test_size": 15, "accuracy": 1.0, "f1_score": 1.0}}
 {"timestamp": "2025-11-17T12:48:02.382619", "type": "collection", "data": {"collected_count": 0, "papers": []}}
+{"timestamp": "2025-11-17T13:06:37.815385", "type": "collection", "data": {"collected_count": 0, "papers": []}}
+{"timestamp": "2025-11-17T13:07:53.316145", "type": "training", "data": {"model": "models/reward_cls_20251117_130753.pkl", "timestamp": "20251117_130753", "data_count": 73, "train_size": 58, "test_size": 15, "accuracy": 1.0, "f1_score": 1.0}}
+{"timestamp": "2025-11-17T13:07:56.660842", "type": "collection", "data": {"collected_count": 0, "papers": []}}
+{"timestamp": "2025-11-17T13:08:54.790277", "type": "collection", "data": {"collected_count": 0, "papers": []}}

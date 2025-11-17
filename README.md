@@ -36,4 +36,16 @@ curl -X POST http://localhost:3000/loop   # 수동 논문 수집
 curl -X POST http://localhost:3000/train  # 수동 학습
 ```
 
+# 전체 논문 보기
+cat logs.jsonl
+
+# ArXiv 논문만 보기
+grep -v "Synthetic Seed" logs.jsonl
+
+# 최신 수집 결과
+cat results/collection_*.json
+
+# 통합 결과 (학습/수집 모두)
+cat results/all_results.jsonl
+
 모든 작업은 자동으로 실행되며 결과는 `results/` 폴더에 JSON으로 저장됩니다.

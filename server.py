@@ -77,6 +77,15 @@ if not SAFE_BOOT:
             log_experiment(log_entry)
         return jsonify({"message": f"Seeded {n} logs"}), 200
 
+    # 키워드 순환을 위한 전역 변수
+    SEARCH_KEYWORDS = [
+        "reinforcement learning", "deep learning", "neural networks",
+        "computer vision", "natural language processing", "transformer models",
+        "generative AI", "machine learning optimization", "graph neural networks",
+        "meta learning"
+    ]
+    keyword_counter = [0]  # 리스트로 감싸서 클로저 내에서 수정 가능하게
+    
     @app.route("/loop", methods=["POST"])
     def run_loop_once():
         print("\n🌀 [LOOP] 논문 수집 및 실험 실행 시작")
@@ -84,7 +93,11 @@ if not SAFE_BOOT:
         papers = []
         if fetch_arxiv_papers:
             try:
-                papers = fetch_arxiv_papers("reinforcement learning", max_results=5)
+                # 키워드 순환
+                current_keyword = SEARCH_KEYWORDS[keyword_counter[0] % len(SEARCH_KEYWORDS)]
+                keyword_counter[0] += 1
+                print(f"🔍 검색 키워드: '{current_keyword}'")
+                papers = fetch_arxiv_papers(current_keyword, max_results=30)
             except Exception as e:
                 print(f"⚠️ fetch_arxiv_papers 실패: {e}")
         

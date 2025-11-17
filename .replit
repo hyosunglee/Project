@@ -40,3 +40,6 @@ outputType = "console"
 task = "shell.exec"
 args = "python server.py & sleep 5 && python auto_initialize.py"
 waitForPort = 3000
+
+[deployment]
+deploymentTarget = "cloudrun"

@@ -9,3 +9,5 @@
 {"timestamp": "2025-11-17T08:47:19.109781", "type": "collection", "data": {"collected_count": 0, "papers": []}}
 {"timestamp": "2025-11-17T08:48:22.861461", "type": "training", "data": {"model": "models/reward_cls_20251117_084822.pkl", "timestamp": "20251117_084822", "data_count": 391, "train_size": 312, "test_size": 79, "accuracy": 0.6582, "f1_score": 0.7568}}
 {"timestamp": "2025-11-17T08:51:07.559923", "type": "training", "data": {"model": "models/reward_cls_20251117_085107.pkl", "timestamp": "20251117_085107", "data_count": 33, "train_size": 26, "test_size": 7, "accuracy": 0.4286, "f1_score": 0.5}}
+{"timestamp": "2025-11-17T09:52:00.468339", "type": "training", "data": {"model": "models/reward_cls_20251117_095200.pkl", "timestamp": "20251117_095200", "data_count": 33, "train_size": 26, "test_size": 7, "accuracy": 0.4286, "f1_score": 0.5}}
+{"timestamp": "2025-11-17T09:52:04.625938", "type": "collection", "data": {"collected_count": 0, "papers": []}}

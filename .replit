@@ -9,6 +9,10 @@ packages = ["glibcLocales", "libxcrypt", "pkg-config", "xsimd"]
 localPort = 3000
 externalPort = 3000
 
+[[ports]]
+localPort = 3100
+externalPort = 80
+
 [agent]
 expertMode = true
 integrations = ["github:1.0.0"]

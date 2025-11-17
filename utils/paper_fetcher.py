@@ -2,7 +2,7 @@ import arxiv
 import time
 from typing import List, Dict
 
-def fetch_arxiv_papers(query: str, max_results: int = 10, retries: int = 3) -> List[Dict]:
+def fetch_arxiv_papers(query: str, max_results: int = 10, retries: int = 3, sort_by: str = "submitted") -> List[Dict]:
     """
     ArXiv에서 논문을 수집합니다. 에러 처리 및 재시도 로직 포함.
     
@@ -10,11 +10,20 @@ def fetch_arxiv_papers(query: str, max_results: int = 10, retries: int = 3) -> L
         query: 검색 쿼리
         max_results: 최대 결과 수
         retries: 실패 시 재시도 횟수
+        sort_by: 정렬 방식 - "submitted" (최신순) 또는 "relevance" (관련성순)
     
     Returns:
         논문 리스트 (각 논문은 title, summary, pdf_url 포함)
     """
-    print(f"📡 [ArXiv] 검색 시작: '{query}' (최대 {max_results}개)")
+    # 정렬 방식 결정
+    if sort_by.lower() == "relevance":
+        sort_criterion = arxiv.SortCriterion.Relevance
+        sort_display = "관련성순"
+    else:
+        sort_criterion = arxiv.SortCriterion.SubmittedDate
+        sort_display = "최신순"
+    
+    print(f"📡 [ArXiv] 검색 시작: '{query}' (최대 {max_results}개, {sort_display})")
     
     for attempt in range(retries):
         try:
@@ -27,7 +36,7 @@ def fetch_arxiv_papers(query: str, max_results: int = 10, retries: int = 3) -> L
             search = arxiv.Search(
                 query=query,
                 max_results=max_results,
-                sort_by=arxiv.SortCriterion.SubmittedDate
+                sort_by=sort_criterion
             )
             
             papers = []

@@ -94,10 +94,15 @@ if not SAFE_BOOT:
         if fetch_arxiv_papers:
             try:
                 # 키워드 순환
-                current_keyword = SEARCH_KEYWORDS[keyword_counter[0] % len(SEARCH_KEYWORDS)]
+                current_index = keyword_counter[0]
+                current_keyword = SEARCH_KEYWORDS[current_index % len(SEARCH_KEYWORDS)]
+                
+                # 정렬 방식: 짝수 인덱스는 관련성순 (중요한 논문), 홀수는 최신순
+                sort_mode = "relevance" if current_index % 2 == 0 else "submitted"
+                
                 keyword_counter[0] += 1
-                print(f"🔍 검색 키워드: '{current_keyword}'")
-                papers = fetch_arxiv_papers(current_keyword, max_results=30)
+                print(f"🔍 검색 키워드: '{current_keyword}' (정렬: {sort_mode})")
+                papers = fetch_arxiv_papers(current_keyword, max_results=30, sort_by=sort_mode)
             except Exception as e:
                 print(f"⚠️ fetch_arxiv_papers 실패: {e}")
         

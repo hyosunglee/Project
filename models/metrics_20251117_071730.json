@@ -1,0 +1,9 @@
+{
+  "model": "models/reward_cls_20251117_071730.pkl",
+  "timestamp": "20251117_071730",
+  "data_count": 259,
+  "train_size": 207,
+  "test_size": 52,
+  "accuracy": 0.6346,
+  "f1_score": 0.7246
+}

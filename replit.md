@@ -4,11 +4,18 @@
 This project is an AI-powered self-learning feedback loop system that automatically collects research papers from ArXiv, trains machine learning models, and makes predictions. The system continuously improves itself through a feedback loop.
 
 ## Recent Changes (November 17, 2025)
+- ✅ **ArXiv API 수집 시스템 완전 개선** (최신 업데이트)
+  - 구버전 .results() → 새로운 Client API로 전환
+  - 상세한 에러 로깅 추가 (실시간 수집 상태 확인 가능)
+  - Retry 로직 구현 (3번 재시도, 지수 백오프)
+  - 타임아웃 및 Rate Limit 처리 강화
+  - 개별 논문 파싱 오류도 gracefully 처리
 - ✅ 다양한 논문 수집 시스템 구축 완료
 - ✅ 10개 AI 주제 키워드 순환 시스템 (reinforcement learning, deep learning, computer vision 등)
 - ✅ 논문 수집량 증가: 10개 → 30개 (3배 증가)
-- ✅ 실제 ArXiv 논문: 7개 → 33개로 증가
+- ✅ 실제 ArXiv 논문: 33개 (깨끗한 데이터)
 - ✅ 자동화 스케줄러 작동 중 (1시간마다 다른 주제로 수집)
+- ✅ 중복 체크 시스템 정상 작동 (이미 수집된 논문은 자동으로 필터링)
 
 ## Project Architecture
 - **Backend**: Flask-based REST API

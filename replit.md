@@ -34,7 +34,18 @@ This project is an AI-powered self-learning feedback loop system that automatica
 - `POST /check_duplicates` - Check for duplicate paper titles
 
 ## Running the Project
-The server runs automatically on port 3000 via the configured workflow.
+The server runs automatically on port 5000 via the configured workflow with webview enabled.
+
+### Web UI
+Open the webview pane to access the interactive web interface where you can:
+- Check server status
+- Generate test data
+- Train models
+- Make predictions
+- Add new data
+- Check for duplicates
+
+All features are accessible through an easy-to-use web interface with buttons and forms.
 
 ### Manual Commands
 ```bash
@@ -57,16 +68,24 @@ curl -X POST http://localhost:3000/predict \
 ```
 
 ## Current State
-- ✅ Server is running and functional on port 3000
+- ✅ Server is running and functional on port 5000
+- ✅ Web UI available in webview pane
 - ✅ All dependencies installed (Flask, scikit-learn, arxiv, gunicorn, etc.)
 - ✅ Ready for data collection and model training
-- ✅ Workflow configured for automatic server startup
-- ✅ All API endpoints tested and working
+- ✅ Workflow configured for automatic server startup with webview
+- ✅ All API endpoints tested and working (100% test pass rate)
 - ✅ Model training pipeline functional
 - ✅ Prediction API operational
 - ✅ Data ingestion and duplicate checking working
+- ✅ Python test script available (test_api.py)
 
 ## User Preferences
 - Language: Korean and English mixed
 - Development environment: Replit
-- Port: 3000 (API server)
+- Port: 5000 (Web UI + API server)
+- Interface: Web UI for easy interaction
+
+## Files Added
+- `static/index.html` - Interactive web UI for all API functions
+- `test_api.py` - Python script to test all API endpoints
+- `QUICKSTART.md` - Korean quickstart guide

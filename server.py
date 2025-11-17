@@ -1,15 +1,20 @@
 import os
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 import threading
 
 # ==============================================================================
 # App Initialization
 # ==============================================================================
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='')
 
 # ==============================================================================
 # Health Check Endpoint (always available)
 # ==============================================================================
+@app.route("/")
+def index():
+    """Serve the main web UI."""
+    return send_from_directory('static', 'index.html')
+
 @app.route("/healthz")
 def healthz():
     """Returns a unique signature to confirm the service is running."""
@@ -46,9 +51,9 @@ if not SAFE_BOOT:
     # --------------------------------------------------------------------------
     # Route Definitions
     # --------------------------------------------------------------------------
-    @app.route("/")
-    def home():
-        print("🔗 '/' 경로에 접근 - 서버 정상 작동 확인됨")
+    @app.route("/api")
+    def api_info():
+        print("🔗 '/api' 경로에 접근 - 서버 정상 작동 확인됨")
         return "✅ 서버 작동 중입니다. /seed /train /predict /loop /ingest /check_duplicates /healthz 사용 가능"
 
     @app.route("/seed", methods=["POST"])

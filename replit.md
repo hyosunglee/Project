@@ -68,16 +68,12 @@ curl -X POST http://localhost:3000/predict \
 ```
 
 ## Current State
-- ✅ Server is running and functional on port 5000
-- ✅ Web UI available in webview pane
-- ✅ All dependencies installed (Flask, scikit-learn, arxiv, gunicorn, etc.)
-- ✅ Ready for data collection and model training
-- ✅ Workflow configured for automatic server startup with webview
-- ✅ All API endpoints tested and working (100% test pass rate)
-- ✅ Model training pipeline functional
-- ✅ Prediction API operational
-- ✅ Data ingestion and duplicate checking working
-- ✅ Python test script available (test_api.py)
+- ✅ 완전 자동화 시스템 작동 중
+- ✅ 포트 3000에서 서버 실행
+- ✅ 1시간마다 자동 논문 수집
+- ✅ 6시간마다 자동 모델 재학습
+- ✅ 모든 결과 JSON 파일로 자동 저장
+- ✅ results/ 폴더에 결과 저장
 
 ## User Preferences
 - Language: Korean and English mixed

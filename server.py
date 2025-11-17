@@ -1,19 +1,24 @@
 import os
-from flask import Flask, jsonify, request, send_from_directory
+from flask import Flask, jsonify, request
 import threading
 
 # ==============================================================================
 # App Initialization
 # ==============================================================================
-app = Flask(__name__, static_folder='static', static_url_path='')
+app = Flask(__name__)
 
 # ==============================================================================
 # Health Check Endpoint (always available)
 # ==============================================================================
 @app.route("/")
 def index():
-    """Serve the main web UI."""
-    return send_from_directory('static', 'index.html')
+    """API 상태 정보"""
+    return jsonify({
+        "service": "Self-Learning AI System",
+        "status": "running",
+        "automation": "enabled",
+        "endpoints": ["/healthz", "/seed", "/train", "/predict", "/loop", "/ingest", "/check_duplicates"]
+    })
 
 @app.route("/healthz")
 def healthz():
@@ -36,6 +41,7 @@ if not SAFE_BOOT:
     from utils.trainer import train_model
     from utils.logger import log_experiment, get_all_logged_titles
     from utils.loop_logic import loop_logic
+    from utils.result_logger import save_result
     from api_predict import bp as predict_bp
 
     try:
@@ -74,32 +80,54 @@ if not SAFE_BOOT:
     @app.route("/loop", methods=["POST"])
     def run_loop_once():
         print("\n🌀 [LOOP] 논문 수집 및 실험 실행 시작")
+        collected_papers = []
         papers = []
         if fetch_arxiv_papers:
             try:
-                papers = fetch_arxiv_papers("reinforcement learning", max_results=1)
+                papers = fetch_arxiv_papers("reinforcement learning", max_results=5)
             except Exception as e:
                 print(f"⚠️ fetch_arxiv_papers 실패: {e}")
+        
         if papers:
-            paper = papers[0]
-            title = paper.get('title', 'untitled')
-            summary = paper.get("summary", "No summary")
             logged_titles = get_all_logged_titles()
-            if title not in logged_titles:
-                log_entry = {
-                    "title": title, "summary": summary, "source": "loop", "label": 1
-                }
-                log_experiment(log_entry)
-                print(f"✅ [LOOP] {title} 실험 및 로그 저장 완료")
-            else:
-                print(f"⚠️ [LOOP] 이미 처리한 논문: {title}")
+            for paper in papers:
+                title = paper.get('title', 'untitled')
+                summary = paper.get("summary", "No summary")
+                if title not in logged_titles:
+                    log_entry = {
+                        "title": title,
+                        "text": summary,  # summary를 text로 저장
+                        "summary": summary,
+                        "source": "loop",
+                        "label": 1
+                    }
+                    log_experiment(log_entry)
+                    collected_papers.append({"title": title, "summary": summary[:100]})
+                    print(f"✅ [LOOP] {title} 실험 및 로그 저장 완료")
+        
         loop_logic()
-        return jsonify({"message": "Loop 실행 완료"}), 200
+        
+        # 결과 저장
+        result_data = {
+            "collected_count": len(collected_papers),
+            "papers": collected_papers
+        }
+        result_file = save_result("collection", result_data)
+        print(f"📁 수집 결과 저장: {result_file}")
+        
+        return jsonify({"message": "Loop 실행 완료", "collected": len(collected_papers)}), 200
 
     @app.route("/train", methods=["POST"])
     def trigger_training():
         print("\n🚀 [TRAIN] 로그 기반 모델 학습 트리거됨 (비동기 시작)")
-        threading.Thread(target=train_model).start()
+        
+        def train_and_save():
+            result = train_model()
+            if result:
+                save_result("training", result)
+                print(f"📁 학습 결과 저장 완료")
+        
+        threading.Thread(target=train_and_save).start()
         return jsonify({"message": "Training started in background"}), 200
 
     @app.route("/ingest", methods=["POST"])
@@ -126,18 +154,37 @@ if not SAFE_BOOT:
         return jsonify({"duplicates": duplicates}), 200
 
     def start_scheduler():
+        """자동화 스케줄러 시작"""
         def scheduled_loop():
             with app.app_context():
                 run_loop_once()
+        
+        def scheduled_train():
+            """주기적으로 모델 재학습"""
+            with app.app_context():
+                print("\n🔄 [AUTO-TRAIN] 자동 재학습 시작")
+                train_model()
+        
         scheduler = BackgroundScheduler()
-        scheduler.add_job(scheduled_loop, 'interval', minutes=1)
+        
+        # 논문 수집: 1시간마다
+        scheduler.add_job(scheduled_loop, 'interval', hours=1, id='paper_collection')
+        
+        # 모델 재학습: 6시간마다
+        scheduler.add_job(scheduled_train, 'interval', hours=6, id='model_training')
+        
         scheduler.start()
-        print("⏰ 자동 스케줄러 시작됨 (1분 간격)")
+        print("⏰ 자동 스케줄러 시작됨")
+        print("   - 논문 수집: 1시간마다")
+        print("   - 모델 학습: 6시간마다")
+
+    # 스케줄러 시작
+    start_scheduler()
 
 # ==============================================================================
 # Main execution block (for direct `python server.py` calls)
 # ==============================================================================
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 3100))
-    print(f"🔧 (dev mode) 서버 실행 중... http://0.0.0.0:{port}")
+    port = int(os.getenv("PORT", 3000))
+    print(f"🤖 자율 학습 시스템 시작... http://0.0.0.0:{port}")
     app.run(host="0.0.0.0", port=port, debug=False, use_reloader=False)

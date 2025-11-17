@@ -37,14 +37,23 @@ def train_model():
 
     if not logs:
         print("[train] No logs found to train on.")
-        return
+        return None
 
-    texts = [x["text"] for x in logs]
-    labels = [x["label"] for x in logs]
+    # text 또는 summary 필드 사용
+    texts = [x.get("text") or x.get("summary", "") for x in logs]
+    labels = [x.get("label", 1) for x in logs]
+    
+    # 빈 텍스트 필터링
+    valid_data = [(t, l) for t, l in zip(texts, labels) if t.strip()]
+    if not valid_data:
+        print("[train] No valid text data found.")
+        return None
+    
+    texts, labels = zip(*valid_data)
 
     if len(set(labels)) < 2:
         print("[train] Not enough class diversity to train.")
-        return
+        return None
 
     X_train, X_test, y_train, y_test = train_test_split(
         texts, labels, test_size=0.2, random_state=42, stratify=labels
@@ -71,6 +80,10 @@ def train_model():
     y_pred = model.predict(X_test_vec)
     metrics = {
         "model": model_path,
+        "timestamp": ts,
+        "data_count": len(logs),
+        "train_size": len(X_train),
+        "test_size": len(X_test),
         "accuracy": round(float(accuracy_score(y_test, y_pred)), 4),
         "f1_score": round(float(f1_score(y_test, y_pred)), 4)
     }
@@ -80,3 +93,5 @@ def train_model():
 
     print(f"[train] Model saved: {model_path}")
     print(f"[train] Metrics: {metrics}")
+    
+    return metrics

@@ -1,6 +1,7 @@
 # api_predict.py  ── Flask Blueprint 라우트 모음
 from flask import Blueprint, request, jsonify
 from utils.predictor import predict_reward
+from utils.result_logger import save_result
 import json
 
 bp = Blueprint("predict_bp", __name__)
@@ -20,6 +21,15 @@ def predict():
             return jsonify({"error": "Missing 'text' field"}), 400
 
         result = predict_reward(text)
+        
+        # 예측 결과 저장
+        prediction_data = {
+            "text": text[:100],  # 처음 100자만 저장
+            "prediction": result.get("prediction"),
+            "confidence": result.get("confidence")
+        }
+        save_result("prediction", prediction_data)
+        
         return jsonify(result)
     except Exception as e:
         return jsonify({"error": f"inference error: {str(e)}"}), 500

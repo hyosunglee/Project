@@ -22,7 +22,12 @@ def loop_logic():
     low_conf_samples = []
 
     for log in logs:
-        result = predict_reward(log["text"])
+        # text 필드가 없으면 summary 사용
+        text = log.get("text") or log.get("summary", "")
+        if not text:
+            continue
+            
+        result = predict_reward(text)
         if result["confidence"] < LOW_CONF_THRESHOLD:
             log["confidence"] = result["confidence"]
             low_conf_samples.append(log)

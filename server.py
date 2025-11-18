@@ -183,6 +183,26 @@ if not SAFE_BOOT:
                 print("\n🔄 [AUTO-TRAIN] 자동 재학습 시작")
                 train_model()
         
+        def one_time_init():
+            """배포 시 초기화 작업 (한 번만 실행)"""
+            with app.app_context():
+                print("\n🚀 [INIT] 배포 환경 초기화 시작")
+                
+                # 로그가 없으면 초기 모델 학습
+                import os as _os
+                if _os.path.exists("logs.jsonl") and _os.path.getsize("logs.jsonl") > 0:
+                    print("✅ [INIT] 기존 로그 데이터 발견")
+                    # 초기 모델 학습
+                    print("🎓 [INIT] 초기 모델 학습 시작...")
+                    trigger_training()
+                else:
+                    print("⚠️ [INIT] 로그 데이터 없음 - /seed 엔드포인트로 데이터 생성 필요")
+                
+                # 첫 번째 논문 수집
+                print("📚 [INIT] 첫 번째 논문 수집 시작...")
+                run_loop_once()
+                print("✅ [INIT] 초기화 완료!")
+        
         scheduler = BackgroundScheduler()
         
         # 논문 수집: 1시간마다
@@ -190,6 +210,13 @@ if not SAFE_BOOT:
         
         # 모델 재학습: 6시간마다
         scheduler.add_job(scheduled_train, 'interval', hours=6, id='model_training')
+        
+        # 배포 환경에서만 초기화 작업 실행 (서버 시작 후 60초 뒤)
+        if os.getenv("REPLIT_DEPLOYMENT") == "1":
+            from datetime import datetime, timedelta
+            run_time = datetime.now() + timedelta(seconds=60)
+            scheduler.add_job(one_time_init, 'date', run_date=run_time, id='one_time_init')
+            print("📅 배포 환경 감지 - 60초 후 자동 초기화 예약됨")
         
         scheduler.start()
         print("⏰ 자동 스케줄러 시작됨")

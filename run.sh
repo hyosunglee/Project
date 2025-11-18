@@ -49,13 +49,8 @@ if [ "$HEALTH_OK" -eq 0 ]; then
   exit 1
 fi
 
-# 서버 준비 완료 후 초기화 스크립트 실행 (선택적)
-if [ -f "auto_initialize.py" ]; then
-  echo "[run] starting auto_initialize.py in background"
-  python auto_initialize.py &
-fi
-
 # gunicorn 프로세스 유지 (서버가 계속 실행되도록)
+# Note: 배포 시 초기화는 server.py 내부에서 자동으로 처리됨
 echo "[run] gunicorn running (PID=$PID), waiting..."
 wait $PID
 EXIT_CODE=$?

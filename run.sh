@@ -34,6 +34,13 @@ echo -n "[run] waiting healthz "
 for i in {1..30}; do
   if curl -sf --ipv4 "http://127.0.0.1:${PORT}/healthz" >/dev/null; then
     echo "OK"
+    # 서버 준비 완료 후 초기화 스크립트 실행 (선택적)
+    if [ -f "auto_initialize.py" ]; then
+      echo "[run] starting auto_initialize.py in background"
+      python auto_initialize.py &
+    fi
+    # gunicorn 프로세스 유지
+    wait $PID
     exit 0
   fi
   echo -n "."

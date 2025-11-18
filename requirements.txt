@@ -10,5 +10,3 @@ scikit-learn
 joblib
 arxiv
 gunicorn
-arxiv
-gunicorn

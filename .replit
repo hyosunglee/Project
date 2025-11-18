@@ -39,4 +39,4 @@ waitForPort = 3000
 
 [deployment]
 deploymentTarget = "vm"
-run = ["bash", "-c", "PORT=5000 gunicorn --bind=0.0.0.0:5000 --reuse-port --workers 2 server:app & GU_PID=$!; sleep 5; PORT=5000 python auto_initialize.py || true; wait $GU_PID"]
+run = ["bash", "run.sh"]

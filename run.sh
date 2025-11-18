@@ -31,23 +31,33 @@ echo "[run] pid=$PID"
 
 # 건강검진: /healthz 30초 대기
 echo -n "[run] waiting healthz "
+HEALTH_OK=0
 for i in {1..30}; do
   if curl -sf --ipv4 "http://127.0.0.1:${PORT}/healthz" >/dev/null; then
-    echo "OK"
-    # 서버 준비 완료 후 초기화 스크립트 실행 (선택적)
-    if [ -f "auto_initialize.py" ]; then
-      echo "[run] starting auto_initialize.py in background"
-      python auto_initialize.py &
-    fi
-    # gunicorn 프로세스 유지
-    wait $PID
-    exit 0
+    echo " OK"
+    HEALTH_OK=1
+    break
   fi
   echo -n "."
   sleep 1
 done
 
-echo
-echo "[run] health check failed, dumping last logs:"
-tail -n 100 "$LOG_DIR/error.log" || true
-exit 1
+if [ "$HEALTH_OK" -eq 0 ]; then
+  echo
+  echo "[run] health check failed, dumping last logs:"
+  tail -n 100 "$LOG_DIR/error.log" || true
+  exit 1
+fi
+
+# 서버 준비 완료 후 초기화 스크립트 실행 (선택적)
+if [ -f "auto_initialize.py" ]; then
+  echo "[run] starting auto_initialize.py in background"
+  python auto_initialize.py &
+fi
+
+# gunicorn 프로세스 유지 (서버가 계속 실행되도록)
+echo "[run] gunicorn running (PID=$PID), waiting..."
+wait $PID
+EXIT_CODE=$?
+echo "[run] gunicorn exited with code $EXIT_CODE"
+exit $EXIT_CODE

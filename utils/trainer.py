@@ -85,7 +85,7 @@ def train_model():
         "train_size": len(X_train),
         "test_size": len(X_test),
         "accuracy": round(float(accuracy_score(y_test, y_pred)), 4),
-        "f1_score": round(float(f1_score(y_test, y_pred)), 4)
+        "f1_score": round(float(f1_score(y_test, y_pred, zero_division=0.0)), 4)
     }
     metrics_path = os.path.join(MODEL_DIR, f"metrics_{ts}.json")
     with open(metrics_path, "w") as f:

@@ -42,7 +42,7 @@ if not SAFE_BOOT:
     from apscheduler.schedulers.background import BackgroundScheduler
     from utils.trainer import train_model
     from utils.logger import log_experiment, get_all_logged_titles
-    from utils.loop_logic import loop_logic
+    from utils.loop_logic import loop_logic, predict_after_training
     from utils.predictor import predict_reward
     from utils.result_logger import save_result
     from api_predict import bp as predict_bp
@@ -234,7 +234,7 @@ if not SAFE_BOOT:
             if result:
                 save_result("training", result)
                 print(f"📁 학습 결과 저장 완료")
-            auto_predict_after_training()
+            predict_after_training()
 
         threading.Thread(target=train_and_save).start()
         return jsonify({"message": "Training started in background"}), 200
@@ -273,7 +273,7 @@ if not SAFE_BOOT:
             with app.app_context():
                 print("\n🔄 [AUTO-TRAIN] 자동 재학습 시작")
                 train_model()
-                auto_predict_after_training()
+                predict_after_training()
         
         def one_time_init():
             """배포 시 초기화 작업 (한 번만 실행)"""

@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-12-03T12:24:54.423809",
+  "type": "training",
+  "data": {
+    "model": "models/reward_cls_20251203_122454.pkl",
+    "timestamp": "20251203_122454",
+    "data_count": 245,
+    "train_size": 196,
+    "test_size": 49,
+    "accuracy": 1.0,
+    "f1_score": 1.0
+  }
+}

@@ -36,11 +36,13 @@ if not SAFE_BOOT:
     # --------------------------------------------------------------------------
     # Heavy Imports (only loaded when not in safe boot mode)
     # --------------------------------------------------------------------------
+    import json
     import random
     from apscheduler.schedulers.background import BackgroundScheduler
     from utils.trainer import train_model
     from utils.logger import log_experiment, get_all_logged_titles
     from utils.loop_logic import loop_logic
+    from utils.predictor import predict_reward
     from utils.result_logger import save_result
     from api_predict import bp as predict_bp
 
@@ -53,6 +55,50 @@ if not SAFE_BOOT:
     # Register Blueprints
     # --------------------------------------------------------------------------
     app.register_blueprint(predict_bp)
+
+    # --------------------------------------------------------------------------
+    # Post-training auto-prediction helper
+    # --------------------------------------------------------------------------
+    def auto_predict_after_training():
+        """모델 학습 후 최근 로그를 대상으로 예측을 수행하는 함수"""
+        # 1. 로그 로드
+        try:
+            with open('logs/experiment_log.json', 'r', encoding='utf-8') as f:
+                logs = json.load(f)
+        except FileNotFoundError:
+            print("예측용 로그 파일이 없어 자동 예측을 건너뜁니다.")
+            return
+
+        # 2. 이미 예측한 텍스트 집합 만들기
+        predicted_texts = set()
+        try:
+            with open('results/all_results.jsonl', 'r', encoding='utf-8') as f:
+                for line in f:
+                    obj = json.loads(line)
+                    if obj.get('type') == 'prediction':
+                        predicted_texts.add(obj.get('text'))
+        except FileNotFoundError:
+            pass
+
+        # 3. 새 로그 항목에 대해 예측 수행
+        for entry in logs:
+            text = entry.get('text') or entry.get('summary')
+            if not text:
+                continue
+            truncated = text[:100]
+
+            if truncated in predicted_texts:
+                continue
+
+            result = predict_reward(text)
+            data = {
+                'text': truncated,
+                'prediction': result.get('prediction'),
+                'confidence': result.get('confidence'),
+                'source_title': entry.get('title')
+            }
+            save_result('prediction', data)
+            print(f"[AUTO-PREDICT] {entry.get('title')} 예측 완료")
 
     # --------------------------------------------------------------------------
     # Route Definitions
@@ -138,13 +184,14 @@ if not SAFE_BOOT:
     @app.route("/train", methods=["POST"])
     def trigger_training():
         print("\n🚀 [TRAIN] 로그 기반 모델 학습 트리거됨 (비동기 시작)")
-        
+
         def train_and_save():
             result = train_model()
             if result:
                 save_result("training", result)
                 print(f"📁 학습 결과 저장 완료")
-        
+            auto_predict_after_training()
+
         threading.Thread(target=train_and_save).start()
         return jsonify({"message": "Training started in background"}), 200
 
@@ -182,6 +229,7 @@ if not SAFE_BOOT:
             with app.app_context():
                 print("\n🔄 [AUTO-TRAIN] 자동 재학습 시작")
                 train_model()
+                auto_predict_after_training()
         
         def one_time_init():
             """배포 시 초기화 작업 (한 번만 실행)"""

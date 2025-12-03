@@ -88,3 +88,7 @@ feedback.jsonl
 # Runtime state files
 .keyword_index.json
 retrain_buffer.jsonl
+
+# Local documentation drafts (do not commit)
+논문_학습후_예측_자동화_설계보고.md
+코드_구현_점검.md

@@ -38,6 +38,7 @@ if not SAFE_BOOT:
     # --------------------------------------------------------------------------
     import json
     import random
+    from datetime import datetime
     from apscheduler.schedulers.background import BackgroundScheduler
     from utils.trainer import train_model
     from utils.logger import log_experiment, get_all_logged_titles
@@ -60,45 +61,88 @@ if not SAFE_BOOT:
     # Post-training auto-prediction helper
     # --------------------------------------------------------------------------
     def auto_predict_after_training():
-        """모델 학습 후 최근 로그를 대상으로 예측을 수행하는 함수"""
-        # 1. 로그 로드
+        """
+        학습 완료 후 자동으로 예측 및 요약을 수행하는 함수.
+        logs/experiment_log.json을 읽어 새 논문에 대해 예측하고,
+        결과를 results/prediction_*.json에 저장하며 summary를 생성한다.
+        """
+        # 1. 로그 읽기
         try:
             with open('logs/experiment_log.json', 'r', encoding='utf-8') as f:
                 logs = json.load(f)
-        except FileNotFoundError:
-            print("예측용 로그 파일이 없어 자동 예측을 건너뜁니다.")
+        except Exception as e:
+            print(f"[AUTO-PREDICT] 로그 파일을 읽을 수 없습니다: {e}")
             return
 
         # 2. 이미 예측한 텍스트 집합 만들기
-        predicted_texts = set()
+        predicted_set = set()
         try:
             with open('results/all_results.jsonl', 'r', encoding='utf-8') as f:
                 for line in f:
-                    obj = json.loads(line)
-                    if obj.get('type') == 'prediction':
-                        predicted_texts.add(obj.get('text'))
+                    try:
+                        obj = json.loads(line)
+                        if obj.get('type') == 'prediction':
+                            data = obj.get('data', {})
+                            text_field = data.get('text')
+                            if text_field:
+                                predicted_set.add(text_field)
+                    except json.JSONDecodeError:
+                        continue
         except FileNotFoundError:
             pass
 
-        # 3. 새 로그 항목에 대해 예측 수행
+        # 3. 예측 수행 및 통계 수집
+        prediction_confidences = []
+        prediction_count = 0
         for entry in logs:
             text = entry.get('text') or entry.get('summary')
             if not text:
                 continue
             truncated = text[:100]
-
-            if truncated in predicted_texts:
+            # 이미 예측한 항목은 건너뜀
+            if truncated in predicted_set:
                 continue
-
+            # 모델 예측
             result = predict_reward(text)
+            if 'error' in result:
+                print(f"[AUTO-PREDICT] 예측 오류: {result['error']}")
+                continue
+            # 결과 저장
             data = {
                 'text': truncated,
-                'prediction': result.get('prediction'),
-                'confidence': result.get('confidence'),
+                'prediction': result['prediction'],
+                'confidence': result['confidence'],
                 'source_title': entry.get('title')
             }
             save_result('prediction', data)
-            print(f"[AUTO-PREDICT] {entry.get('title')} 예측 완료")
+            prediction_confidences.append(result['confidence'])
+            prediction_count += 1
+            print(f"[AUTO-PREDICT] '{entry.get('title')}' 예측 완료 (conf={result['confidence']})")
+
+        # 4. 요약 통계 계산
+        summary = {}
+        if prediction_count > 0:
+            confs = prediction_confidences
+            summary = {
+                'timestamp': datetime.utcnow().isoformat(),
+                'count': prediction_count,
+                'min_confidence': min(confs),
+                'max_confidence': max(confs),
+                'avg_confidence': sum(confs) / prediction_count,
+                'confidence_bins': {
+                    '0-0.2': sum(1 for c in confs if 0.0 <= c < 0.2),
+                    '0.2-0.4': sum(1 for c in confs if 0.2 <= c < 0.4),
+                    '0.4-0.6': sum(1 for c in confs if 0.4 <= c < 0.6),
+                    '0.6-0.8': sum(1 for c in confs if 0.6 <= c < 0.8),
+                    '0.8-1.0': sum(1 for c in confs if 0.8 <= c <= 1.0)
+                }
+            }
+            save_result('summary', summary)
+            print(f"[AUTO-PREDICT] 요약 리포트 저장 완료: {summary}")
+        else:
+            print("[AUTO-PREDICT] 예측할 새로운 항목이 없습니다.")
+
+        return summary
 
     # --------------------------------------------------------------------------
     # Route Definitions

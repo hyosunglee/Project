@@ -5,6 +5,7 @@ from utils.trainer import train_model
 from utils.predictor import predict_reward
 
 LOW_CONF_THRESHOLD = 0.6
+HIGH_CONF_THRESHOLD = 0.8
 RETRAIN_TRIGGER_COUNT = 10
 RESULTS_DIR = "results"
 
@@ -19,21 +20,26 @@ def save_for_retraining(logs, file_path="retrain_buffer.jsonl"):
         for log in logs:
             f.write(json.dumps(log) + "\n")
 
-def save_prediction_results(predictions, low_conf_count, total_count):
+def save_prediction_results(predictions, low_conf_count, total_count, high_conf_details):
     os.makedirs(RESULTS_DIR, exist_ok=True)
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    
+    high_conf_count = len(high_conf_details)
     
     result = {
         "timestamp": datetime.now().isoformat(),
         "type": "batch_prediction",
         "summary": {
             "total_predictions": total_count,
-            "high_confidence": total_count - low_conf_count,
+            "high_confidence_80": high_conf_count,
+            "medium_confidence": total_count - low_conf_count - high_conf_count,
             "low_confidence": low_conf_count,
             "avg_confidence": round(sum(p["confidence"] for p in predictions) / len(predictions), 4) if predictions else 0,
-            "threshold": LOW_CONF_THRESHOLD
+            "low_threshold": LOW_CONF_THRESHOLD,
+            "high_threshold": HIGH_CONF_THRESHOLD
         },
-        "predictions": predictions
+        "predictions": predictions,
+        "high_confidence_details": high_conf_details
     }
     
     filepath = os.path.join(RESULTS_DIR, f"prediction_{ts}.json")
@@ -41,7 +47,9 @@ def save_prediction_results(predictions, low_conf_count, total_count):
         json.dump(result, f, indent=2, ensure_ascii=False)
     
     print(f"📊 [예측] 결과 저장: {filepath}")
-    print(f"   - 총 {total_count}개 예측, 높은 신뢰도: {total_count - low_conf_count}개, 낮은 신뢰도: {low_conf_count}개")
+    print(f"   - 총 {total_count}개 예측")
+    print(f"   - 높은 신뢰도(80%+): {high_conf_count}개 (상세 내용 포함)")
+    print(f"   - 낮은 신뢰도(<60%): {low_conf_count}개")
     
     return filepath
 
@@ -49,10 +57,11 @@ def run_predictions_on_logs():
     logs = load_logs()
     predictions = []
     low_conf_samples = []
+    high_conf_details = []
     
     if not logs:
         print("[예측] 로그 데이터 없음")
-        return [], 0, 0
+        return [], [], 0, []
     
     for log in logs:
         text = log.get("text") or log.get("summary", "")
@@ -69,11 +78,21 @@ def run_predictions_on_logs():
         }
         predictions.append(pred_record)
         
+        if result["confidence"] >= HIGH_CONF_THRESHOLD:
+            high_conf_record = {
+                "title": log.get("title", ""),
+                "text": text,
+                "prediction": result["prediction"],
+                "confidence": result["confidence"],
+                "source": log.get("source", "unknown")
+            }
+            high_conf_details.append(high_conf_record)
+        
         if result["confidence"] < LOW_CONF_THRESHOLD:
             log["confidence"] = result["confidence"]
             low_conf_samples.append(log)
     
-    return predictions, low_conf_samples, len(predictions)
+    return predictions, low_conf_samples, len(predictions), high_conf_details
 
 def loop_logic():
     logs = load_logs()
@@ -98,10 +117,10 @@ def loop_logic():
 
 def predict_after_training():
     print("🔮 [학습 후 예측] 전체 데이터 예측 시작...")
-    predictions, low_conf_samples, total = run_predictions_on_logs()
+    predictions, low_conf_samples, total, high_conf_details = run_predictions_on_logs()
     
     if predictions:
-        save_prediction_results(predictions, len(low_conf_samples), total)
+        save_prediction_results(predictions, len(low_conf_samples), total, high_conf_details)
         return True
     else:
         print("[예측] 예측할 데이터 없음")

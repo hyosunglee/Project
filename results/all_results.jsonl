@@ -40,3 +40,9 @@
 {"timestamp": "2025-12-03T13:29:36.367492", "type": "training", "data": {"model": "models/reward_cls_20251203_132936.pkl", "timestamp": "20251203_132936", "data_count": 275, "train_size": 220, "test_size": 55, "accuracy": 0.9455, "f1_score": 0.962}}
 {"timestamp": "2025-12-03T13:29:40.952882", "type": "collection", "data": {"collected_count": 0, "papers": []}}
 {"timestamp": "2025-12-03T13:30:03.228316", "type": "training", "data": {"model": "models/reward_cls_20251203_133003.pkl", "timestamp": "20251203_133003", "data_count": 287, "train_size": 229, "test_size": 58, "accuracy": 0.9655, "f1_score": 0.975}}
+{"timestamp": "2025-12-03T14:29:33.424875", "type": "training", "data": {"model": "models/reward_cls_20251203_142933.pkl", "timestamp": "20251203_142933", "data_count": 287, "train_size": 229, "test_size": 58, "accuracy": 0.9655, "f1_score": 0.975}}
+{"timestamp": "2025-12-03T14:29:38.108875", "type": "collection", "data": {"collected_count": 0, "papers": []}}
+{"timestamp": "2025-12-03T21:57:36.235217", "type": "training", "data": {"model": "models/reward_cls_20251203_215736.pkl", "timestamp": "20251203_215736", "data_count": 287, "train_size": 229, "test_size": 58, "accuracy": 0.9655, "f1_score": 0.975}}
+{"timestamp": "2025-12-03T21:57:40.636421", "type": "collection", "data": {"collected_count": 0, "papers": []}}
+{"timestamp": "2025-12-04T07:15:28.561227", "type": "training", "data": {"model": "models/reward_cls_20251204_071528.pkl", "timestamp": "20251204_071528", "data_count": 287, "train_size": 229, "test_size": 58, "accuracy": 0.9655, "f1_score": 0.975}}
+{"timestamp": "2025-12-04T07:15:31.481202", "type": "collection", "data": {"collected_count": 0, "papers": []}}

@@ -1,13 +1,67 @@
 import json
 import os
+import sys
 from datetime import datetime
 from utils.trainer import train_model
 from utils.predictor import predict_reward
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from virtue_engine import ResearchAssistantVirtueEngine, VirtueState
 
 LOW_CONF_THRESHOLD = 0.6
 HIGH_CONF_THRESHOLD = 0.8
 RETRAIN_TRIGGER_COUNT = 10
 RESULTS_DIR = "results"
+
+virtue_engine = ResearchAssistantVirtueEngine()
+
+def compute_research_context(logs, last_train_time=None):
+    """현재 연구 상태를 기반으로 VirtueEngine 컨텍스트 계산"""
+    total_logs = len(logs)
+    
+    if total_logs < 50:
+        task_stage = "explore"
+        info_density = total_logs / 100.0
+    elif total_logs < 200:
+        task_stage = "review"
+        info_density = min(0.7, total_logs / 300.0)
+    else:
+        task_stage = "synthesise"
+        info_density = min(1.0, total_logs / 500.0)
+    
+    if last_train_time:
+        hours_since_train = (datetime.now() - last_train_time).total_seconds() / 3600
+        deadline_hours = max(1, 6 - hours_since_train)
+    else:
+        deadline_hours = 24
+    
+    return {
+        "task_stage": task_stage,
+        "deadline_hours": deadline_hours,
+        "information_density": info_density,
+        "total_papers": total_logs
+    }
+
+def get_available_actions():
+    """시스템에서 가능한 모든 액션 목록"""
+    return [
+        ("collect_more_papers", {"description": "ArXiv에서 새 논문 수집"}),
+        ("summarise_current_findings", {"description": "현재 데이터 분석 및 요약"}),
+        ("plan_next_steps", {"description": "다음 연구 단계 계획"}),
+        ("write_draft_outline", {"description": "연구 결과 초안 작성"}),
+        ("auto_generate_predictions", {"description": "자동 예측 생성"}),
+    ]
+
+def virtue_state_to_dict(state: VirtueState) -> dict:
+    """VirtueState를 JSON 직렬화 가능한 dict로 변환"""
+    return {
+        "wisdom": round(state.wisdom, 4),
+        "understanding": round(state.understanding, 4),
+        "counsel": round(state.counsel, 4),
+        "strength": round(state.strength, 4),
+        "knowledge": round(state.knowledge, 4),
+        "reverence": round(state.reverence, 4)
+    }
 
 def load_logs(file_path="logs.jsonl"):
     if not os.path.exists(file_path):
@@ -20,7 +74,7 @@ def save_for_retraining(logs, file_path="retrain_buffer.jsonl"):
         for log in logs:
             f.write(json.dumps(log) + "\n")
 
-def save_prediction_results(predictions, low_conf_count, total_count, high_conf_details):
+def save_prediction_results(predictions, low_conf_count, total_count, high_conf_details, virtue_info=None):
     os.makedirs(RESULTS_DIR, exist_ok=True)
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
     
@@ -41,6 +95,9 @@ def save_prediction_results(predictions, low_conf_count, total_count, high_conf_
         "predictions": predictions,
         "high_confidence_details": high_conf_details
     }
+    
+    if virtue_info:
+        result["virtue_analysis"] = virtue_info
     
     filepath = os.path.join(RESULTS_DIR, f"prediction_{ts}.json")
     with open(filepath, "w") as f:
@@ -97,6 +154,25 @@ def run_predictions_on_logs():
 def loop_logic():
     logs = load_logs()
     low_conf_samples = []
+    
+    context = compute_research_context(logs)
+    virtue_state = virtue_engine.evaluate_context(context)
+    
+    print(f"🧭 [VirtueEngine] 현재 상태 분석:")
+    print(f"   연구 단계: {context['task_stage']}")
+    print(f"   정보 밀도: {context['information_density']:.2f}")
+    print(f"   논문 수: {context['total_papers']}")
+    
+    state_dict = virtue_state_to_dict(virtue_state)
+    top_virtues = sorted(state_dict.items(), key=lambda x: x[1], reverse=True)[:3]
+    print(f"   주요 덕목: {', '.join(f'{v[0]}({v[1]:.2f})' for v in top_virtues)}")
+    
+    actions = get_available_actions()
+    ranked_actions = virtue_engine.filter_actions(context, actions, virtue_state)
+    
+    print(f"   추천 액션 순위:")
+    for i, (name, _) in enumerate(ranked_actions[:3], 1):
+        print(f"     {i}. {name}")
 
     for log in logs:
         text = log.get("text") or log.get("summary", "")
@@ -114,13 +190,38 @@ def loop_logic():
         train_model()
     else:
         print(f"[loop] Low confidence count: {len(low_conf_samples)} — no retrain")
+    
+    return {
+        "context": context,
+        "virtue_state": state_dict,
+        "ranked_actions": [(name, payload.get("description", "")) for name, payload in ranked_actions],
+        "low_conf_count": len(low_conf_samples)
+    }
 
 def predict_after_training():
     print("🔮 [학습 후 예측] 전체 데이터 예측 시작...")
     predictions, low_conf_samples, total, high_conf_details = run_predictions_on_logs()
     
     if predictions:
-        save_prediction_results(predictions, len(low_conf_samples), total, high_conf_details)
+        logs = load_logs()
+        context = compute_research_context(logs)
+        virtue_state = virtue_engine.evaluate_context(context)
+        state_dict = virtue_state_to_dict(virtue_state)
+        
+        actions = get_available_actions()
+        ranked_actions = virtue_engine.filter_actions(context, actions, virtue_state)
+        
+        virtue_info = {
+            "context": context,
+            "virtue_state": state_dict,
+            "recommended_actions": [(name, payload.get("description", "")) for name, payload in ranked_actions[:3]]
+        }
+        
+        print(f"🧭 [VirtueEngine] 예측 시 덕목 상태:")
+        top_virtues = sorted(state_dict.items(), key=lambda x: x[1], reverse=True)[:3]
+        print(f"   주요 덕목: {', '.join(f'{v[0]}({v[1]:.2f})' for v in top_virtues)}")
+        
+        save_prediction_results(predictions, len(low_conf_samples), total, high_conf_details, virtue_info)
         return True
     else:
         print("[예측] 예측할 데이터 없음")

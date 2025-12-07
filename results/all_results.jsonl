@@ -58,3 +58,5 @@
 {"timestamp": "2025-12-06T11:45:58.523290", "type": "collection", "data": {"collected_count": 0, "papers": []}}
 {"timestamp": "2025-12-07T12:04:50.518227", "type": "training", "data": {"model": "models/reward_cls_20251207_120450.pkl", "timestamp": "20251207_120450", "data_count": 287, "train_size": 229, "test_size": 58, "accuracy": 0.9655, "f1_score": 0.975}}
 {"timestamp": "2025-12-07T12:04:55.130154", "type": "collection", "data": {"collected_count": 0, "papers": []}}
+{"timestamp": "2025-12-07T12:24:00.168606", "type": "training", "data": {"model": "models/reward_cls_20251207_122400.pkl", "timestamp": "20251207_122400", "data_count": 287, "train_size": 229, "test_size": 58, "accuracy": 0.9655, "f1_score": 0.975}}
+{"timestamp": "2025-12-07T12:24:03.485716", "type": "collection", "data": {"collected_count": 0, "papers": []}}

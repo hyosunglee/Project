@@ -50,3 +50,11 @@
 {"timestamp": "2025-12-04T07:32:31.204180", "type": "training", "data": {"model": "models/reward_cls_20251204_073231.pkl", "timestamp": "20251204_073231", "data_count": 287, "train_size": 229, "test_size": 58, "accuracy": 0.9655, "f1_score": 0.975}}
 {"timestamp": "2025-12-04T07:32:34.422048", "type": "collection", "data": {"collected_count": 0, "papers": []}}
 {"timestamp": "2025-12-04T07:33:02.464778", "type": "training", "data": {"model": "models/reward_cls_20251204_073302.pkl", "timestamp": "20251204_073302", "data_count": 287, "train_size": 229, "test_size": 58, "accuracy": 0.9655, "f1_score": 0.975}}
+{"timestamp": "2025-12-04T08:02:14.454493", "type": "training", "data": {"model": "models/reward_cls_20251204_080214.pkl", "timestamp": "20251204_080214", "data_count": 287, "train_size": 229, "test_size": 58, "accuracy": 0.9655, "f1_score": 0.975}}
+{"timestamp": "2025-12-04T08:02:17.482567", "type": "collection", "data": {"collected_count": 0, "papers": []}}
+{"timestamp": "2025-12-05T06:16:59.005095", "type": "training", "data": {"model": "models/reward_cls_20251205_061658.pkl", "timestamp": "20251205_061658", "data_count": 287, "train_size": 229, "test_size": 58, "accuracy": 0.9655, "f1_score": 0.975}}
+{"timestamp": "2025-12-05T06:17:03.951798", "type": "collection", "data": {"collected_count": 0, "papers": []}}
+{"timestamp": "2025-12-06T11:45:54.317806", "type": "training", "data": {"model": "models/reward_cls_20251206_114554.pkl", "timestamp": "20251206_114554", "data_count": 287, "train_size": 229, "test_size": 58, "accuracy": 0.9655, "f1_score": 0.975}}
+{"timestamp": "2025-12-06T11:45:58.523290", "type": "collection", "data": {"collected_count": 0, "papers": []}}
+{"timestamp": "2025-12-07T12:04:50.518227", "type": "training", "data": {"model": "models/reward_cls_20251207_120450.pkl", "timestamp": "20251207_120450", "data_count": 287, "train_size": 229, "test_size": 58, "accuracy": 0.9655, "f1_score": 0.975}}
+{"timestamp": "2025-12-07T12:04:55.130154", "type": "collection", "data": {"collected_count": 0, "papers": []}}

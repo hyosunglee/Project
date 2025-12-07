@@ -1,51 +1,57 @@
-# 자율 학습 AI 시스템
+VirtueEngine Framework
+Purpose
+This document accompanies the virtue_engine.py module and outlines a high‑level design for
+incorporating six virtues inspired by Isaiah 11:2 into machine‑decision processes. The goal is to provide
+a general framework that can be adopted across different types of agents—such as literature‑review
+assistants, conversational bots or task planners—to align their behaviour with values like wisdom,
+understanding, planning, strength, knowledge and reverence.
+Design Overview
+VirtueState
+The VirtueState dataclass encapsulates six floating‑point values corresponding to the six virtues.
+Each value lies in the range [0, 1] . The normalised method optionally scales the values so that
+they sum to one. This normalisation can be useful when treating the virtues as a soft probability
+distribution over behavioural emphases.
+VirtueEngine (abstract base class)
+VirtueEngine is an abstract base class defining two core methods:
+1.
+2.
+evaluate_context(context) -> VirtueState : examines the agent’s context and returns a
+VirtueState describing how strongly each virtue should influence behaviour in that situation.
+The type of context is left flexible to accommodate different domains.
+filter_actions(context, actions, virtue_state) -> List[(str, Any)] : accepts a
+list of candidate actions (as (name, payload) tuples) and returns an ordered or filtered list of
+actions based on the computed VirtueState . Subclasses can implement domain‑specific
+scoring or filtering strategies.
+Any agent can integrate a virtue engine by first computing a then passing both the context and its candidate actions through the VirtueState from its current context and
+filter_actions method.
+Example: ResearchAssistantVirtueEngine
+The concrete class ResearchAssistantVirtueEngine demonstrates how VirtueEngine can be
+specialised for a literature‑review assistant. It illustrates several key ideas:
 
-## 자동화 시스템
-- 논문 수집: 1시간마다 자동 실행
-- 모델 학습: 6시간마다 자동 실행
-- 모든 결과: JSON 파일로 자동 저장
-
-## 결과 파일 위치
-```
-results/
-├── collection_*.json      # 논문 수집 결과
-├── training_*.json        # 모델 학습 결과  
-├── prediction_*.json      # 예측 결과
-└── all_results.jsonl      # 통합 결과 (모든 작업)
-```
-
-## 시스템 구조
-```
-logs.jsonl              # 수집된 모든 논문 데이터
-models/                 # 학습된 모델 저장
-  ├── reward_cls_*.pkl  # 버전별 모델
-  └── reward_latest.pkl # 최신 모델 (심볼릭 링크)
-```
-
-## 자동 실행
-서버가 시작되면 자동으로:
-1. 초기 데이터 생성 (필요시)
-2. 첫 모델 학습
-3. 논문 수집 시작
-4. 주기적 작업 스케줄링
-
-## API (필요시)
-```bash
-curl http://localhost:3000/healthz        # 상태 확인
-curl -X POST http://localhost:3000/loop   # 수동 논문 수집
-curl -X POST http://localhost:3000/train  # 수동 학습
-```
-
-# 전체 논문 보기
-cat logs.jsonl
-
-# ArXiv 논문만 보기
-grep -v "Synthetic Seed" logs.jsonl
-
-# 최신 수집 결과
-cat results/collection_*.json
-
-# 통합 결과 (학습/수집 모두)
-cat results/all_results.jsonl
-
-모든 작업은 자동으로 실행되며 결과는 `results/` 폴더에 JSON으로 저장됩니다.
+Context interpretation: the engine reads keys such as task_stage, deadline_hours and
+information_density to adjust virtue weights.
+Stage‑dependent emphasis:
+During an explore stage, knowledge is prioritised to gather more sources.
+During review or synthesis, wisdom and understanding are given greater weight.
+As deadlines approach, strength (execution) and counsel (planning) are emphasised.
+Heuristic action scoring: the engine assigns scores to candidate actions based on how they relate
+to each virtue (e.g. collection actions benefit from high knowledge and understanding; synthesis
+actions from wisdom and counsel; drafting from strength). Risky actions (such as uncontrolled
+auto‑generation) are penalised when reverence is high.
+Although simplistic, this example shows how the six virtues can be mapped to specific behaviours and
+how an agent might reorder its actions accordingly.
+Usage
+To adopt the framework:
+Create a subclass of VirtueEngine for your specific agent.
+Implement evaluate_context to interpret the agent’s context and return a VirtueState
+with appropriate weights.
+Implement filter_actions to score or filter candidate actions based on the computed virtue
+state. Maintain modularity so that the scoring logic can be reused across agents.
+In your agent’s decision loop, invoke these methods:
+engine = MyVirtueEngine()
+state = engine.evaluate_context(current_context)
+allowed_actions = engine.filter_actions(current_context, candidates, state)
+next_action = allowed_actions[0] # choose the highest‑ranked action
+For a demonstration, run the module directly:
+python3 virtue_engine.py
+which will output a sample context, the computed virtue state and the ranking of example actions.

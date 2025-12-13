@@ -17,7 +17,7 @@ def index():
         "service": "Self-Learning AI System",
         "status": "running",
         "automation": "enabled",
-        "endpoints": ["/healthz", "/seed", "/train", "/predict", "/loop", "/ingest", "/check_duplicates"]
+        "endpoints": ["/healthz", "/seed", "/train", "/predict", "/loop", "/ingest", "/check_duplicates", "/generate"]
     })
 
 @app.route("/healthz")
@@ -46,6 +46,7 @@ if not SAFE_BOOT:
     from utils.predictor import predict_reward
     from utils.result_logger import save_result
     from api_predict import bp as predict_bp
+    from api_generate import bp_generate
 
     try:
         from utils.paper_fetcher import fetch_arxiv_papers
@@ -56,6 +57,7 @@ if not SAFE_BOOT:
     # Register Blueprints
     # --------------------------------------------------------------------------
     app.register_blueprint(predict_bp)
+    app.register_blueprint(bp_generate)
 
     # --------------------------------------------------------------------------
     # Post-training auto-prediction helper

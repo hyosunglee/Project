@@ -1,0 +1,1483 @@
+{
+  "timestamp": "2025-12-13T16:58:04.455504",
+  "type": "batch_prediction",
+  "summary": {
+    "total_predictions": 154,
+    "high_confidence_80": 73,
+    "medium_confidence": 77,
+    "low_confidence": 4,
+    "avg_confidence": 0.78,
+    "low_threshold": 0.6,
+    "high_threshold": 0.8
+  },
+  "predictions": [
+    {
+      "title": "Test Research Paper on Deep RL",
+      "text_preview": "This paper explores deep reinforcement learning with transformer architectures for complex decision making tasks",
+      "prediction": 0,
+      "confidence": 0.6426
+    },
+    {
+      "title": "Test Paper on Deep RL",
+      "text_preview": "이것은 심층 강화학습에 대한 테스트 논문입니다. Transformer 아키텍처를 사용합니다.",
+      "prediction": 1,
+      "confidence": 0.7615
+    },
+    {
+      "title": "Optimizing Mixture of Block Attention",
+      "text_preview": "Mixture of Block Attention (MoBA) (Lu et al., 2025) is a promising building block for efficiently processing long contexts in LLMs by enabling queries to sparsely attend to a small subset of key-value",
+      "prediction": 0,
+      "confidence": 0.5731
+    },
+    {
+      "title": "Implicit inference of the reionization history with higher-order statistics of the 21-cm signal",
+      "text_preview": "The Epoch of Reionization (EoR), when the first luminous sources ionised the intergalactic medium, represents a new frontier in cosmology. The Square Kilometre Array Observatory (SKAO) will offer unpr",
+      "prediction": 1,
+      "confidence": 0.8081
+    },
+    {
+      "title": "Who Moved My Distribution? Conformal Prediction for Interactive Multi-Agent Systems",
+      "text_preview": "Uncertainty-aware prediction is essential for safe motion planning, especially when using learned models to forecast the behavior of surrounding agents. Conformal prediction is a statistical tool ofte",
+      "prediction": 0,
+      "confidence": 0.591
+    },
+    {
+      "title": "Estimating Total Effects in Bipartite Experiments with Spillovers and Partial Eligibility",
+      "text_preview": "We study randomized experiments in bipartite systems where only a subset of treatment-side units are eligible for assignment while all units continue to interact, generating interference. We formalize",
+      "prediction": 1,
+      "confidence": 0.8155
+    },
+    {
+      "title": "A Unified Convergence Analysis for Semi-Decentralized Learning: Sampled-to-Sampled vs. Sampled-to-Al",
+      "text_preview": "In semi-decentralized federated learning, devices primarily rely on device-to-device communication but occasionally interact with a central server. Periodically, a sampled subset of devices uploads th",
+      "prediction": 0,
+      "confidence": 0.629
+    },
+    {
+      "title": "Drone Swarm Energy Management",
+      "text_preview": "This note presents an analytical framework for decision-making in drone swarm systems operating under uncertainty, based on the integration of Partially Observable Markov Decision Processes (POMDP) wi",
+      "prediction": 1,
+      "confidence": 0.8157
+    },
+    {
+      "title": "Multistability of Self-Attention Dynamics in Transformers",
+      "text_preview": "In machine learning, a self-attention dynamics is a continuous-time multiagent-like model of the attention mechanisms of transformers. In this paper we show that such dynamics is related to a multiage",
+      "prediction": 0,
+      "confidence": 0.6373
+    },
+    {
+      "title": "Aligning Machiavellian Agents: Behavior Steering via Test-Time Policy Shaping",
+      "text_preview": "The deployment of decision-making AI agents presents a critical challenge in maintaining alignment with human values or guidelines while operating in complex, dynamic environments. Agents trained sole",
+      "prediction": 1,
+      "confidence": 0.7634
+    },
+    {
+      "title": "HetDAPAC: Leveraging Attribute Heterogeneity in Distributed Attribute-Based Private Access Control",
+      "text_preview": "Verifying user attributes to provide fine-grained access control to databases is fundamental to attribute-based authentication. Either a single (central) authority verifies all the attributes, or mult",
+      "prediction": 0,
+      "confidence": 0.6239
+    },
+    {
+      "title": "Incremental Data-Driven Policy Synthesis via Game Abstractions",
+      "text_preview": "We address the synthesis of control policies for unknown discrete-time stochastic dynamical systems to satisfy temporal logic objectives. We present a data-driven, abstraction-based control framework ",
+      "prediction": 1,
+      "confidence": 0.8126
+    },
+    {
+      "title": "Generalizing Fair Clustering to Multiple Groups: Algorithms and Applications",
+      "text_preview": "Clustering is a fundamental task in machine learning and data analysis, but it frequently fails to provide fair representation for various marginalized communities defined by multiple protected attrib",
+      "prediction": 0,
+      "confidence": 0.6355
+    },
+    {
+      "title": "Terrain Costmap Generation via Scaled Preference Conditioning",
+      "text_preview": "Successful autonomous robot navigation in off-road domains requires the ability to generate high-quality terrain costmaps that are able to both generalize well over a wide variety of terrains and rapi",
+      "prediction": 1,
+      "confidence": 0.833
+    },
+    {
+      "title": "CVChess: A Deep Learning Framework for Converting Chessboard Images to Forsyth-Edwards Notation",
+      "text_preview": "Chess has experienced a large increase in viewership since the pandemic, driven largely by the accessibility of online learning platforms. However, no equivalent assistance exists for physical chess g",
+      "prediction": 0,
+      "confidence": 0.628
+    },
+    {
+      "title": "Scalable Policy Evaluation with Video World Models",
+      "text_preview": "Training generalist policies for robotic manipulation has shown great promise, as they enable language-conditioned, multi-task behaviors across diverse scenarios. However, evaluating these policies re",
+      "prediction": 1,
+      "confidence": 0.8487
+    },
+    {
+      "title": "Experience-Guided Adaptation of Inference-Time Reasoning Strategies",
+      "text_preview": "Enabling agentic AI systems to adapt their problem-solving approaches based on post-training interactions remains a fundamental challenge. While systems that update and maintain a memory at inference ",
+      "prediction": 0,
+      "confidence": 0.6318
+    },
+    {
+      "title": "W2S-AlignTree: Weak-to-Strong Inference-Time Alignment for Large Language Models via Monte Carlo Tre",
+      "text_preview": "Large Language Models (LLMs) demonstrate impressive capabilities, yet their outputs often suffer from misalignment with human preferences due to the inadequacy of weak supervision and a lack of fine-g",
+      "prediction": 1,
+      "confidence": 0.8234
+    },
+    {
+      "title": "Distributed Optimization of Pairwise Polynomial Graph Spectral Functions via Subgraph Optimization",
+      "text_preview": "We study distributed optimization of finite-degree polynomial Laplacian spectral objectives under fixed topology and a global weight budget, targeting the collective behavior of the entire spectrum ra",
+      "prediction": 0,
+      "confidence": 0.6458
+    },
+    {
+      "title": "Collaborative Representation Learning for Alignment of Tactile, Language, and Vision Modalities",
+      "text_preview": "Tactile sensing offers rich and complementary information to vision and language, enabling robots to perceive fine-grained object properties. However, existing tactile sensors lack standardization, le",
+      "prediction": 1,
+      "confidence": 0.8384
+    },
+    {
+      "title": "OpenUS: A Fully Open-Source Foundation Model for Ultrasound Image Analysis via Self-Adaptive Masked ",
+      "text_preview": "Ultrasound (US) is one of the most widely used medical imaging modalities, thanks to its low cost, portability, real-time feedback, and absence of ionizing radiation. However, US image interpretation ",
+      "prediction": 0,
+      "confidence": 0.6179
+    },
+    {
+      "title": "FarSkip-Collective: Unhobbling Blocking Communication in Mixture of Experts Models",
+      "text_preview": "Blocking communication presents a major hurdle in running MoEs efficiently in distributed settings. To address this, we present FarSkip-Collective which modifies the architecture of modern models to e",
+      "prediction": 1,
+      "confidence": 0.7909
+    },
+    {
+      "title": "Honesty over Accuracy: Trustworthy Language Models through Reinforced Hesitation",
+      "text_preview": "Modern language models fail a fundamental requirement of trustworthy intelligence: knowing when not to answer. Despite achieving impressive accuracy on benchmarks, these models produce confident hallu",
+      "prediction": 0,
+      "confidence": 0.6451
+    },
+    {
+      "title": "Learning and Testing Convex Functions",
+      "text_preview": "We consider the problems of \\emph{learning} and \\emph{testing} real-valued convex functions over Gaussian space. Despite the extensive study of function convexity across mathematics, statistics, and c",
+      "prediction": 1,
+      "confidence": 0.8192
+    },
+    {
+      "title": "Photonic-integrated quantum sensor array for microscale magnetic localisation",
+      "text_preview": "Nitrogen-vacancy centres (NVs) are promising solid-state nanoscale quantum sensors for applications ranging from material science to biotechnology. Using multiple sensors simultaneously offers advanta",
+      "prediction": 0,
+      "confidence": 0.6096
+    },
+    {
+      "title": "Intrinsic Dimension Estimation for Radio Galaxy Zoo using Diffusion Models",
+      "text_preview": "In this work, we estimate the intrinsic dimension (iD) of the Radio Galaxy Zoo (RGZ) dataset using a score-based diffusion model. We examine how the iD estimates vary as a function of Bayesian neural ",
+      "prediction": 1,
+      "confidence": 0.8378
+    },
+    {
+      "title": "Power law attention biases for molecular transformers",
+      "text_preview": "Transformers are the go-to architecture for most data modalities due to their scalability. While they have been applied extensively to molecular property prediction, they do not dominate the field as ",
+      "prediction": 1,
+      "confidence": 0.505
+    },
+    {
+      "title": "Data-efficient U-Net for Segmentation of Carbide Microstructures in SEM Images of Steel Alloys",
+      "text_preview": "Understanding reactor-pressure-vessel steel microstructure is crucial for predicting mechanical properties, as carbide precipitates both strengthen the alloy and can initiate cracks. In scanning elect",
+      "prediction": 1,
+      "confidence": 0.8109
+    },
+    {
+      "title": "Risk-Aware Deep Reinforcement Learning for Dynamic Portfolio Optimization",
+      "text_preview": "This paper presents a deep reinforcement learning (DRL) framework for dynamic portfolio optimization under market uncertainty and risk. The proposed model integrates a Sharpe ratio-based reward functi",
+      "prediction": 0,
+      "confidence": 0.6496
+    },
+    {
+      "title": "Inferring response times of perceptual decisions with Poisson variational autoencoders",
+      "text_preview": "Many properties of perceptual decision making are well-modeled by deep neural networks. However, such architectures typically treat decisions as instantaneous readouts, overlooking the temporal dynami",
+      "prediction": 1,
+      "confidence": 0.787
+    },
+    {
+      "title": "Context-aware Adaptive Visualizations for Critical Decision Making",
+      "text_preview": "Effective decision-making often relies on timely insights from complex visual data. While Information Visualization (InfoVis) dashboards can support this process, they rarely adapt to users' cognitive",
+      "prediction": 0,
+      "confidence": 0.5259
+    },
+    {
+      "title": "Quantifying and Improving Adaptivity in Conformal Prediction through Input Transformations",
+      "text_preview": "Conformal prediction constructs a set of labels instead of a single point prediction, while providing a probabilistic coverage guarantee. Beyond the coverage guarantee, adaptiveness to example difficu",
+      "prediction": 1,
+      "confidence": 0.8119
+    },
+    {
+      "title": "Stable Quantum Vortices in Lee-Huang-Yang Dipolar Superfluids",
+      "text_preview": "The nucleation and dynamics of vortices in the quasi-two-dimensional rotating dipolar Bose-Einstein condensate are explored by taking into account the Lee-Huang-Yang (LHY) correction to the mean-field",
+      "prediction": 0,
+      "confidence": 0.637
+    },
+    {
+      "title": "ARLBench: Flexible and Efficient Benchmarking for Hyperparameter Optimization in Reinforcement Learn",
+      "text_preview": "Hyperparameters are a critical factor in reliably training well-performing reinforcement learning (RL) agents. Unfortunately, developing and evaluating automated approaches for tuning such hyperparame",
+      "prediction": 1,
+      "confidence": 0.8361
+    },
+    {
+      "title": "Causal-Paced Deep Reinforcement Learning",
+      "text_preview": "Designing effective task sequences is crucial for curriculum reinforcement learning (CRL), where agents must gradually acquire skills by training on intermediate tasks. A key challenge in CRL is to id",
+      "prediction": 1,
+      "confidence": 0.8182
+    },
+    {
+      "title": "Exploring Hierarchy-Aware Inverse Reinforcement Learning",
+      "text_preview": "We introduce a new generative model for human planning under the Bayesian Inverse Reinforcement Learning (BIRL) framework which takes into account the fact that humans often plan using hierarchical st",
+      "prediction": 1,
+      "confidence": 0.8223
+    },
+    {
+      "title": "A Tutorial on Meta-Reinforcement Learning",
+      "text_preview": "While deep reinforcement learning (RL) has fueled multiple high-profile successes in machine learning, it is held back from more widespread adoption by its often poor data efficiency and the limited g",
+      "prediction": 1,
+      "confidence": 0.8349
+    },
+    {
+      "title": "Anderson Acceleration for Reinforcement Learning",
+      "text_preview": "Anderson acceleration is an old and simple method for accelerating the computation of a fixed point. However, as far as we know and quite surprisingly, it has never been applied to dynamic programming",
+      "prediction": 1,
+      "confidence": 0.8247
+    },
+    {
+      "title": "Stabilizing Extreme Q-learning by Maclaurin Expansion",
+      "text_preview": "In offline reinforcement learning, in-sample learning methods have been widely used to prevent performance degradation caused by evaluating out-of-distribution actions from the dataset. Extreme Q-lear",
+      "prediction": 1,
+      "confidence": 0.8219
+    },
+    {
+      "title": "MERL: Multi-Head Reinforcement Learning",
+      "text_preview": "A common challenge in reinforcement learning is how to convert the agent's interactions with an environment into fast and robust learning. For instance, earlier work makes use of domain knowledge to i",
+      "prediction": 1,
+      "confidence": 0.8324
+    },
+    {
+      "title": "Compression and Localization in Reinforcement Learning for ATARI Games",
+      "text_preview": "Deep neural networks have become commonplace in the domain of reinforcement learning, but are often expensive in terms of the number of parameters needed. While compressing deep neural networks has of",
+      "prediction": 1,
+      "confidence": 0.8226
+    },
+    {
+      "title": "Accelerating Training in Pommerman with Imitation and Reinforcement Learning",
+      "text_preview": "The Pommerman simulation was recently developed to mimic the classic Japanese game Bomberman, and focuses on competitive gameplay in a multi-agent setting. We focus on the 2$\\times$2 team version of P",
+      "prediction": 1,
+      "confidence": 0.8089
+    },
+    {
+      "title": "Will it Blend? Composing Value Functions in Reinforcement Learning",
+      "text_preview": "An important property for lifelong-learning agents is the ability to combine existing skills to solve unseen tasks. In general, however, it is unclear how to compose skills in a principled way. We pro",
+      "prediction": 1,
+      "confidence": 0.8682
+    },
+    {
+      "title": "Memory-Efficient Episodic Control Reinforcement Learning with Dynamic Online k-means",
+      "text_preview": "Recently, neuro-inspired episodic control (EC) methods have been developed to overcome the data-inefficiency of standard deep reinforcement learning approaches. Using non-/semi-parametric models to es",
+      "prediction": 1,
+      "confidence": 0.8367
+    },
+    {
+      "title": "Reinforcement Learning with Stepwise Fairness Constraints",
+      "text_preview": "AI methods are used in societally important settings, ranging from credit to employment to housing, and it is crucial to provide fairness in regard to algorithmic decision making. Moreover, many setti",
+      "prediction": 1,
+      "confidence": 0.8246
+    },
+    {
+      "title": "Sample-Efficient Reinforcement Learning with Maximum Entropy Mellowmax Episodic Control",
+      "text_preview": "Deep networks have enabled reinforcement learning to scale to more complex and challenging domains, but these methods typically require large quantities of training data. An alternative is to use samp",
+      "prediction": 1,
+      "confidence": 0.8437
+    },
+    {
+      "title": "Biologically inspired architectures for sample-efficient deep reinforcement learning",
+      "text_preview": "Deep reinforcement learning requires a heavy price in terms of sample efficiency and overparameterization in the neural networks used for function approximation. In this work, we use tensor factorizat",
+      "prediction": 1,
+      "confidence": 0.8571
+    },
+    {
+      "title": "A Demonstration of Issues with Value-Based Multiobjective Reinforcement Learning Under Stochastic St",
+      "text_preview": "We report a previously unidentified issue with model-free, value-based approaches to multiobjective reinforcement learning in the context of environments with stochastic state transitions. An example ",
+      "prediction": 1,
+      "confidence": 0.8332
+    },
+    {
+      "title": "Classifying Options for Deep Reinforcement Learning",
+      "text_preview": "In this paper we combine one method for hierarchical reinforcement learning - the options framework - with deep Q-networks (DQNs) through the use of different \"option heads\" on the policy network, and",
+      "prediction": 1,
+      "confidence": 0.8292
+    },
+    {
+      "title": "Learning Multimodal Transition Dynamics for Model-Based Reinforcement Learning",
+      "text_preview": "In this paper we study how to learn stochastic, multimodal transition dynamics in reinforcement learning (RL) tasks. We focus on evaluating transition function estimation, while we defer planning over",
+      "prediction": 1,
+      "confidence": 0.8236
+    },
+    {
+      "title": "Time Adaptive Reinforcement Learning",
+      "text_preview": "Reinforcement learning (RL) allows to solve complex tasks such as Go often with a stronger performance than humans. However, the learned behaviors are usually fixed to specific tasks and unable to ada",
+      "prediction": 1,
+      "confidence": 0.8065
+    },
+    {
+      "title": "An Optimistic Perspective on Offline Reinforcement Learning",
+      "text_preview": "Off-policy reinforcement learning (RL) using a fixed offline dataset of logged interactions is an important consideration in real world applications. This paper studies offline RL using the DQN replay",
+      "prediction": 1,
+      "confidence": 0.8248
+    },
+    {
+      "title": "Directed Policy Gradient for Safe Reinforcement Learning with Human Advice",
+      "text_preview": "Many currently deployed Reinforcement Learning agents work in an environment shared with humans, be them co-workers, users or clients. It is desirable that these agents adjust to people's preferences,",
+      "prediction": 1,
+      "confidence": 0.8306
+    },
+    {
+      "title": "Comparing Deep Reinforcement Learning and Evolutionary Methods in Continuous Control",
+      "text_preview": "Reinforcement Learning and the Evolutionary Strategy are two major approaches in addressing complicated control problems. Both are strong contenders and have their own devotee communities. Both groups",
+      "prediction": 1,
+      "confidence": 0.8084
+    },
+    {
+      "title": "Deep Reinforcement Learning: An Overview",
+      "text_preview": "We give an overview of recent exciting achievements of deep reinforcement learning (RL). We discuss six core elements, six important mechanisms, and twelve applications. We start with background of ma",
+      "prediction": 1,
+      "confidence": 0.8573
+    },
+    {
+      "title": "Learning to Navigate in Mazes with Novel Layouts using Abstract Top-down Maps",
+      "text_preview": "Learning navigation capabilities in different environments has long been one of the major challenges in decision-making. In this work, we focus on zero-shot navigation ability using given abstract $2$",
+      "prediction": 1,
+      "confidence": 0.8279
+    },
+    {
+      "title": "Multi-agent Deep Reinforcement Learning with Extremely Noisy Observations",
+      "text_preview": "Multi-agent reinforcement learning systems aim to provide interacting agents with the ability to collaboratively learn and adapt to the behaviour of other agents. In many real-world applications, the ",
+      "prediction": 1,
+      "confidence": 0.8344
+    },
+    {
+      "title": "FairDICE: Fairness-Driven Offline Multi-Objective Reinforcement Learning",
+      "text_preview": "Multi-objective reinforcement learning (MORL) aims to optimize policies in the presence of conflicting objectives, where linear scalarization is commonly used to reduce vector-valued returns into scal",
+      "prediction": 1,
+      "confidence": 0.8044
+    },
+    {
+      "title": "Pre-trained Word Embeddings for Goal-conditional Transfer Learning in Reinforcement Learning",
+      "text_preview": "Reinforcement learning (RL) algorithms typically start tabula rasa, without any prior knowledge of the environment, and without any prior skills. This however often leads to low sample efficiency, req",
+      "prediction": 1,
+      "confidence": 0.8516
+    },
+    {
+      "title": "Impoola: The Power of Average Pooling for Image-Based Deep Reinforcement Learning",
+      "text_preview": "As image-based deep reinforcement learning tackles more challenging tasks, increasing model size has become an important factor in improving performance. Recent studies achieved this by focusing on th",
+      "prediction": 1,
+      "confidence": 0.7969
+    },
+    {
+      "title": "Rating-based Reinforcement Learning",
+      "text_preview": "This paper develops a novel rating-based reinforcement learning approach that uses human ratings to obtain human guidance in reinforcement learning. Different from the existing preference-based and ra",
+      "prediction": 1,
+      "confidence": 0.8276
+    },
+    {
+      "title": "Vanishing Bias Heuristic-guided Reinforcement Learning Algorithm",
+      "text_preview": "Reinforcement Learning has achieved tremendous success in the many Atari games. In this paper we explored with the lunar lander environment and implemented classical methods including Q-Learning, SARS",
+      "prediction": 1,
+      "confidence": 0.8549
+    },
+    {
+      "title": "ChainerRL: A Deep Reinforcement Learning Library",
+      "text_preview": "In this paper, we introduce ChainerRL, an open-source deep reinforcement learning (DRL) library built using Python and the Chainer deep learning framework. ChainerRL implements a comprehensive set of ",
+      "prediction": 1,
+      "confidence": 0.7985
+    },
+    {
+      "title": "RLCache: Automated Cache Management Using Reinforcement Learning",
+      "text_preview": "This study investigates the use of reinforcement learning to guide a general purpose cache manager decisions. Cache managers directly impact the overall performance of computer systems. They govern de",
+      "prediction": 1,
+      "confidence": 0.7686
+    },
+    {
+      "title": "Robust Defense Strategies for Multimodal Contrastive Learning: Efficient Fine-tuning Against Backdoo",
+      "text_preview": "The advent of multimodal deep learning models, such as CLIP, has unlocked new frontiers in a wide range of applications, from image-text understanding to classification tasks. However, these models ar",
+      "prediction": 1,
+      "confidence": 0.7804
+    },
+    {
+      "title": "In-memory phononic learning toward cognitive mechanical intelligence",
+      "text_preview": "Modern autonomous systems are driving the critical need for next-generation adaptive materials and structures with embodied intelligence, i.e., the embodiment of memory, perception, learning, and deci",
+      "prediction": 1,
+      "confidence": 0.7823
+    },
+    {
+      "title": "Making Evidence Actionable in Adaptive Learning Closing the Diagnostic Pedagogical Loop",
+      "text_preview": "Adaptive learning often diagnoses precisely yet intervenes weakly, producing help that is mistimed or misaligned. This study presents evidence supporting an instructor-governed feedback loop that conv",
+      "prediction": 1,
+      "confidence": 0.788
+    },
+    {
+      "title": "Graph Out-of-Distribution Detection via Test-Time Calibration with Dual Dynamic Dictionaries",
+      "text_preview": "A key challenge in graph out-of-distribution (OOD) detection lies in the absence of ground-truth OOD samples during training. Existing methods are typically optimized to capture features within the in",
+      "prediction": 1,
+      "confidence": 0.8103
+    },
+    {
+      "title": "Fairness-Aware Graph Representation Learning with Limited Demographic Information",
+      "text_preview": "Ensuring fairness in Graph Neural Networks is fundamental to promoting trustworthy and socially responsible machine learning systems. In response, numerous fair graph learning methods have been propos",
+      "prediction": 1,
+      "confidence": 0.7972
+    },
+    {
+      "title": "BootOOD: Self-Supervised Out-of-Distribution Detection via Synthetic Sample Exposure under Neural Co",
+      "text_preview": "Out-of-distribution (OOD) detection is critical for deploying image classifiers in safety-sensitive environments, yet existing detectors often struggle when OOD samples are semantically similar to the",
+      "prediction": 1,
+      "confidence": 0.8318
+    },
+    {
+      "title": "Accuracy is Not Enough: Poisoning Interpretability in Federated Learning via Color Skew",
+      "text_preview": "As machine learning models are increasingly deployed in safety-critical domains, visual explanation techniques have become essential tools for supporting transparency. In this work, we reveal a new cl",
+      "prediction": 1,
+      "confidence": 0.7955
+    },
+    {
+      "title": "Minimax Multi-Target Conformal Prediction with Applications to Imaging Inverse Problems",
+      "text_preview": "In ill-posed imaging inverse problems, uncertainty quantification remains a fundamental challenge, especially in safety-critical applications. Recently, conformal prediction has been used to quantify ",
+      "prediction": 1,
+      "confidence": 0.768
+    },
+    {
+      "title": "Mitigating Spurious Correlations in Patch-wise Tumor Classification on High-Resolution Multimodal Im",
+      "text_preview": "Patch-wise multi-label classification provides an efficient alternative to full pixel-wise segmentation on high-resolution images, particularly when the objective is to determine the presence or absen",
+      "prediction": 1,
+      "confidence": 0.7926
+    },
+    {
+      "title": "Automated Construction of Medical Indicator Knowledge Graphs Using Retrieval Augmented Large Languag",
+      "text_preview": "Artificial intelligence (AI) is reshaping modern healthcare by advancing disease diagnosis, treatment decision-making, and biomedical research. Among AI technologies, large language models (LLMs) have",
+      "prediction": 1,
+      "confidence": 0.7833
+    },
+    {
+      "title": "AI Fairness Beyond Complete Demographics: Current Achievements and Future Directions",
+      "text_preview": "Fairness in artificial intelligence (AI) has become a growing concern due to discriminatory outcomes in AI-based decision-making systems. While various methods have been proposed to mitigate bias, mos",
+      "prediction": 1,
+      "confidence": 0.8062
+    },
+    {
+      "title": "Interpretable Ransomware Detection Using Hybrid Large Language Models: A Comparative Analysis of BER",
+      "text_preview": "Ransomware continues to evolve in complexity, making early and explainable detection a critical requirement for modern cybersecurity systems. This study presents a comparative analysis of three Transf",
+      "prediction": 1,
+      "confidence": 0.7794
+    },
+    {
+      "title": "A Quantum Tensor Network-Based Viewpoint for Modeling and Analysis of Time Series Data",
+      "text_preview": "Accurate uncertainty quantification is a critical challenge in machine learning. While neural networks are highly versatile and capable of learning complex patterns, they often lack interpretability d",
+      "prediction": 1,
+      "confidence": 0.7615
+    },
+    {
+      "title": "Naga: Vedic Encoding for Deep State Space Models",
+      "text_preview": "This paper presents Naga, a deep State Space Model (SSM) encoding approach inspired by structural concepts from Vedic mathematics. The proposed method introduces a bidirectional representation for tim",
+      "prediction": 1,
+      "confidence": 0.7965
+    },
+    {
+      "title": "Mapping the Vanishing and Transformation of Urban Villages in China",
+      "text_preview": "Urban villages (UVs), informal settlements embedded within China's urban fabric, have undergone widespread demolition and redevelopment in recent decades. However, there remains a lack of systematic e",
+      "prediction": 1,
+      "confidence": 0.7358
+    },
+    {
+      "title": "The Shape of Data: Topology Meets Analytics. A Practical Introduction to Topological Analytics and t",
+      "text_preview": "Modern business and economic datasets often exhibit nonlinear, multi-scale structures that traditional linear tools under-represent. Topological Data Analysis (TDA) offers a geometric lens for uncover",
+      "prediction": 1,
+      "confidence": 0.7813
+    },
+    {
+      "title": "Tight and Practical Privacy Auditing for Differentially Private In-Context Learning",
+      "text_preview": "Large language models (LLMs) perform in-context learning (ICL) by adapting to tasks from prompt demonstrations, which in practice often contain private or proprietary data. Although differential priva",
+      "prediction": 1,
+      "confidence": 0.7754
+    },
+    {
+      "title": "Quantum Machine Learning via Contrastive Training",
+      "text_preview": "Quantum machine learning (QML) has attracted growing interest with the rapid parallel advances in large-scale classical machine learning and quantum technologies. Similar to classical machine learning",
+      "prediction": 1,
+      "confidence": 0.8131
+    },
+    {
+      "title": "PolicyBot - Reliable Question Answering over Policy Documents",
+      "text_preview": "All citizens of a country are affected by the laws and policies introduced by their government. These laws and policies serve essential functions for citizens. Such as granting them certain rights or ",
+      "prediction": 1,
+      "confidence": 0.7734
+    },
+    {
+      "title": "Systematic evaluation of time-frequency features for binaural sound source localization",
+      "text_preview": "This study presents a systematic evaluation of time-frequency feature design for binaural sound source localization (SSL), focusing on how feature selection influences model performance across diverse",
+      "prediction": 1,
+      "confidence": 0.8046
+    },
+    {
+      "title": "Semantic Document Derendering: SVG Reconstruction via Vision-Language Modeling",
+      "text_preview": "Multimedia documents such as slide presentations and posters are designed to be interactive and easy to modify. Yet, they are often distributed in a static raster format, which limits editing and cust",
+      "prediction": 1,
+      "confidence": 0.8051
+    },
+    {
+      "title": "Machine learning inspired photon number resolution in superconducting nanowire single-photon detecto",
+      "text_preview": "Photon-number resolved detection with superconducting nanowire single-photon detectors (SNSPDs) attracts increasing interest, but lacks a systematic framework for interpreting and benchmarking this ca",
+      "prediction": 1,
+      "confidence": 0.8043
+    },
+    {
+      "title": "GREAT: Generalizable Representation Enhancement via Auxiliary Transformations for Zero-Shot Environm",
+      "text_preview": "Environmental modeling faces critical challenges in predicting ecosystem dynamics across unmonitored regions due to limited and geographically imbalanced observation data. This challenge is compounded",
+      "prediction": 1,
+      "confidence": 0.8149
+    },
+    {
+      "title": "Spin Accumulation based deep MOKE Microscopy",
+      "text_preview": "Magnetic imaging techniques are widespread critical tools used in fields such as magnetism, spintronics or even superconductivity. Among them, one of the most versatile methods is the magneto-optical ",
+      "prediction": 1,
+      "confidence": 0.7885
+    },
+    {
+      "title": "The Quick Red Fox gets the best Data Driven Classroom Interviews: A manual for an interview app and ",
+      "text_preview": "Data Driven Classroom Interviews (DDCIs) are an interviewing technique that is facilitated by recent technological developments in the learning analytics community. DDCIs are short, targeted interview",
+      "prediction": 1,
+      "confidence": 0.7323
+    },
+    {
+      "title": "AdamX: An Adam improvement algorithm based on a novel exponential decay mechanism for the second-ord",
+      "text_preview": "Since the 21st century, artificial intelligence has been leading a new round of industrial revolution. Under the training framework, the optimization algorithm aims to stably converge high-dimensional",
+      "prediction": 1,
+      "confidence": 0.7818
+    },
+    {
+      "title": "Multi-task GINN-LP for Multi-target Symbolic Regression",
+      "text_preview": "In the area of explainable artificial intelligence, Symbolic Regression (SR) has emerged as a promising approach by discovering interpretable mathematical expressions that fit data. However, SR faces ",
+      "prediction": 1,
+      "confidence": 0.8203
+    },
+    {
+      "title": "Measurement of Exclusive $π^+$--argon Interactions Using ProtoDUNE-SP",
+      "text_preview": "We present the measurement of $π^{+}$--argon inelastic cross sections using the ProtoDUNE Single-Phase liquid argon time projection chamber in the incident $π^+$ kinetic energy range of 500 -- 800 MeV",
+      "prediction": 1,
+      "confidence": 0.7863
+    },
+    {
+      "title": "Contact-Safe Reinforcement Learning with ProMP Reparameterization and Energy Awareness",
+      "text_preview": "Reinforcement learning (RL) approaches based on Markov Decision Processes (MDPs) are predominantly applied in the robot joint space, often relying on limited task-specific information and partial awar",
+      "prediction": 1,
+      "confidence": 0.8568
+    },
+    {
+      "title": "Artificial Intelligence-Enabled Spirometry for Early Detection of Right Heart Failure",
+      "text_preview": "Right heart failure (RHF) is a disease characterized by abnormalities in the structure or function of the right ventricle (RV), which is associated with high morbidity and mortality. Lung disease ofte",
+      "prediction": 1,
+      "confidence": 0.7866
+    },
+    {
+      "title": "Scaling Spatial Intelligence with Multimodal Foundation Models",
+      "text_preview": "Despite remarkable progress, multimodal foundation models still exhibit surprising deficiencies in spatial intelligence. In this work, we explore scaling up multimodal foundation models to cultivate s",
+      "prediction": 1,
+      "confidence": 0.8186
+    },
+    {
+      "title": "UnSAMv2: Self-Supervised Learning Enables Segment Anything at Any Granularity",
+      "text_preview": "The Segment Anything Model (SAM) family has become a widely adopted vision foundation model, but its ability to control segmentation granularity remains limited. Users often need to refine results man",
+      "prediction": 1,
+      "confidence": 0.774
+    },
+    {
+      "title": "Free-Form Scene Editor: Enabling Multi-Round Object Manipulation like in a 3D Engine",
+      "text_preview": "Recent advances in text-to-image (T2I) diffusion models have significantly improved semantic image editing, yet most methods fall short in performing 3D-aware object manipulation. In this work, we pre",
+      "prediction": 1,
+      "confidence": 0.8279
+    },
+    {
+      "title": "From Black Box to Insight: Explainable AI for Extreme Event Preparedness",
+      "text_preview": "As climate change accelerates the frequency and severity of extreme events such as wildfires, the need for accurate, explainable, and actionable forecasting becomes increasingly urgent. While artifici",
+      "prediction": 1,
+      "confidence": 0.7446
+    },
+    {
+      "title": "From Power to Precision: Learning Fine-grained Dexterity for Multi-fingered Robotic Hands",
+      "text_preview": "Human grasps can be roughly categorized into two types: power grasps and precision grasps. Precision grasping enables tool use and is believed to have influenced human evolution. Today's multi-fingere",
+      "prediction": 1,
+      "confidence": 0.8136
+    },
+    {
+      "title": "OpenRoboCare: A Multimodal Multi-Task Expert Demonstration Dataset for Robot Caregiving",
+      "text_preview": "We present OpenRoboCare, a multimodal dataset for robot caregiving, capturing expert occupational therapist demonstrations of Activities of Daily Living (ADLs). Caregiving tasks involve complex physic",
+      "prediction": 1,
+      "confidence": 0.7951
+    },
+    {
+      "title": "Rare Genomic Subtype Discovery from RNA-seq via Autoencoder Embeddings and Stability-Aware Clusterin",
+      "text_preview": "Unsupervised learning on high-dimensional RNA-seq data can reveal molecular subtypes beyond standard labels. We combine an autoencoder-based representation with clustering and stability analysis to se",
+      "prediction": 1,
+      "confidence": 0.7791
+    },
+    {
+      "title": "Generalist Foundation Models Are Not Clinical Enough for Hospital Operations",
+      "text_preview": "Hospitals and healthcare systems rely on operational decisions that determine patient flow, cost, and quality of care. Despite strong performance on medical knowledge and conversational benchmarks, fo",
+      "prediction": 1,
+      "confidence": 0.813
+    },
+    {
+      "title": "ST-ProC: A Graph-Prototypical Framework for Robust Semi-Supervised Travel Mode Identification",
+      "text_preview": "Travel mode identification (TMI) from GPS trajectories is critical for urban intelligence, but is hampered by the high cost of annotation, leading to severe label scarcity. Prevailing semi-supervised ",
+      "prediction": 1,
+      "confidence": 0.8032
+    },
+    {
+      "title": "Learning stochasticity: a nonparametric framework for intrinsic noise estimation",
+      "text_preview": "Understanding the principles that govern dynamical systems is a central challenge across many scientific domains, including biology and ecology. Incomplete knowledge of nonlinear interactions and stoc",
+      "prediction": 1,
+      "confidence": 0.8176
+    },
+    {
+      "title": "Efficient Calibration for Decision Making",
+      "text_preview": "A decision-theoretic characterization of perfect calibration is that an agent seeking to minimize a proper loss in expectation cannot improve their outcome by post-processing a perfectly calibrated pr",
+      "prediction": 1,
+      "confidence": 0.7264
+    },
+    {
+      "title": "Crossing Borders: A Multimodal Challenge for Indian Poetry Translation and Image Generation",
+      "text_preview": "Indian poetry, known for its linguistic complexity and deep cultural resonance, has a rich and varied heritage spanning thousands of years. However, its layered meanings, cultural allusions, and sophi",
+      "prediction": 1,
+      "confidence": 0.8019
+    },
+    {
+      "title": "Protein Secondary Structure Prediction Using 3D Graphs and Relation-Aware Message Passing Transforme",
+      "text_preview": "In this study, we tackle the challenging task of predicting secondary structures from protein primary sequences, a pivotal initial stride towards predicting tertiary structures, while yielding crucial",
+      "prediction": 1,
+      "confidence": 0.8162
+    },
+    {
+      "title": "Training-Free Multi-View Extension of IC-Light for Textual Position-Aware Scene Relighting",
+      "text_preview": "We introduce GS-Light, an efficient, textual position-aware pipeline for text-guided relighting of 3D scenes represented via Gaussian Splatting (3DGS). GS-Light implements a training-free extension of",
+      "prediction": 1,
+      "confidence": 0.793
+    },
+    {
+      "title": "Quantum Advantage in Learning Mixed Unitary Channels",
+      "text_preview": "We study the task of learning mixed unitary channels using Fisher information, under different quantum resource assumptions including ancilla and concatenation. Our result shows that the asymptotic sa",
+      "prediction": 1,
+      "confidence": 0.7835
+    },
+    {
+      "title": "Cross-Learning from Scarce Data via Multi-Task Constrained Optimization",
+      "text_preview": "A learning task, understood as the problem of fitting a parametric model from supervised data, fundamentally requires the dataset to be large enough to be representative of the underlying distribution",
+      "prediction": 1,
+      "confidence": 0.8071
+    },
+    {
+      "title": "QUILL: An Algorithm-Architecture Co-Design for Cache-Local Deformable Attention",
+      "text_preview": "Deformable transformers deliver state-of-the-art detection but map poorly to hardware due to irregular memory access and low arithmetic intensity. We introduce QUILL, a schedule-aware accelerator that",
+      "prediction": 1,
+      "confidence": 0.7945
+    },
+    {
+      "title": "T-SAR: A Full-Stack Co-design for CPU-Only Ternary LLM Inference via In-Place SIMD ALU Reorganizatio",
+      "text_preview": "Recent advances in LLMs have outpaced the computational and memory capacities of edge platforms that primarily employ CPUs, thereby challenging efficient and scalable deployment. While ternary quantiz",
+      "prediction": 1,
+      "confidence": 0.785
+    },
+    {
+      "title": "Scientific Data Compression and Super-Resolution Sampling",
+      "text_preview": "Modern scientific simulations, observations, and large-scale experiments generate data at volumes that often exceed the limits of storage, processing, and analysis. This challenge drives the developme",
+      "prediction": 1,
+      "confidence": 0.8373
+    },
+    {
+      "title": "Cost-Driven Synthesis of Sound Abstract Interpreters",
+      "text_preview": "Constructing abstract interpreters that provide global soundness guarantees remains a major obstacle in abstract interpretation. We investigate whether modern LLMs can reduce this burden by leveraging",
+      "prediction": 1,
+      "confidence": 0.7824
+    },
+    {
+      "title": "Why is \"Chicago\" Predictive of Deceptive Reviews? Using LLMs to Discover Language Phenomena from Lex",
+      "text_preview": "Deceptive reviews mislead consumers, harm businesses, and undermine trust in online marketplaces. Machine learning classifiers can learn from large amounts of training examples to effectively distingu",
+      "prediction": 1,
+      "confidence": 0.828
+    },
+    {
+      "title": "Architectural Approaches to Fault-Tolerant Distributed Quantum Computing and Their Entanglement Over",
+      "text_preview": "Fault tolerant quantum computation over distributed quantum computing (DQC) platforms requires careful evaluation of resource requirements and noise thresholds. As quantum hardware advances toward mod",
+      "prediction": 1,
+      "confidence": 0.6986
+    },
+    {
+      "title": "OlmoEarth: Stable Latent Image Modeling for Multimodal Earth Observation",
+      "text_preview": "Earth observation data presents a unique challenge: it is spatial like images, sequential like video or text, and highly multimodal. We present OlmoEarth: a multimodal, spatio-temporal foundation mode",
+      "prediction": 1,
+      "confidence": 0.783
+    },
+    {
+      "title": "Tuning for Two Adversaries: Enhancing the Robustness Against Transfer and Query-Based Attacks using ",
+      "text_preview": "In this paper, we present the first detailed analysis of how optimization hyperparameters -- such as learning rate, weight decay, momentum, and batch size -- influence robustness against both transfer",
+      "prediction": 1,
+      "confidence": 0.7373
+    },
+    {
+      "title": "Weight-sparse transformers have interpretable circuits",
+      "text_preview": "Finding human-understandable circuits in language models is a central goal of the field of mechanistic interpretability. We train models to have more understandable circuits by constraining most of th",
+      "prediction": 1,
+      "confidence": 0.7824
+    },
+    {
+      "title": "Distribution Matching Distillation Meets Reinforcement Learning",
+      "text_preview": "Distribution Matching Distillation (DMD) distills a pre-trained multi-step diffusion model to a few-step one to improve inference efficiency. However, the performance of the latter is often capped by ",
+      "prediction": 1,
+      "confidence": 0.7484
+    },
+    {
+      "title": "PhysX-Anything: Simulation-Ready Physical 3D Assets from Single Image",
+      "text_preview": "3D modeling is shifting from static visual representations toward physical, articulated assets that can be directly used in simulation and interaction. However, most existing 3D generation methods ove",
+      "prediction": 1,
+      "confidence": 0.8053
+    },
+    {
+      "title": "Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?",
+      "text_preview": "Large Language Models (LLMs) are reshaping almost all industries, including software engineering. In recent years, a number of LLM agents have been proposed to solve real-world software problems. Such",
+      "prediction": 1,
+      "confidence": 0.7961
+    },
+    {
+      "title": "FuseSampleAgg: Fused Neighbor Sampling and Aggregation for Mini-batch GNNs",
+      "text_preview": "We present FuseSampleAgg, a CUDA operator that fuses neighbor sampling and mean aggregation into a single pass for one and two hop GraphSAGE. By eliminating block materialization and extra kernel laun",
+      "prediction": 1,
+      "confidence": 0.7664
+    },
+    {
+      "title": "Data Value in the Age of Scaling: Understanding LLM Scaling Dynamics Under Real-Synthetic Data Mixtu",
+      "text_preview": "The rapid progress of large language models (LLMs) is fueled by the growing reliance on datasets that blend real and synthetic data. While synthetic data offers scalability and cost-efficiency, it oft",
+      "prediction": 1,
+      "confidence": 0.8054
+    },
+    {
+      "title": "CAMEO: Correspondence-Attention Alignment for Multi-View Diffusion Models",
+      "text_preview": "Multi-view diffusion models have recently emerged as a powerful paradigm for novel view synthesis, yet the underlying mechanism that enables their view-consistency remains unclear. In this work, we fi",
+      "prediction": 1,
+      "confidence": 0.7898
+    },
+    {
+      "title": "Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling",
+      "text_preview": "Robust perception and dynamics modeling are fundamental to real-world robotic policy learning. Recent methods employ video diffusion models (VDMs) to enhance robotic policies, improving their understa",
+      "prediction": 1,
+      "confidence": 0.805
+    },
+    {
+      "title": "OneThinker: All-in-one Reasoning Model for Image and Video",
+      "text_preview": "Reinforcement learning (RL) has recently achieved remarkable success in eliciting visual reasoning within Multimodal Large Language Models (MLLMs). However, existing approaches typically train separat",
+      "prediction": 1,
+      "confidence": 0.8305
+    },
+    {
+      "title": "Learning Physically Consistent Lagrangian Control Models Without Acceleration Measurements",
+      "text_preview": "This article investigates the modeling and control of Lagrangian systems involving non-conservative forces using a hybrid method that does not require acceleration calculations. It focuses in particul",
+      "prediction": 1,
+      "confidence": 0.8029
+    },
+    {
+      "title": "Information dynamics and symmetry breaking in generic monitored $\\mathbb{Z}_2$-symmetric open quantu",
+      "text_preview": "We investigate the steady-state phases of generic $\\mathbb{Z}_2$-symmetric monitored, open quantum dynamics. We describe the phases systematically in terms of both information-theoretic diagnostics an",
+      "prediction": 1,
+      "confidence": 0.8008
+    },
+    {
+      "title": "SMP: Reusable Score-Matching Motion Priors for Physics-Based Character Control",
+      "text_preview": "Data-driven motion priors that can guide agents toward producing naturalistic behaviors play a pivotal role in creating life-like virtual characters. Adversarial imitation learning has been a highly e",
+      "prediction": 1,
+      "confidence": 0.8085
+    },
+    {
+      "title": "LORE: A Large Generative Model for Search Relevance",
+      "text_preview": "Achievement. We introduce LORE, a systematic framework for Large Generative Model-based relevance in e-commerce search. Deployed and iterated over three years, LORE achieves a cumulative +27\\% improve",
+      "prediction": 1,
+      "confidence": 0.7987
+    },
+    {
+      "title": "TokenPowerBench: Benchmarking the Power Consumption of LLM Inference",
+      "text_preview": "Large language model (LLM) services now answer billions of queries per day, and industry reports show that inference, not training, accounts for more than 90% of total power consumption. However, exis",
+      "prediction": 1,
+      "confidence": 0.7825
+    },
+    {
+      "title": "Unrolled Networks are Conditional Probability Flows in MRI Reconstruction",
+      "text_preview": "Magnetic Resonance Imaging (MRI) offers excellent soft-tissue contrast without ionizing radiation, but its long acquisition time limits clinical utility. Recent methods accelerate MRI by under-samplin",
+      "prediction": 1,
+      "confidence": 0.7869
+    },
+    {
+      "title": "Distribution-Calibrated Inference time compute for Thinking LLM-as-a-Judge",
+      "text_preview": "Thinking Large Language Models (LLMs) used as judges for pairwise preferences remain noisy at the single-sample level, and common aggregation rules (majority vote, soft self-consistency, or instructio",
+      "prediction": 1,
+      "confidence": 0.79
+    },
+    {
+      "title": "Generation of strong ultralow-phase-noise microwave fields with tunable ellipticity for ultracold po",
+      "text_preview": "Microwave(MW) fields with strong field strength, ultralow phase-noise and tunable polarization are crucial for stabilizing and manipulating ultracold polar molecules, which have emerged as a promising",
+      "prediction": 1,
+      "confidence": 0.7732
+    },
+    {
+      "title": "MIRI spectrophotometry of GN-z11: Detection and nature of an optical red continuum component",
+      "text_preview": "We present new MIRI F560W, F770W and F1000W imaging of GN-z11, extending the previous rest-frame coverage from 0.38 to 0.86$μ$m. We report significant detections (14$σ$) in the F560W and F770W images,",
+      "prediction": 1,
+      "confidence": 0.7963
+    },
+    {
+      "title": "GraphFusion3D: Dynamic Graph Attention Convolution with Adaptive Cross-Modal Transformer for 3D Obje",
+      "text_preview": "Despite significant progress in 3D object detection, point clouds remain challenging due to sparse data, incomplete structures, and limited semantic information. Capturing contextual relationships bet",
+      "prediction": 1,
+      "confidence": 0.8035
+    },
+    {
+      "title": "Learning interpretable surface elasticity properties from bulk properties",
+      "text_preview": "Surface elasticity is central to understanding the mechanics and stability of surfaces and interfaces. It is characterized by quantities such as surface tension, residual surface stress, and surface s",
+      "prediction": 1,
+      "confidence": 0.7908
+    },
+    {
+      "title": "ProteinPNet: Prototypical Part Networks for Concept Learning in Spatial Proteomics",
+      "text_preview": "Understanding the spatial architecture of the tumor microenvironment (TME) is critical to advance precision oncology. We present ProteinPNet, a novel framework based on prototypical part networks that",
+      "prediction": 1,
+      "confidence": 0.8241
+    },
+    {
+      "title": "U4D: Uncertainty-Aware 4D World Modeling from LiDAR Sequences",
+      "text_preview": "Modeling dynamic 3D environments from LiDAR sequences is central to building reliable 4D worlds for autonomous driving and embodied AI. Existing generative frameworks, however, often treat all spatial",
+      "prediction": 1,
+      "confidence": 0.7533
+    },
+    {
+      "title": "Rethinking Generalized BCIs: Benchmarking 340,000+ Unique Algorithmic Configurations for EEG Mental ",
+      "text_preview": "Robust decoding and classification of brain patterns measured with electroencephalography (EEG) remains a major challenge for real-world (i.e. outside scientific lab and medical facilities) brain-comp",
+      "prediction": 1,
+      "confidence": 0.7817
+    },
+    {
+      "title": "Identification of Multivariate Measurement Error Models",
+      "text_preview": "This paper develops new identification results for multidimensional continuous measurement-error models where all observed measurements are contaminated by potentially correlated errors and none provi",
+      "prediction": 1,
+      "confidence": 0.7853
+    },
+    {
+      "title": "Flexible Gravitational-Wave Parameter Estimation with Transformers",
+      "text_preview": "Gravitational-wave data analysis relies on accurate and efficient methods to extract physical information from noisy detector signals, yet the increasing rate and complexity of observations represent ",
+      "prediction": 1,
+      "confidence": 0.8104
+    },
+    {
+      "title": "Pruning AMR: Efficient Visualization of Implicit Neural Representations via Weight Matrix Analysis",
+      "text_preview": "An implicit neural representation (INR) is a neural network that approximates a spatiotemporal function. Many memory-intensive visualization tasks, including modern 4D CT scanning methods, represent d",
+      "prediction": 1,
+      "confidence": 0.7792
+    },
+    {
+      "title": "Layout Anything: One Transformer for Universal Room Layout Estimation",
+      "text_preview": "We present Layout Anything, a transformer-based framework for indoor layout estimation that adapts the OneFormer's universal segmentation architecture to geometric structure prediction. Our approach i",
+      "prediction": 1,
+      "confidence": 0.7728
+    },
+    {
+      "title": "Representation of Inorganic Synthesis Reactions and Prediction: Graphical Framework and Datasets",
+      "text_preview": "While machine learning has enabled the rapid prediction of inorganic materials with novel properties, the challenge of determining how to synthesize these materials remains largely unsolved. Previous ",
+      "prediction": 1,
+      "confidence": 0.7463
+    },
+    {
+      "title": "Combining Transport of Pendular Water with Wind-Assisted Interfacial Evaporation for Dewatering of C",
+      "text_preview": "Drying concentrated slurry waste is slow, particularly due to the entrapment and limited accessibility of water entrained between the particles in the slurry. A sailboat evaporator with a root-like st",
+      "prediction": 1,
+      "confidence": 0.7876
+    },
+    {
+      "title": "From Administrative Chaos to Analytical Cohorts: A Three-Stage Normalisation Pipeline for Longitudin",
+      "text_preview": "The growing use of longitudinal university administrative records in data-driven decision-making often overlooks a critical layer: how raw, inconsistent data are normalised before modelling. This arti",
+      "prediction": 1,
+      "confidence": 0.7733
+    },
+    {
+      "title": "Time-series forecasting with multiphoton quantum states and integrated photonics",
+      "text_preview": "Quantum machine learning algorithms have very recently attracted significant attention in photonic platforms. In particular, reconfigurable integrated photonic circuits offer a promising route, thanks",
+      "prediction": 1,
+      "confidence": 0.7742
+    },
+    {
+      "title": "Fast Gaussian Process Approximations for Autocorrelated Data",
+      "text_preview": "This paper is concerned with the problem of how to speed up computation for Gaussian process models trained on autocorrelated data. The Gaussian process model is a powerful tool commonly used in nonli",
+      "prediction": 1,
+      "confidence": 0.8102
+    },
+    {
+      "title": "Learning Multimodal Embeddings for Traffic Accident Prediction and Causal Estimation",
+      "text_preview": "We consider analyzing traffic accident patterns using both road network data and satellite images aligned to road graph nodes. Previous work for predicting accident occurrences relies primarily on roa",
+      "prediction": 1,
+      "confidence": 0.8054
+    },
+    {
+      "title": "Maintaining SUV Accuracy in Low-Count PET with PETfectior: A Deep Learning Denoising Solution",
+      "text_preview": "Background: Diagnostic PET image quality depends on the administered activity and acquisition time. However, minimizing these variables is desirable to reduce patient radiation exposure and radiopharm",
+      "prediction": 1,
+      "confidence": 0.7808
+    },
+    {
+      "title": "Martingale Score: An Unsupervised Metric for Bayesian Rationality in LLM Reasoning",
+      "text_preview": "Recent advances in reasoning techniques have substantially improved the performance of large language models (LLMs), raising expectations for their ability to provide accurate, truthful, and reliable ",
+      "prediction": 1,
+      "confidence": 0.7855
+    },
+    {
+      "title": "Hypothesis Testing for Generalized Thurstone Models",
+      "text_preview": "In this work, we develop a hypothesis testing framework to determine whether pairwise comparison data is generated by an underlying \\emph{generalized Thurstone model} $\\mathcal{T}_F$ for a given choic",
+      "prediction": 1,
+      "confidence": 0.7624
+    }
+  ],
+  "high_confidence_details": [
+    {
+      "title": "Implicit inference of the reionization history with higher-order statistics of the 21-cm signal",
+      "text": "The Epoch of Reionization (EoR), when the first luminous sources ionised the intergalactic medium, represents a new frontier in cosmology. The Square Kilometre Array Observatory (SKAO) will offer unprecedented insights into this era through observations of the redshifted 21-cm signal, enabling constraints on the Universe's reionization history. We investigate the information content of the average neutral hydrogen fraction ($\\bar{x}_{\\rm HI}$) in several Gaussian (spherical and cylindrical power spectra) and non-Gaussian (Betti numbers and bispectrum) summary statistics of the 21-cm signal. Mock 21-cm observations are generated using the AA* configuration of SKAO's low-frequency telescope, incorporating noise levels for 100 and 1000 hours. We employ a state-of-the-art implicit inference framework to learn posterior distributions of $\\bar{x}_{\\rm HI}$ in redshift bins centred at $z=8.0,7.2$ and $6.5$, for each statistic and noise scenario, validating the posteriors through calibration tests. Using the figure of merit to assess constraining power, we find that Betti numbers alone are on average more informative than the power spectra, while the bispectrum provides limited constraints. However, combining higher-order statistics with the cylindrical power spectrum improves the mean figure of merit by $\\sim$0.25 dex ($\\sim33\\%$ reduction in $σ(\\bar{x}_{\\rm HI})$). The relative contribution of each statistic varies with the stage of reionization. With SKAO observations approaching, our results show that combining power spectra with higher-order statistics can significantly increase the information retrieved from the EoR, maximising the scientific return of future 21-cm observations.",
+      "prediction": 1,
+      "confidence": 0.8081,
+      "source": "loop"
+    },
+    {
+      "title": "Estimating Total Effects in Bipartite Experiments with Spillovers and Partial Eligibility",
+      "text": "We study randomized experiments in bipartite systems where only a subset of treatment-side units are eligible for assignment while all units continue to interact, generating interference. We formalize eligibility-constrained bipartite experiments and define estimands aligned with full deployment: the Primary Total Treatment Effect (PTTE) on eligible units and the Secondary Total Treatment Effect (STTE) on ineligible units. Under randomization within the eligible set, we give identification conditions and develop interference-aware ensemble estimators that combine exposure mappings, generalized propensity scores, and flexible machine learning. We further introduce a projection that links treatment- and outcome-level estimands; this mapping is exact under a Linear Additive Edges condition and enables estimation on the (typically much smaller) treatment side with deterministic aggregation to outcomes. In simulations with known ground truth across realistic exposure regimes, the proposed estimators recover PTTE and STTE with low bias and variance and reduce the bias that could arise when interference is ignored. Two field experiments illustrate practical relevance: our method corrects the direction of expected interference bias for a pre-specified metric in both studies and reverses the sign and significance of the primary decision metric in one case.",
+      "prediction": 1,
+      "confidence": 0.8155,
+      "source": "loop"
+    },
+    {
+      "title": "Drone Swarm Energy Management",
+      "text": "This note presents an analytical framework for decision-making in drone swarm systems operating under uncertainty, based on the integration of Partially Observable Markov Decision Processes (POMDP) with Deep Deterministic Policy Gradient (DDPG) reinforcement learning. The proposed approach enables adaptive control and cooperative behavior of unmanned aerial vehicles (UAVs) within a cognitive AI platform, where each agent learns optimal energy management and navigation policies from dynamic environmental states. We extend the standard DDPG architecture with a belief-state representation derived from Bayesian filtering, allowing for robust decision-making in partially observable environments. In this paper, for the Gaussian case, we numerically compare the performance of policies derived from DDPG to optimal policies for discretized versions of the original continuous problem. Simulation results demonstrate that the POMDP-DDPG-based swarm control model significantly improves mission success rates and energy efficiency compared to baseline methods. The developed framework supports distributed learning and decision coordination across multiple agents, providing a foundation for scalable cognitive swarm autonomy. The outcomes of this research contribute to the advancement of energy-aware control algorithms for intelligent multi-agent systems and can be applied in security, environmental monitoring, and infrastructure inspection scenarios.",
+      "prediction": 1,
+      "confidence": 0.8157,
+      "source": "loop"
+    },
+    {
+      "title": "Incremental Data-Driven Policy Synthesis via Game Abstractions",
+      "text": "We address the synthesis of control policies for unknown discrete-time stochastic dynamical systems to satisfy temporal logic objectives. We present a data-driven, abstraction-based control framework that integrates online learning with novel incremental game-solving. Under appropriate continuity assumptions, our method abstracts the system dynamics into a finite stochastic (2.5-player) game graph derived from data. Given a requirement over time on this graph, we compute the winning region -- i.e., the set of initial states from which the objective is satisfiable -- in the resulting game, together with a corresponding control policy.\n  Our main contribution is the construction of abstractions, winning regions and control policies incrementally, as data about the system dynamics accumulates. Concretely, our algorithm refines under- and over-approximations of reachable sets for each state-action pair as new data samples arrive. These refinements induce structural modifications in the game graph abstraction -- such as the addition or removal of nodes and edges -- which in turn modify the winning region. Crucially, we show that these updates are inherently monotonic: under-approximations can only grow, over-approximations can only shrink, and the winning region can only expand.\n  We exploit this monotonicity by defining an objective-induced ranking function on the nodes of the abstract game that increases monotonically as new data samples are incorporated. These ranks underpin our novel incremental game-solving algorithm, which employs customized gadgets (DAG-like subgames) within a rank-lifting algorithm to efficiently update the winning region. Numerical case studies demonstrate significant computational savings compared to the baseline approach, which resolves the entire game from scratch whenever new data samples arrive.",
+      "prediction": 1,
+      "confidence": 0.8126,
+      "source": "loop"
+    },
+    {
+      "title": "Terrain Costmap Generation via Scaled Preference Conditioning",
+      "text": "Successful autonomous robot navigation in off-road domains requires the ability to generate high-quality terrain costmaps that are able to both generalize well over a wide variety of terrains and rapidly adapt relative costs at test time to meet mission-specific needs. Existing approaches for costmap generation allow for either rapid test-time adaptation of relative costs (e.g., semantic segmentation methods) or generalization to new terrain types (e.g., representation learning methods), but not both. In this work, we present scaled preference conditioned all-terrain costmap generation (SPACER), a novel approach for generating terrain costmaps that leverages synthetic data during training in order to generalize well to new terrains, and allows for rapid test-time adaptation of relative costs by conditioning on a user-specified scaled preference context. Using large-scale aerial maps, we provide empirical evidence that SPACER outperforms other approaches at generating costmaps for terrain navigation, with the lowest measured regret across varied preferences in five of seven environments for global path planning.",
+      "prediction": 1,
+      "confidence": 0.833,
+      "source": "loop"
+    },
+    {
+      "title": "Scalable Policy Evaluation with Video World Models",
+      "text": "Training generalist policies for robotic manipulation has shown great promise, as they enable language-conditioned, multi-task behaviors across diverse scenarios. However, evaluating these policies remains difficult because real-world testing is expensive, time-consuming, and labor-intensive. It also requires frequent environment resets and carries safety risks when deploying unproven policies on physical robots. Manually creating and populating simulation environments with assets for robotic manipulation has not addressed these issues, primarily due to the significant engineering effort required and the often substantial sim-to-real gap, both in terms of physics and rendering. In this paper, we explore the use of action-conditional video generation models as a scalable way to learn world models for policy evaluation. We demonstrate how to incorporate action conditioning into existing pre-trained video generation models. This allows leveraging internet-scale in-the-wild online videos during the pre-training stage, and alleviates the need for a large dataset of paired video-action data, which is expensive to collect for robotic manipulation. Our paper examines the effect of dataset diversity, pre-trained weight and common failure cases for the proposed evaluation pipeline.Our experiments demonstrate that, across various metrics, including policy ranking and the correlation between actual policy values and predicted policy values, these models offer a promising approach for evaluating policies without requiring real-world interactions.",
+      "prediction": 1,
+      "confidence": 0.8487,
+      "source": "loop"
+    },
+    {
+      "title": "W2S-AlignTree: Weak-to-Strong Inference-Time Alignment for Large Language Models via Monte Carlo Tree Search",
+      "text": "Large Language Models (LLMs) demonstrate impressive capabilities, yet their outputs often suffer from misalignment with human preferences due to the inadequacy of weak supervision and a lack of fine-grained control. Training-time alignment methods like Reinforcement Learning from Human Feedback (RLHF) face prohibitive costs in expert supervision and inherent scalability limitations, offering limited dynamic control during inference. Consequently, there is an urgent need for scalable and adaptable alignment mechanisms. To address this, we propose W2S-AlignTree, a pioneering plug-and-play inference-time alignment framework that synergistically combines Monte Carlo Tree Search (MCTS) with the Weak-to-Strong Generalization paradigm for the first time. W2S-AlignTree formulates LLM alignment as an optimal heuristic search problem within a generative search tree. By leveraging weak model's real-time, step-level signals as alignment proxies and introducing an Entropy-Aware exploration mechanism, W2S-AlignTree enables fine-grained guidance during strong model's generation without modifying its parameters. The approach dynamically balances exploration and exploitation in high-dimensional generation search trees. Experiments across controlled sentiment generation, summarization, and instruction-following show that W2S-AlignTree consistently outperforms strong baselines. Notably, W2S-AlignTree raises the performance of Llama3-8B from 1.89 to 2.19, a relative improvement of 15.9 on the summarization task.",
+      "prediction": 1,
+      "confidence": 0.8234,
+      "source": "loop"
+    },
+    {
+      "title": "Collaborative Representation Learning for Alignment of Tactile, Language, and Vision Modalities",
+      "text": "Tactile sensing offers rich and complementary information to vision and language, enabling robots to perceive fine-grained object properties. However, existing tactile sensors lack standardization, leading to redundant features that hinder cross-sensor generalization. Moreover, existing methods fail to fully integrate the intermediate communication among tactile, language, and vision modalities. To address this, we propose TLV-CoRe, a CLIP-based Tactile-Language-Vision Collaborative Representation learning method. TLV-CoRe introduces a Sensor-Aware Modulator to unify tactile features across different sensors and employs tactile-irrelevant decoupled learning to disentangle irrelevant tactile features. Additionally, a Unified Bridging Adapter is introduced to enhance tri-modal interaction within the shared representation space. To fairly evaluate the effectiveness of tactile models, we further propose the RSS evaluation framework, focusing on Robustness, Synergy, and Stability across different methods. Experimental results demonstrate that TLV-CoRe significantly improves sensor-agnostic representation learning and cross-modal alignment, offering a new direction for multimodal tactile representation.",
+      "prediction": 1,
+      "confidence": 0.8384,
+      "source": "loop"
+    },
+    {
+      "title": "Learning and Testing Convex Functions",
+      "text": "We consider the problems of \\emph{learning} and \\emph{testing} real-valued convex functions over Gaussian space. Despite the extensive study of function convexity across mathematics, statistics, and computer science, its learnability and testability have largely been examined only in discrete or restricted settings -- typically with respect to the Hamming distance, which is ill-suited for real-valued functions.\n  In contrast, we study these problems in high dimensions under the standard Gaussian measure, assuming sample access to the function and a mild smoothness condition, namely Lipschitzness. A smoothness assumption is natural and, in fact, necessary even in one dimension: without it, convexity cannot be inferred from finitely many samples. As our main results, we give:\n  - Learning Convex Functions: An agnostic proper learning algorithm for Lipschitz convex functions that achieves error $\\varepsilon$ using $n^{O(1/\\varepsilon^2)}$ samples, together with a complementary lower bound of $n^{\\mathrm{poly}(1/\\varepsilon)}$ samples in the \\emph{correlational statistical query (CSQ)} model.\n  - Testing Convex Functions: A tolerant (two-sided) tester for convexity of Lipschitz functions with the same sample complexity (as a corollary of our learning result), and a one-sided tester (which never rejects convex functions) using $O(\\sqrt{n}/\\varepsilon)^n$ samples.",
+      "prediction": 1,
+      "confidence": 0.8192,
+      "source": "loop"
+    },
+    {
+      "title": "Intrinsic Dimension Estimation for Radio Galaxy Zoo using Diffusion Models",
+      "text": "In this work, we estimate the intrinsic dimension (iD) of the Radio Galaxy Zoo (RGZ) dataset using a score-based diffusion model. We examine how the iD estimates vary as a function of Bayesian neural network (BNN) energy scores, which measure how similar the radio sources are to the MiraBest subset of the RGZ dataset. We find that out-of-distribution sources exhibit higher iD values, and that the overall iD for RGZ exceeds those typically reported for natural image datasets. Furthermore, we analyse how iD varies across Fanaroff-Riley (FR) morphological classes and as a function of the signal-to-noise ratio (SNR). While no relationship is found between FR I and FR II classes, a weak trend toward higher SNR at lower iD. Future work using the RGZ dataset could make use of the relationship between iD and energy scores to quantitatively study and improve the representations learned by various self-supervised learning algorithms.",
+      "prediction": 1,
+      "confidence": 0.8378,
+      "source": "loop"
+    },
+    {
+      "title": "Data-efficient U-Net for Segmentation of Carbide Microstructures in SEM Images of Steel Alloys",
+      "text": "Understanding reactor-pressure-vessel steel microstructure is crucial for predicting mechanical properties, as carbide precipitates both strengthen the alloy and can initiate cracks. In scanning electron microscopy images, gray-value overlap between carbides and matrix makes simple thresholding ineffective. We present a data-efficient segmentation pipeline using a lightweight U-Net (30.7~M parameters) trained on just \\textbf{10 annotated scanning electron microscopy images}. Despite limited data, our model achieves a \\textbf{Dice-Sørensen coefficient of 0.98}, significantly outperforming the state-of-the-art in the field of metallurgy (classical image analysis: 0.85), while reducing annotation effort by one order of magnitude compared to the state-of-the-art data efficient segmentation model. This approach enables rapid, automated carbide quantification for alloy design and generalizes to other steel types, demonstrating the potential of data-efficient deep learning in reactor-pressure-vessel steel analysis.",
+      "prediction": 1,
+      "confidence": 0.8109,
+      "source": "loop"
+    },
+    {
+      "title": "Quantifying and Improving Adaptivity in Conformal Prediction through Input Transformations",
+      "text": "Conformal prediction constructs a set of labels instead of a single point prediction, while providing a probabilistic coverage guarantee. Beyond the coverage guarantee, adaptiveness to example difficulty is an important property. It means that the method should produce larger prediction sets for more difficult examples, and smaller ones for easier examples. Existing evaluation methods for adaptiveness typically analyze coverage rate violation or average set size across bins of examples grouped by difficulty. However, these approaches often suffer from imbalanced binning, which can lead to inaccurate estimates of coverage or set size. To address this issue, we propose a binning method that leverages input transformations to sort examples by difficulty, followed by uniform-mass binning. Building on this binning, we introduce two metrics to better evaluate adaptiveness. These metrics provide more reliable estimates of coverage rate violation and average set size due to balanced binning, leading to more accurate adaptivity assessment. Through experiments, we demonstrate that our proposed metric correlates more strongly with the desired adaptiveness property compared to existing ones. Furthermore, motivated by our findings, we propose a new adaptive prediction set algorithm that groups examples by estimated difficulty and applies group-conditional conformal prediction. This allows us to determine appropriate thresholds for each group. Experimental results on both (a) an Image Classification (ImageNet) (b) a medical task (visual acuity prediction) show that our method outperforms existing approaches according to the new metrics.",
+      "prediction": 1,
+      "confidence": 0.8119,
+      "source": "loop"
+    },
+    {
+      "title": "ARLBench: Flexible and Efficient Benchmarking for Hyperparameter Optimization in Reinforcement Learning",
+      "text": "Hyperparameters are a critical factor in reliably training well-performing reinforcement learning (RL) agents. Unfortunately, developing and evaluating automated approaches for tuning such hyperparameters is both costly and time-consuming. As a result, such approaches are often only evaluated on a single domain or algorithm, making comparisons difficult and limiting insights into their generalizability. We propose ARLBench, a benchmark for hyperparameter optimization (HPO) in RL that allows comparisons of diverse HPO approaches while being highly efficient in evaluation. To enable research into HPO in RL, even in settings with low compute resources, we select a representative subset of HPO tasks spanning a variety of algorithm and environment combinations. This selection allows for generating a performance profile of an automated RL (AutoRL) method using only a fraction of the compute previously necessary, enabling a broader range of researchers to work on HPO in RL. With the extensive and large-scale dataset on hyperparameter landscapes that our selection is based on, ARLBench is an efficient, flexible, and future-oriented foundation for research on AutoRL. Both the benchmark and the dataset are available at https://github.com/automl/arlbench.",
+      "prediction": 1,
+      "confidence": 0.8361,
+      "source": "loop"
+    },
+    {
+      "title": "Causal-Paced Deep Reinforcement Learning",
+      "text": "Designing effective task sequences is crucial for curriculum reinforcement learning (CRL), where agents must gradually acquire skills by training on intermediate tasks. A key challenge in CRL is to identify tasks that promote exploration, yet are similar enough to support effective transfer. While recent approach suggests comparing tasks via their Structural Causal Models (SCMs), the method requires access to ground-truth causal structures, an unrealistic assumption in most RL settings. In this work, we propose Causal-Paced Deep Reinforcement Learning (CP-DRL), a curriculum learning framework aware of SCM differences between tasks based on interaction data approximation. This signal captures task novelty, which we combine with the agent's learnability, measured by reward gain, to form a unified objective. Empirically, CP-DRL outperforms existing curriculum methods on the Point Mass benchmark, achieving faster convergence and higher returns. CP-DRL demonstrates reduced variance with comparable final returns in the Bipedal Walker-Trivial setting, and achieves the highest average performance in the Infeasible variant. These results indicate that leveraging causal relationships between tasks can improve the structure-awareness and sample efficiency of curriculum reinforcement learning. We provide the full implementation of CP-DRL to facilitate the reproduction of our main results at https://github.com/Cho-Geonwoo/CP-DRL.",
+      "prediction": 1,
+      "confidence": 0.8182,
+      "source": "loop"
+    },
+    {
+      "title": "Exploring Hierarchy-Aware Inverse Reinforcement Learning",
+      "text": "We introduce a new generative model for human planning under the Bayesian Inverse Reinforcement Learning (BIRL) framework which takes into account the fact that humans often plan using hierarchical strategies. We describe the Bayesian Inverse Hierarchical RL (BIHRL) algorithm for inferring the values of hierarchical planners, and use an illustrative toy model to show that BIHRL retains accuracy where standard BIRL fails. Furthermore, BIHRL is able to accurately predict the goals of `Wikispeedia' game players, with inclusion of hierarchical structure in the model resulting in a large boost in accuracy. We show that BIHRL is able to significantly outperform BIRL even when we only have a weak prior on the hierarchical structure of the plans available to the agent, and discuss the significant challenges that remain for scaling up this framework to more realistic settings.",
+      "prediction": 1,
+      "confidence": 0.8223,
+      "source": "loop"
+    },
+    {
+      "title": "A Tutorial on Meta-Reinforcement Learning",
+      "text": "While deep reinforcement learning (RL) has fueled multiple high-profile successes in machine learning, it is held back from more widespread adoption by its often poor data efficiency and the limited generality of the policies it produces. A promising approach for alleviating these limitations is to cast the development of better RL algorithms as a machine learning problem itself in a process called meta-RL. Meta-RL is most commonly studied in a problem setting where, given a distribution of tasks, the goal is to learn a policy that is capable of adapting to any new task from the task distribution with as little data as possible. In this survey, we describe the meta-RL problem setting in detail as well as its major variations. We discuss how, at a high level, meta-RL research can be clustered based on the presence of a task distribution and the learning budget available for each individual task. Using these clusters, we then survey meta-RL algorithms and applications. We conclude by presenting the open problems on the path to making meta-RL part of the standard toolbox for a deep RL practitioner.",
+      "prediction": 1,
+      "confidence": 0.8349,
+      "source": "loop"
+    },
+    {
+      "title": "Anderson Acceleration for Reinforcement Learning",
+      "text": "Anderson acceleration is an old and simple method for accelerating the computation of a fixed point. However, as far as we know and quite surprisingly, it has never been applied to dynamic programming or reinforcement learning. In this paper, we explain briefly what Anderson acceleration is and how it can be applied to value iteration, this being supported by preliminary experiments showing a significant speed up of convergence, that we critically discuss. We also discuss how this idea could be applied more generally to (deep) reinforcement learning.",
+      "prediction": 1,
+      "confidence": 0.8247,
+      "source": "loop"
+    },
+    {
+      "title": "Stabilizing Extreme Q-learning by Maclaurin Expansion",
+      "text": "In offline reinforcement learning, in-sample learning methods have been widely used to prevent performance degradation caused by evaluating out-of-distribution actions from the dataset. Extreme Q-learning (XQL) employs a loss function based on the assumption that Bellman error follows a Gumbel distribution, enabling it to model the soft optimal value function in an in-sample manner. It has demonstrated strong performance in both offline and online reinforcement learning settings. However, issues remain, such as the instability caused by the exponential term in the loss function and the risk of the error distribution deviating from the Gumbel distribution. Therefore, we propose Maclaurin Expanded Extreme Q-learning to enhance stability. In this method, applying Maclaurin expansion to the loss function in XQL enhances stability against large errors. This approach involves adjusting the modeled value function between the value function under the behavior policy and the soft optimal value function, thus achieving a trade-off between stability and optimality depending on the order of expansion. It also enables adjustment of the error distribution assumption from a normal distribution to a Gumbel distribution. Our method significantly stabilizes learning in online RL tasks from DM Control, where XQL was previously unstable. Additionally, it improves performance in several offline RL tasks from D4RL.",
+      "prediction": 1,
+      "confidence": 0.8219,
+      "source": "loop"
+    },
+    {
+      "title": "MERL: Multi-Head Reinforcement Learning",
+      "text": "A common challenge in reinforcement learning is how to convert the agent's interactions with an environment into fast and robust learning. For instance, earlier work makes use of domain knowledge to improve existing reinforcement learning algorithms in complex tasks. While promising, previously acquired knowledge is often costly and challenging to scale up. Instead, we decide to consider problem knowledge with signals from quantities relevant to solve any task, e.g., self-performance assessment and accurate expectations. $\\mathcal{V}^{ex}$ is such a quantity. It is the fraction of variance explained by the value function $V$ and measures the discrepancy between $V$ and the returns. Taking advantage of $\\mathcal{V}^{ex}$, we propose MERL, a general framework for structuring reinforcement learning by injecting problem knowledge into policy gradient updates. As a result, the agent is not only optimized for a reward but learns using problem-focused quantities provided by MERL, applicable out-of-the-box to any task. In this paper: (a) We introduce and define MERL, the multi-head reinforcement learning framework we use throughout this work. (b) We conduct experiments across a variety of standard benchmark environments, including 9 continuous control tasks, where results show improved performance. (c) We demonstrate that MERL also improves transfer learning on a set of challenging pixel-based tasks. (d) We ponder how MERL tackles the problem of reward sparsity and better conditions the feature space of reinforcement learning agents.",
+      "prediction": 1,
+      "confidence": 0.8324,
+      "source": "loop"
+    },
+    {
+      "title": "Compression and Localization in Reinforcement Learning for ATARI Games",
+      "text": "Deep neural networks have become commonplace in the domain of reinforcement learning, but are often expensive in terms of the number of parameters needed. While compressing deep neural networks has of late assumed great importance to overcome this drawback, little work has been done to address this problem in the context of reinforcement learning agents. This work aims at making first steps towards model compression in an RL agent. In particular, we compress networks to drastically reduce the number of parameters in them (to sizes less than 3% of their original size), further facilitated by applying a global max pool after the final convolution layer, and propose using Actor-Mimic in the context of compression. Finally, we show that this global max-pool allows for weakly supervised object localization, improving the ability to identify the agent's points of focus.",
+      "prediction": 1,
+      "confidence": 0.8226,
+      "source": "loop"
+    },
+    {
+      "title": "Accelerating Training in Pommerman with Imitation and Reinforcement Learning",
+      "text": "The Pommerman simulation was recently developed to mimic the classic Japanese game Bomberman, and focuses on competitive gameplay in a multi-agent setting. We focus on the 2$\\times$2 team version of Pommerman, developed for a competition at NeurIPS 2018. Our methodology involves training an agent initially through imitation learning on a noisy expert policy, followed by a proximal-policy optimization (PPO) reinforcement learning algorithm. The basic PPO approach is modified for stable transition from the imitation learning phase through reward shaping, action filters based on heuristics, and curriculum learning. The proposed methodology is able to beat heuristic and pure reinforcement learning baselines with a combined 100,000 training games, significantly faster than other non-tree-search methods in literature. We present results against multiple agents provided by the developers of the simulation, including some that we have enhanced. We include a sensitivity analysis over different parameters, and highlight undesirable effects of some strategies that initially appear promising. Since Pommerman is a complex multi-agent competitive environment, the strategies developed here provide insights into several real-world problems with characteristics such as partial observability, decentralized execution (without communication), and very sparse and delayed rewards.",
+      "prediction": 1,
+      "confidence": 0.8089,
+      "source": "loop"
+    },
+    {
+      "title": "Will it Blend? Composing Value Functions in Reinforcement Learning",
+      "text": "An important property for lifelong-learning agents is the ability to combine existing skills to solve unseen tasks. In general, however, it is unclear how to compose skills in a principled way. We provide a \"recipe\" for optimal value function composition in entropy-regularised reinforcement learning (RL) and then extend this to the standard RL setting. Composition is demonstrated in a video game environment, where an agent with an existing library of policies is able to solve new tasks without the need for further learning.",
+      "prediction": 1,
+      "confidence": 0.8682,
+      "source": "loop"
+    },
+    {
+      "title": "Memory-Efficient Episodic Control Reinforcement Learning with Dynamic Online k-means",
+      "text": "Recently, neuro-inspired episodic control (EC) methods have been developed to overcome the data-inefficiency of standard deep reinforcement learning approaches. Using non-/semi-parametric models to estimate the value function, they learn rapidly, retrieving cached values from similar past states. In realistic scenarios, with limited resources and noisy data, maintaining meaningful representations in memory is essential to speed up the learning and avoid catastrophic forgetting. Unfortunately, EC methods have a large space and time complexity. We investigate different solutions to these problems based on prioritising and ranking stored states, as well as online clustering techniques. We also propose a new dynamic online k-means algorithm that is both computationally-efficient and yields significantly better performance at smaller memory sizes; we validate this approach on classic reinforcement learning environments and Atari games.",
+      "prediction": 1,
+      "confidence": 0.8367,
+      "source": "loop"
+    },
+    {
+      "title": "Reinforcement Learning with Stepwise Fairness Constraints",
+      "text": "AI methods are used in societally important settings, ranging from credit to employment to housing, and it is crucial to provide fairness in regard to algorithmic decision making. Moreover, many settings are dynamic, with populations responding to sequential decision policies. We introduce the study of reinforcement learning (RL) with stepwise fairness constraints, requiring group fairness at each time step. Our focus is on tabular episodic RL, and we provide learning algorithms with strong theoretical guarantees in regard to policy optimality and fairness violation. Our framework provides useful tools to study the impact of fairness constraints in sequential settings and brings up new challenges in RL.",
+      "prediction": 1,
+      "confidence": 0.8246,
+      "source": "loop"
+    },
+    {
+      "title": "Sample-Efficient Reinforcement Learning with Maximum Entropy Mellowmax Episodic Control",
+      "text": "Deep networks have enabled reinforcement learning to scale to more complex and challenging domains, but these methods typically require large quantities of training data. An alternative is to use sample-efficient episodic control methods: neuro-inspired algorithms which use non-/semi-parametric models that predict values based on storing and retrieving previously experienced transitions. One way to further improve the sample efficiency of these approaches is to use more principled exploration strategies. In this work, we therefore propose maximum entropy mellowmax episodic control (MEMEC), which samples actions according to a Boltzmann policy with a state-dependent temperature. We demonstrate that MEMEC outperforms other uncertainty- and softmax-based exploration methods on classic reinforcement learning environments and Atari games, achieving both more rapid learning and higher final rewards.",
+      "prediction": 1,
+      "confidence": 0.8437,
+      "source": "loop"
+    },
+    {
+      "title": "Biologically inspired architectures for sample-efficient deep reinforcement learning",
+      "text": "Deep reinforcement learning requires a heavy price in terms of sample efficiency and overparameterization in the neural networks used for function approximation. In this work, we use tensor factorization in order to learn more compact representation for reinforcement learning policies. We show empirically that in the low-data regime, it is possible to learn online policies with 2 to 10 times less total coefficients, with little to no loss of performance. We also leverage progress in second order optimization, and use the theory of wavelet scattering to further reduce the number of learned coefficients, by foregoing learning the topmost convolutional layer filters altogether. We evaluate our results on the Atari suite against recent baseline algorithms that represent the state-of-the-art in data efficiency, and get comparable results with an order of magnitude gain in weight parsimony.",
+      "prediction": 1,
+      "confidence": 0.8571,
+      "source": "loop"
+    },
+    {
+      "title": "A Demonstration of Issues with Value-Based Multiobjective Reinforcement Learning Under Stochastic State Transitions",
+      "text": "We report a previously unidentified issue with model-free, value-based approaches to multiobjective reinforcement learning in the context of environments with stochastic state transitions. An example multiobjective Markov Decision Process (MOMDP) is used to demonstrate that under such conditions these approaches may be unable to discover the policy which maximises the Scalarised Expected Return, and in fact may converge to a Pareto-dominated solution. We discuss several alternative methods which may be more suitable for maximising SER in MOMDPs with stochastic transitions.",
+      "prediction": 1,
+      "confidence": 0.8332,
+      "source": "loop"
+    },
+    {
+      "title": "Classifying Options for Deep Reinforcement Learning",
+      "text": "In this paper we combine one method for hierarchical reinforcement learning - the options framework - with deep Q-networks (DQNs) through the use of different \"option heads\" on the policy network, and a supervisory network for choosing between the different options. We utilise our setup to investigate the effects of architectural constraints in subtasks with positive and negative transfer, across a range of network capacities. We empirically show that our augmented DQN has lower sample complexity when simultaneously learning subtasks with negative transfer, without degrading performance when learning subtasks with positive transfer.",
+      "prediction": 1,
+      "confidence": 0.8292,
+      "source": "loop"
+    },
+    {
+      "title": "Learning Multimodal Transition Dynamics for Model-Based Reinforcement Learning",
+      "text": "In this paper we study how to learn stochastic, multimodal transition dynamics in reinforcement learning (RL) tasks. We focus on evaluating transition function estimation, while we defer planning over this model to future work. Stochasticity is a fundamental property of many task environments. However, discriminative function approximators have difficulty estimating multimodal stochasticity. In contrast, deep generative models do capture complex high-dimensional outcome distributions. First we discuss why, amongst such models, conditional variational inference (VI) is theoretically most appealing for model-based RL. Subsequently, we compare different VI models on their ability to learn complex stochasticity on simulated functions, as well as on a typical RL gridworld with multimodal dynamics. Results show VI successfully predicts multimodal outcomes, but also robustly ignores these for deterministic parts of the transition dynamics. In summary, we show a robust method to learn multimodal transitions using function approximation, which is a key preliminary for model-based RL in stochastic domains.",
+      "prediction": 1,
+      "confidence": 0.8236,
+      "source": "loop"
+    },
+    {
+      "title": "Time Adaptive Reinforcement Learning",
+      "text": "Reinforcement learning (RL) allows to solve complex tasks such as Go often with a stronger performance than humans. However, the learned behaviors are usually fixed to specific tasks and unable to adapt to different contexts. Here we consider the case of adapting RL agents to different time restrictions, such as finishing a task with a given time limit that might change from one task execution to the next. We define such problems as Time Adaptive Markov Decision Processes and introduce two model-free, value-based algorithms: the Independent Gamma-Ensemble and the n-Step Ensemble. In difference to classical approaches, they allow a zero-shot adaptation between different time restrictions. The proposed approaches represent general mechanisms to handle time adaptive tasks making them compatible with many existing RL methods, algorithms, and scenarios.",
+      "prediction": 1,
+      "confidence": 0.8065,
+      "source": "loop"
+    },
+    {
+      "title": "An Optimistic Perspective on Offline Reinforcement Learning",
+      "text": "Off-policy reinforcement learning (RL) using a fixed offline dataset of logged interactions is an important consideration in real world applications. This paper studies offline RL using the DQN replay dataset comprising the entire replay experience of a DQN agent on 60 Atari 2600 games. We demonstrate that recent off-policy deep RL algorithms, even when trained solely on this fixed dataset, outperform the fully trained DQN agent. To enhance generalization in the offline setting, we present Random Ensemble Mixture (REM), a robust Q-learning algorithm that enforces optimal Bellman consistency on random convex combinations of multiple Q-value estimates. Offline REM trained on the DQN replay dataset surpasses strong RL baselines. Ablation studies highlight the role of offline dataset size and diversity as well as the algorithm choice in our positive results. Overall, the results here present an optimistic view that robust RL algorithms trained on sufficiently large and diverse offline datasets can lead to high quality policies. The DQN replay dataset can serve as an offline RL benchmark and is open-sourced.",
+      "prediction": 1,
+      "confidence": 0.8248,
+      "source": "loop"
+    },
+    {
+      "title": "Directed Policy Gradient for Safe Reinforcement Learning with Human Advice",
+      "text": "Many currently deployed Reinforcement Learning agents work in an environment shared with humans, be them co-workers, users or clients. It is desirable that these agents adjust to people's preferences, learn faster thanks to their help, and act safely around them. We argue that most current approaches that learn from human feedback are unsafe: rewarding or punishing the agent a-posteriori cannot immediately prevent it from wrong-doing. In this paper, we extend Policy Gradient to make it robust to external directives, that would otherwise break the fundamentally on-policy nature of Policy Gradient. Our technique, Directed Policy Gradient (DPG), allows a teacher or backup policy to override the agent before it acts undesirably, while allowing the agent to leverage human advice or directives to learn faster. Our experiments demonstrate that DPG makes the agent learn much faster than reward-based approaches, while requiring an order of magnitude less advice.",
+      "prediction": 1,
+      "confidence": 0.8306,
+      "source": "loop"
+    },
+    {
+      "title": "Comparing Deep Reinforcement Learning and Evolutionary Methods in Continuous Control",
+      "text": "Reinforcement Learning and the Evolutionary Strategy are two major approaches in addressing complicated control problems. Both are strong contenders and have their own devotee communities. Both groups have been very active in developing new advances in their own domain and devising, in recent years, leading-edge techniques to address complex continuous control tasks. Here, in the context of Deep Reinforcement Learning, we formulate a parallelized version of the Proximal Policy Optimization method and a Deep Deterministic Policy Gradient method. Moreover, we conduct a thorough comparison between the state-of-the-art techniques in both camps fro continuous control; evolutionary methods and Deep Reinforcement Learning methods. The results show there is no consistent winner.",
+      "prediction": 1,
+      "confidence": 0.8084,
+      "source": "loop"
+    },
+    {
+      "title": "Deep Reinforcement Learning: An Overview",
+      "text": "We give an overview of recent exciting achievements of deep reinforcement learning (RL). We discuss six core elements, six important mechanisms, and twelve applications. We start with background of machine learning, deep learning and reinforcement learning. Next we discuss core RL elements, including value function, in particular, Deep Q-Network (DQN), policy, reward, model, planning, and exploration. After that, we discuss important mechanisms for RL, including attention and memory, unsupervised learning, transfer learning, multi-agent RL, hierarchical RL, and learning to learn. Then we discuss various applications of RL, including games, in particular, AlphaGo, robotics, natural language processing, including dialogue systems, machine translation, and text generation, computer vision, neural architecture design, business management, finance, healthcare, Industry 4.0, smart grid, intelligent transportation systems, and computer systems. We mention topics not reviewed yet, and list a collection of RL resources. After presenting a brief summary, we close with discussions.\n  Please see Deep Reinforcement Learning, arXiv:1810.06339, for a significant update.",
+      "prediction": 1,
+      "confidence": 0.8573,
+      "source": "loop"
+    },
+    {
+      "title": "Learning to Navigate in Mazes with Novel Layouts using Abstract Top-down Maps",
+      "text": "Learning navigation capabilities in different environments has long been one of the major challenges in decision-making. In this work, we focus on zero-shot navigation ability using given abstract $2$-D top-down maps. Like human navigation by reading a paper map, the agent reads the map as an image when navigating in a novel layout, after learning to navigate on a set of training maps. We propose a model-based reinforcement learning approach for this multi-task learning problem, where it jointly learns a hypermodel that takes top-down maps as input and predicts the weights of the transition network. We use the DeepMind Lab environment and customize layouts using generated maps. Our method can adapt better to novel environments in zero-shot and is more robust to noise.",
+      "prediction": 1,
+      "confidence": 0.8279,
+      "source": "loop"
+    },
+    {
+      "title": "Multi-agent Deep Reinforcement Learning with Extremely Noisy Observations",
+      "text": "Multi-agent reinforcement learning systems aim to provide interacting agents with the ability to collaboratively learn and adapt to the behaviour of other agents. In many real-world applications, the agents can only acquire a partial view of the world. Here we consider a setting whereby most agents' observations are also extremely noisy, hence only weakly correlated to the true state of the environment. Under these circumstances, learning an optimal policy becomes particularly challenging, even in the unrealistic case that an agent's policy can be made conditional upon all other agents' observations. To overcome these difficulties, we propose a multi-agent deep deterministic policy gradient algorithm enhanced by a communication medium (MADDPG-M), which implements a two-level, concurrent learning mechanism. An agent's policy depends on its own private observations as well as those explicitly shared by others through a communication medium. At any given point in time, an agent must decide whether its private observations are sufficiently informative to be shared with others. However, our environments provide no explicit feedback informing an agent whether a communication action is beneficial, rather the communication policies must also be learned through experience concurrently to the main policies. Our experimental results demonstrate that the algorithm performs well in six highly non-stationary environments of progressively higher complexity, and offers substantial performance gains compared to the baselines.",
+      "prediction": 1,
+      "confidence": 0.8344,
+      "source": "loop"
+    },
+    {
+      "title": "FairDICE: Fairness-Driven Offline Multi-Objective Reinforcement Learning",
+      "text": "Multi-objective reinforcement learning (MORL) aims to optimize policies in the presence of conflicting objectives, where linear scalarization is commonly used to reduce vector-valued returns into scalar signals. While effective for certain preferences, this approach cannot capture fairness-oriented goals such as Nash social welfare or max-min fairness, which require nonlinear and non-additive trade-offs. Although several online algorithms have been proposed for specific fairness objectives, a unified approach for optimizing nonlinear welfare criteria in the offline setting-where learning must proceed from a fixed dataset-remains unexplored. In this work, we present FairDICE, the first offline MORL framework that directly optimizes nonlinear welfare objective. FairDICE leverages distribution correction estimation to jointly account for welfare maximization and distributional regularization, enabling stable and sample-efficient learning without requiring explicit preference weights or exhaustive weight search. Across multiple offline benchmarks, FairDICE demonstrates strong fairness-aware performance compared to existing baselines.",
+      "prediction": 1,
+      "confidence": 0.8044,
+      "source": "loop"
+    },
+    {
+      "title": "Pre-trained Word Embeddings for Goal-conditional Transfer Learning in Reinforcement Learning",
+      "text": "Reinforcement learning (RL) algorithms typically start tabula rasa, without any prior knowledge of the environment, and without any prior skills. This however often leads to low sample efficiency, requiring a large amount of interaction with the environment. This is especially true in a lifelong learning setting, in which the agent needs to continually extend its capabilities. In this paper, we examine how a pre-trained task-independent language model can make a goal-conditional RL agent more sample efficient. We do this by facilitating transfer learning between different related tasks. We experimentally demonstrate our approach on a set of object navigation tasks.",
+      "prediction": 1,
+      "confidence": 0.8516,
+      "source": "loop"
+    },
+    {
+      "title": "Rating-based Reinforcement Learning",
+      "text": "This paper develops a novel rating-based reinforcement learning approach that uses human ratings to obtain human guidance in reinforcement learning. Different from the existing preference-based and ranking-based reinforcement learning paradigms, based on human relative preferences over sample pairs, the proposed rating-based reinforcement learning approach is based on human evaluation of individual trajectories without relative comparisons between sample pairs. The rating-based reinforcement learning approach builds on a new prediction model for human ratings and a novel multi-class loss function. We conduct several experimental studies based on synthetic ratings and real human ratings to evaluate the effectiveness and benefits of the new rating-based reinforcement learning approach.",
+      "prediction": 1,
+      "confidence": 0.8276,
+      "source": "loop"
+    },
+    {
+      "title": "Vanishing Bias Heuristic-guided Reinforcement Learning Algorithm",
+      "text": "Reinforcement Learning has achieved tremendous success in the many Atari games. In this paper we explored with the lunar lander environment and implemented classical methods including Q-Learning, SARSA, MC as well as tiling coding. We also implemented Neural Network based methods including DQN, Double DQN, Clipped DQN. On top of these, we proposed a new algorithm called Heuristic RL which utilizes heuristic to guide the early stage training while alleviating the introduced human bias. Our experiments showed promising results for our proposed methods in the lunar lander environment.",
+      "prediction": 1,
+      "confidence": 0.8549,
+      "source": "loop"
+    },
+    {
+      "title": "Graph Out-of-Distribution Detection via Test-Time Calibration with Dual Dynamic Dictionaries",
+      "text": "A key challenge in graph out-of-distribution (OOD) detection lies in the absence of ground-truth OOD samples during training. Existing methods are typically optimized to capture features within the in-distribution (ID) data and calculate OOD scores, which often limits pre-trained models from representing distributional boundaries, leading to unreliable OOD detection. Moreover, the latent structure of graph data is often governed by multiple underlying factors, which remains less explored. To address these challenges, we propose a novel test-time graph OOD detection method, termed BaCa, that calibrates OOD scores using dual dynamically updated dictionaries without requiring fine-tuning the pre-trained model. Specifically, BaCa estimates graphons and applies a mix-up strategy solely with test samples to generate diverse boundary-aware discriminative topologies, eliminating the need for exposing auxiliary datasets as outliers. We construct dual dynamic dictionaries via priority queues and attention mechanisms to adaptively capture latent ID and OOD representations, which are then utilized for boundary-aware OOD score calibration. To the best of our knowledge, extensive experiments on real-world datasets show that BaCa significantly outperforms existing state-of-the-art methods in OOD detection.",
+      "prediction": 1,
+      "confidence": 0.8103,
+      "source": "loop"
+    },
+    {
+      "title": "BootOOD: Self-Supervised Out-of-Distribution Detection via Synthetic Sample Exposure under Neural Collapse",
+      "text": "Out-of-distribution (OOD) detection is critical for deploying image classifiers in safety-sensitive environments, yet existing detectors often struggle when OOD samples are semantically similar to the in-distribution (ID) classes. We present BootOOD, a fully self-supervised OOD detection framework that bootstraps exclusively from ID data and is explicitly designed to handle semantically challenging OOD samples. BootOOD synthesizes pseudo-OOD features through simple transformations of ID representations and leverages Neural Collapse (NC), where ID features cluster tightly around class means with consistent feature norms. Unlike prior approaches that aim to constrain OOD features into subspaces orthogonal to the collapsed ID means, BootOOD introduces a lightweight auxiliary head that performs radius-based classification on feature norms. This design decouples OOD detection from the primary classifier and imposes a relaxed requirement: OOD samples are learned to have smaller feature norms than ID features, which is easier to satisfy when ID and OOD are semantically close. Experiments on CIFAR-10, CIFAR-100, and ImageNet-200 show that BootOOD outperforms prior post-hoc methods, surpasses training-based methods without outlier exposure, and is competitive with state-of-the-art outlier-exposure approaches while maintaining or improving ID accuracy.",
+      "prediction": 1,
+      "confidence": 0.8318,
+      "source": "loop"
+    },
+    {
+      "title": "AI Fairness Beyond Complete Demographics: Current Achievements and Future Directions",
+      "text": "Fairness in artificial intelligence (AI) has become a growing concern due to discriminatory outcomes in AI-based decision-making systems. While various methods have been proposed to mitigate bias, most rely on complete demographic information, an assumption often impractical due to legal constraints and the risk of reinforcing discrimination. This survey examines fairness in AI when demographics are incomplete, addressing the gap between traditional approaches and real-world challenges. We introduce a novel taxonomy of fairness notions in this setting, clarifying their relationships and distinctions. Additionally, we summarize existing techniques that promote fairness beyond complete demographics and highlight open research questions to encourage further progress in the field.",
+      "prediction": 1,
+      "confidence": 0.8062,
+      "source": "loop"
+    },
+    {
+      "title": "Quantum Machine Learning via Contrastive Training",
+      "text": "Quantum machine learning (QML) has attracted growing interest with the rapid parallel advances in large-scale classical machine learning and quantum technologies. Similar to classical machine learning, QML models also face challenges arising from the scarcity of labeled data, particularly as their scale and complexity increase. Here, we introduce self-supervised pretraining of quantum representations that reduces reliance on labeled data by learning invariances from unlabeled examples. We implement this paradigm on a programmable trapped-ion quantum computer, encoding images as quantum states. In situ contrastive pretraining on hardware yields a representation that, when fine-tuned, classifies image families with higher mean test accuracy and lower run-to-run variability than models trained from random initialization. Performance improvement is especially significant in regimes with limited labeled training data. We show that the learned invariances generalize beyond the pretraining image samples. Unlike prior work, our pipeline derives similarity from measured quantum overlaps and executes all training and classification stages on hardware. These results establish a label-efficient route to quantum representation learning, with direct relevance to quantum-native datasets and a clear path to larger classical inputs.",
+      "prediction": 1,
+      "confidence": 0.8131,
+      "source": "loop"
+    },
+    {
+      "title": "Systematic evaluation of time-frequency features for binaural sound source localization",
+      "text": "This study presents a systematic evaluation of time-frequency feature design for binaural sound source localization (SSL), focusing on how feature selection influences model performance across diverse conditions. We investigate the performance of a convolutional neural network (CNN) model using various combinations of amplitude-based features (magnitude spectrogram, interaural level difference - ILD) and phase-based features (phase spectrogram, interaural phase difference - IPD). Evaluations on in-domain and out-of-domain data with mismatched head-related transfer functions (HRTFs) reveal that carefully chosen feature combinations often outperform increases in model complexity. While two-feature sets such as ILD + IPD are sufficient for in-domain SSL, generalization to diverse content requires richer inputs combining channel spectrograms with both ILD and IPD. Using the optimal feature sets, our low-complexity CNN model achieves competitive performance. Our findings underscore the importance of feature design in binaural SSL and provide practical guidance for both domain-specific and general-purpose localization.",
+      "prediction": 1,
+      "confidence": 0.8046,
+      "source": "loop"
+    },
+    {
+      "title": "Semantic Document Derendering: SVG Reconstruction via Vision-Language Modeling",
+      "text": "Multimedia documents such as slide presentations and posters are designed to be interactive and easy to modify. Yet, they are often distributed in a static raster format, which limits editing and customization. Restoring their editability requires converting these raster images back into structured vector formats. However, existing geometric raster-vectorization methods, which rely on low-level primitives like curves and polygons, fall short at this task. Specifically, when applied to complex documents like slides, they fail to preserve the high-level structure, resulting in a flat collection of shapes where the semantic distinction between image and text elements is lost. To overcome this limitation, we address the problem of semantic document derendering by introducing SliDer, a novel framework that uses Vision-Language Models (VLMs) to derender slide images as compact and editable Scalable Vector Graphic (SVG) representations. SliDer detects and extracts attributes from individual image and text elements in a raster input and organizes them into a coherent SVG format. Crucially, the model iteratively refines its predictions during inference in a process analogous to human design, generating SVG code that more faithfully reconstructs the original raster upon rendering. Furthermore, we introduce Slide2SVG, a novel dataset comprising raster-SVG pairs of slide documents curated from real-world scientific presentations, to facilitate future research in this domain. Our results demonstrate that SliDer achieves a reconstruction LPIPS of 0.069 and is favored by human evaluators in 82.9% of cases compared to the strongest zero-shot VLM baseline.",
+      "prediction": 1,
+      "confidence": 0.8051,
+      "source": "loop"
+    },
+    {
+      "title": "Machine learning inspired photon number resolution in superconducting nanowire single-photon detectors",
+      "text": "Photon-number resolved detection with superconducting nanowire single-photon detectors (SNSPDs) attracts increasing interest, but lacks a systematic framework for interpreting and benchmarking this capability. In this work, we combine principal component analysis (PCA) with a new readout technique to explore the photon-number resolving capabilities of SNSPDs and find that the information of the photon number is contained in a single principal component which approximates the time derivative of the average response trace. We introduce a new confidence metric based on the Bhattacharyya coefficient to quantify the photon-number-resolving capabilities of a detector system and show that this metric can be used to compare different systems. Our analysis and interpretation of the principal components imply that photon-number resolution in SNSPDs can be achieved with moderate hardware requirements in terms of both sample rate (5 GSample/sec) and analog bandwidth (3 GHz) and could be implemented in an FPGA, giving a highly scalable solution for real-time photon counting.",
+      "prediction": 1,
+      "confidence": 0.8043,
+      "source": "loop"
+    },
+    {
+      "title": "GREAT: Generalizable Representation Enhancement via Auxiliary Transformations for Zero-Shot Environmental Prediction",
+      "text": "Environmental modeling faces critical challenges in predicting ecosystem dynamics across unmonitored regions due to limited and geographically imbalanced observation data. This challenge is compounded by spatial heterogeneity, causing models to learn spurious patterns that fit only local data. Unlike conventional domain generalization, environmental modeling must preserve invariant physical relationships and temporal coherence during augmentation. In this paper, we introduce Generalizable Representation Enhancement via Auxiliary Transformations (GREAT), a framework that effectively augments available datasets to improve predictions in completely unseen regions. GREAT guides the augmentation process to ensure that the original governing processes can be recovered from the augmented data, and the inclusion of the augmented data leads to improved model generalization. Specifically, GREAT learns transformation functions at multiple layers of neural networks to augment both raw environmental features and temporal influence. They are refined through a novel bi-level training process that constrains augmented data to preserve key patterns of the original source data. We demonstrate GREAT's effectiveness on stream temperature prediction across six ecologically diverse watersheds in the eastern U.S., each containing multiple stream segments. Experimental results show that GREAT significantly outperforms existing methods in zero-shot scenarios. This work provides a practical solution for environmental applications where comprehensive monitoring is infeasible.",
+      "prediction": 1,
+      "confidence": 0.8149,
+      "source": "loop"
+    },
+    {
+      "title": "Multi-task GINN-LP for Multi-target Symbolic Regression",
+      "text": "In the area of explainable artificial intelligence, Symbolic Regression (SR) has emerged as a promising approach by discovering interpretable mathematical expressions that fit data. However, SR faces two main challenges: most methods are evaluated on scientific datasets with well-understood relationships, limiting generalization, and SR primarily targets single-output regression, whereas many real-world problems involve multi-target outputs with interdependent variables. To address these issues, we propose multi-task regression GINN-LP (MTRGINN-LP), an interpretable neural network for multi-target symbolic regression. By integrating GINN-LP with a multi-task deep learning, the model combines a shared backbone including multiple power-term approximator blocks with task-specific output layers, capturing inter-target dependencies while preserving interpretability. We validate multi-task GINN-LP on practical multi-target applications, including energy efficiency prediction and sustainable agriculture. Experimental results demonstrate competitive predictive performance alongside high interpretability, effectively extending symbolic regression to broader real-world multi-output tasks.",
+      "prediction": 1,
+      "confidence": 0.8203,
+      "source": "loop"
+    },
+    {
+      "title": "Contact-Safe Reinforcement Learning with ProMP Reparameterization and Energy Awareness",
+      "text": "Reinforcement learning (RL) approaches based on Markov Decision Processes (MDPs) are predominantly applied in the robot joint space, often relying on limited task-specific information and partial awareness of the 3D environment. In contrast, episodic RL has demonstrated advantages over traditional MDP-based methods in terms of trajectory consistency, task awareness, and overall performance in complex robotic tasks. Moreover, traditional step-wise and episodic RL methods often neglect the contact-rich information inherent in task-space manipulation, especially considering the contact-safety and robustness. In this work, contact-rich manipulation tasks are tackled using a task-space, energy-safe framework, where reliable and safe task-space trajectories are generated through the combination of Proximal Policy Optimization (PPO) and movement primitives. Furthermore, an energy-aware Cartesian Impedance Controller objective is incorporated within the proposed framework to ensure safe interactions between the robot and the environment. Our experimental results demonstrate that the proposed framework outperforms existing methods in handling tasks on various types of surfaces in 3D environments, achieving high success rates as well as smooth trajectories and energy-safe interactions.",
+      "prediction": 1,
+      "confidence": 0.8568,
+      "source": "loop"
+    },
+    {
+      "title": "Scaling Spatial Intelligence with Multimodal Foundation Models",
+      "text": "Despite remarkable progress, multimodal foundation models still exhibit surprising deficiencies in spatial intelligence. In this work, we explore scaling up multimodal foundation models to cultivate spatial intelligence within the SenseNova-SI family, built upon established multimodal foundations including visual understanding models (i.e., Qwen3-VL and InternVL3) and unified understanding and generation models (i.e., Bagel). We take a principled approach to constructing high-performing and robust spatial intelligence by systematically curating SenseNova-SI-8M: eight million diverse data samples under a rigorous taxonomy of spatial capabilities. SenseNova-SI demonstrates unprecedented performance across a broad range of spatial intelligence benchmarks: 68.7% on VSI-Bench, 43.3% on MMSI, 85.6% on MindCube, 54.6% on ViewSpatial, and 50.1% on SITE, while maintaining strong general multimodal understanding (e.g., 84.9% on MMBench-En). More importantly, we analyze the impact of data scaling, discuss early signs of emergent generalization capabilities enabled by diverse data training, analyze the risk of overfitting and language shortcuts, present a preliminary study on spatial chain-of-thought reasoning, and validate the potential downstream application. SenseNova-SI is an ongoing project, and this report will be updated continuously. All newly trained multimodal foundation models are publicly released to facilitate further research in this direction.",
+      "prediction": 1,
+      "confidence": 0.8186,
+      "source": "loop"
+    },
+    {
+      "title": "Free-Form Scene Editor: Enabling Multi-Round Object Manipulation like in a 3D Engine",
+      "text": "Recent advances in text-to-image (T2I) diffusion models have significantly improved semantic image editing, yet most methods fall short in performing 3D-aware object manipulation. In this work, we present FFSE, a 3D-aware autoregressive framework designed to enable intuitive, physically-consistent object editing directly on real-world images. Unlike previous approaches that either operate in image space or require slow and error-prone 3D reconstruction, FFSE models editing as a sequence of learned 3D transformations, allowing users to perform arbitrary manipulations, such as translation, scaling, and rotation, while preserving realistic background effects (e.g., shadows, reflections) and maintaining global scene consistency across multiple editing rounds. To support learning of multi-round 3D-aware object manipulation, we introduce 3DObjectEditor, a hybrid dataset constructed from simulated editing sequences across diverse objects and scenes, enabling effective training under multi-round and dynamic conditions. Extensive experiments show that the proposed FFSE significantly outperforms existing methods in both single-round and multi-round 3D-aware editing scenarios.",
+      "prediction": 1,
+      "confidence": 0.8279,
+      "source": "loop"
+    },
+    {
+      "title": "From Power to Precision: Learning Fine-grained Dexterity for Multi-fingered Robotic Hands",
+      "text": "Human grasps can be roughly categorized into two types: power grasps and precision grasps. Precision grasping enables tool use and is believed to have influenced human evolution. Today's multi-fingered robotic hands are effective in power grasps, but for tasks requiring precision, parallel grippers are still more widely adopted. This contrast highlights a key limitation in current robotic hand design: the difficulty of achieving both stable power grasps and precise, fine-grained manipulation within a single, versatile system. In this work, we bridge this gap by jointly optimizing the control and hardware design of a multi-fingered dexterous hand, enabling both power and precision manipulation. Rather than redesigning the entire hand, we introduce a lightweight fingertip geometry modification, represent it as a contact plane, and jointly optimize its parameters along with the corresponding control. Our control strategy dynamically switches between power and precision manipulation and simplifies precision control into parallel thumb-index motions, which proves robust for sim-to-real transfer. On the design side, we leverage large-scale simulation to optimize the fingertip geometry using a differentiable neural-physics surrogate model. We validate our approach through extensive experiments in both sim-to-real and real-to-real settings. Our method achieves an 82.5% zero-shot success rate on unseen objects in sim-to-real precision grasping, and a 93.3% success rate in challenging real-world tasks involving bread pinching. These results demonstrate that our co-design framework can significantly enhance the fine-grained manipulation ability of multi-fingered hands without reducing their ability for power grasps. Our project page is at https://jianglongye.com/power-to-precision",
+      "prediction": 1,
+      "confidence": 0.8136,
+      "source": "loop"
+    },
+    {
+      "title": "Generalist Foundation Models Are Not Clinical Enough for Hospital Operations",
+      "text": "Hospitals and healthcare systems rely on operational decisions that determine patient flow, cost, and quality of care. Despite strong performance on medical knowledge and conversational benchmarks, foundation models trained on general text may lack the specialized knowledge required for these operational decisions. We introduce Lang1, a family of models (100M-7B parameters) pretrained on a specialized corpus blending 80B clinical tokens from NYU Langone Health's EHRs and 627B tokens from the internet. To rigorously evaluate Lang1 in real-world settings, we developed the REalistic Medical Evaluation (ReMedE), a benchmark derived from 668,331 EHR notes that evaluates five critical tasks: 30-day readmission prediction, 30-day mortality prediction, length of stay, comorbidity coding, and predicting insurance claims denial. In zero-shot settings, both general-purpose and specialized models underperform on four of five tasks (36.6%-71.7% AUROC), with mortality prediction being an exception. After finetuning, Lang1-1B outperforms finetuned generalist models up to 70x larger and zero-shot models up to 671x larger, improving AUROC by 3.64%-6.75% and 1.66%-23.66% respectively. We also observed cross-task scaling with joint finetuning on multiple tasks leading to improvement on other tasks. Lang1-1B effectively transfers to out-of-distribution settings, including other clinical tasks and an external health system. Our findings suggest that predictive capabilities for hospital operations require explicit supervised finetuning, and that this finetuning process is made more efficient by in-domain pretraining on EHR. Our findings support the emerging view that specialized LLMs can compete with generalist models in specialized tasks, and show that effective healthcare systems AI requires the combination of in-domain pretraining, supervised finetuning, and real-world evaluation beyond proxy benchmarks.",
+      "prediction": 1,
+      "confidence": 0.813,
+      "source": "loop"
+    },
+    {
+      "title": "ST-ProC: A Graph-Prototypical Framework for Robust Semi-Supervised Travel Mode Identification",
+      "text": "Travel mode identification (TMI) from GPS trajectories is critical for urban intelligence, but is hampered by the high cost of annotation, leading to severe label scarcity. Prevailing semi-supervised learning (SSL) methods are ill-suited for this task, as they suffer from catastrophic confirmation bias and ignore the intrinsic data manifold. We propose ST-ProC, a novel graph-prototypical multi-objective SSL framework to address these limitations. Our framework synergizes a graph-prototypical core with foundational SSL Support. The core exploits the data manifold via graph regularization, prototypical anchoring, and a novel, margin-aware pseudo-labeling strategy to actively reject noise. This core is supported and stabilized by foundational contrastive and teacher-student consistency losses, ensuring high-quality representations and robust optimization. ST-ProC outperforms all baselines by a significant margin, demonstrating its efficacy in real-world sparse-label settings, with a performance boost of 21.5% over state-of-the-art methods like FixMatch.",
+      "prediction": 1,
+      "confidence": 0.8032,
+      "source": "loop"
+    },
+    {
+      "title": "Learning stochasticity: a nonparametric framework for intrinsic noise estimation",
+      "text": "Understanding the principles that govern dynamical systems is a central challenge across many scientific domains, including biology and ecology. Incomplete knowledge of nonlinear interactions and stochastic effects often renders bottom-up modeling approaches ineffective, motivating the development of methods that can discover governing equations directly from data. In such contexts, parametric models often struggle without strong prior knowledge, especially when estimating intrinsic noise. Nonetheless, incorporating stochastic effects is often essential for understanding the dynamic behavior of complex systems such as gene regulatory networks and signaling pathways. To address these challenges, we introduce Trine (Three-phase Regression for INtrinsic noisE), a nonparametric, kernel-based framework that infers state-dependent intrinsic noise from time-series data. Trine features a three-stage algorithm that com- bines analytically solvable subproblems with a structured kernel architecture that captures both abrupt noise-driven fluctuations and smooth, state-dependent changes in variance. We validate Trine on biological and ecological systems, demonstrating its ability to uncover hidden dynamics without relying on predefined parametric assumptions. Across several benchmark problems, Trine achieves performance comparable to that of an oracle. Biologically, this oracle can be viewed as an idealized observer capable of directly tracking the random fluctuations in molecular concentrations or reaction events within a cell. The Trine framework thus opens new avenues for understanding how intrinsic noise affects the behavior of complex systems.",
+      "prediction": 1,
+      "confidence": 0.8176,
+      "source": "loop"
+    },
+    {
+      "title": "Crossing Borders: A Multimodal Challenge for Indian Poetry Translation and Image Generation",
+      "text": "Indian poetry, known for its linguistic complexity and deep cultural resonance, has a rich and varied heritage spanning thousands of years. However, its layered meanings, cultural allusions, and sophisticated grammatical constructions often pose challenges for comprehension, especially for non-native speakers or readers unfamiliar with its context and language. Despite its cultural significance, existing works on poetry have largely overlooked Indian language poems. In this paper, we propose the Translation and Image Generation (TAI) framework, leveraging Large Language Models (LLMs) and Latent Diffusion Models through appropriate prompt tuning. Our framework supports the United Nations Sustainable Development Goals of Quality Education (SDG 4) and Reduced Inequalities (SDG 10) by enhancing the accessibility of culturally rich Indian-language poetry to a global audience. It includes (1) a translation module that uses an Odds Ratio Preference Alignment Algorithm to accurately translate morphologically rich poetry into English, and (2) an image generation module that employs a semantic graph to capture tokens, dependencies, and semantic relationships between metaphors and their meanings, to create visually meaningful representations of Indian poems. Our comprehensive experimental evaluation, including both human and quantitative assessments, demonstrates the superiority of TAI Diffusion in poem image generation tasks, outperforming strong baselines. To further address the scarcity of resources for Indian-language poetry, we introduce the Morphologically Rich Indian Language Poems MorphoVerse Dataset, comprising 1,570 poems across 21 low-resource Indian languages. By addressing the gap in poetry translation and visual comprehension, this work aims to broaden accessibility and enrich the reader's experience.",
+      "prediction": 1,
+      "confidence": 0.8019,
+      "source": "loop"
+    },
+    {
+      "title": "Protein Secondary Structure Prediction Using 3D Graphs and Relation-Aware Message Passing Transformers",
+      "text": "In this study, we tackle the challenging task of predicting secondary structures from protein primary sequences, a pivotal initial stride towards predicting tertiary structures, while yielding crucial insights into protein activity, relationships, and functions. Existing methods often utilize extensive sets of unlabeled amino acid sequences. However, these approaches neither explicitly capture nor harness the accessible protein 3D structural data, which is recognized as a decisive factor in dictating protein functions. To address this, we utilize protein residue graphs and introduce various forms of sequential or structural connections to capture enhanced spatial information. We adeptly combine Graph Neural Networks (GNNs) and Language Models (LMs), specifically utilizing a pre-trained transformer-based protein language model to encode amino acid sequences and employing message-passing mechanisms like GCN and R-GCN to capture geometric characteristics of protein structures. Employing convolution within a specific node's nearby region, including relations, we stack multiple convolutional layers to efficiently learn combined insights from the protein's spatial graph, revealing intricate interconnections and dependencies in its structural arrangement. To assess our model's performance, we employed the training dataset provided by NetSurfP-2.0, which outlines secondary structure in 3-and 8-states. Extensive experiments show that our proposed model, SSRGNet surpasses the baseline on f1-scores.",
+      "prediction": 1,
+      "confidence": 0.8162,
+      "source": "loop"
+    },
+    {
+      "title": "Cross-Learning from Scarce Data via Multi-Task Constrained Optimization",
+      "text": "A learning task, understood as the problem of fitting a parametric model from supervised data, fundamentally requires the dataset to be large enough to be representative of the underlying distribution of the source. When data is limited, the learned models fail generalize to cases not seen during training. This paper introduces a multi-task \\emph{cross-learning} framework to overcome data scarcity by jointly estimating \\emph{deterministic} parameters across multiple, related tasks. We formulate this joint estimation as a constrained optimization problem, where the constraints dictate the resulting similarity between the parameters of the different models, allowing the estimated parameters to differ across tasks while still combining information from multiple data sources. This framework enables knowledge transfer from tasks with abundant data to those with scarce data, leading to more accurate and reliable parameter estimates, providing a solution for scenarios where parameter inference from limited data is critical. We provide theoretical guarantees in a controlled framework with Gaussian data, and show the efficiency of our cross-learning method in applications with real data including image classification and propagation of infectious diseases.",
+      "prediction": 1,
+      "confidence": 0.8071,
+      "source": "loop"
+    },
+    {
+      "title": "Scientific Data Compression and Super-Resolution Sampling",
+      "text": "Modern scientific simulations, observations, and large-scale experiments generate data at volumes that often exceed the limits of storage, processing, and analysis. This challenge drives the development of data reduction methods that efficiently manage massive datasets while preserving essential physical features and quantities of interest. In many scientific workflows, it is also crucial to enable data recovery from compressed representations - a task known as super-resolution - with guarantees on the preservation of key physical characteristics. A notable example is checkpointing and restarting, which is essential for long-running simulations to recover from failures, resume after interruptions, or examine intermediate results. In this work, we introduce a novel framework for scientific data compression and super-resolution, grounded in recent advances in learning exponential families. Our method preserves and quantifies uncertainty in physical quantities of interest and supports flexible trade-offs between compression ratio and reconstruction fidelity.",
+      "prediction": 1,
+      "confidence": 0.8373,
+      "source": "loop"
+    },
+    {
+      "title": "Why is \"Chicago\" Predictive of Deceptive Reviews? Using LLMs to Discover Language Phenomena from Lexical Cues",
+      "text": "Deceptive reviews mislead consumers, harm businesses, and undermine trust in online marketplaces. Machine learning classifiers can learn from large amounts of training examples to effectively distinguish deceptive reviews from genuine ones. However, the distinguishing features learned by these classifiers are often subtle, fragmented, and difficult for humans to interpret. In this work, we explore using large language models (LLMs) to translate machine-learned lexical cues into human-understandable language phenomena that can differentiate deceptive reviews from genuine ones. We show that language phenomena obtained in this manner are empirically grounded in data, generalizable across similar domains, and more predictive than phenomena either in LLMs' prior knowledge or obtained through in-context learning. These language phenomena have the potential to aid people in critically assessing the credibility of online reviews in environments where deception detection classifiers are unavailable.",
+      "prediction": 1,
+      "confidence": 0.828,
+      "source": "loop"
+    },
+    {
+      "title": "PhysX-Anything: Simulation-Ready Physical 3D Assets from Single Image",
+      "text": "3D modeling is shifting from static visual representations toward physical, articulated assets that can be directly used in simulation and interaction. However, most existing 3D generation methods overlook key physical and articulation properties, thereby limiting their utility in embodied AI. To bridge this gap, we introduce PhysX-Anything, the first simulation-ready physical 3D generative framework that, given a single in-the-wild image, produces high-quality sim-ready 3D assets with explicit geometry, articulation, and physical attributes. Specifically, we propose the first VLM-based physical 3D generative model, along with a new 3D representation that efficiently tokenizes geometry. It reduces the number of tokens by 193x, enabling explicit geometry learning within standard VLM token budgets without introducing any special tokens during fine-tuning and significantly improving generative quality. In addition, to overcome the limited diversity of existing physical 3D datasets, we construct a new dataset, PhysX-Mobility, which expands the object categories in prior physical 3D datasets by over 2x and includes more than 2K common real-world objects with rich physical annotations. Extensive experiments on PhysX-Mobility and in-the-wild images demonstrate that PhysX-Anything delivers strong generative performance and robust generalization. Furthermore, simulation-based experiments in a MuJoCo-style environment validate that our sim-ready assets can be directly used for contact-rich robotic policy learning. We believe PhysX-Anything can substantially empower a broad range of downstream applications, especially in embodied AI and physics-based simulation.",
+      "prediction": 1,
+      "confidence": 0.8053,
+      "source": "loop"
+    },
+    {
+      "title": "Data Value in the Age of Scaling: Understanding LLM Scaling Dynamics Under Real-Synthetic Data Mixtures",
+      "text": "The rapid progress of large language models (LLMs) is fueled by the growing reliance on datasets that blend real and synthetic data. While synthetic data offers scalability and cost-efficiency, it often introduces systematic distributional discrepancies, particularly underrepresenting long-tail knowledge due to truncation effects from data generation mechanisms like top-p sampling, temperature scaling, and finite sampling. These discrepancies pose fundamental challenges in characterizing and evaluating the utility of mixed real-synthetic datasets. In this paper, we identify a three-phase scaling behavior characterized by two breakpoints that reflect transitions in model behavior across learning head and tail knowledge. We further derive an LLM generalization bound designed for real and synthetic mixtures, revealing several key factors that govern their generalization performance. Building on our theoretical findings, we propose an effective yet efficient data valuation method that scales to large-scale datasets. Comprehensive experiments across four tasks, including image classification, sentiment classification, instruction following, and complex reasoning, demonstrate that our method surpasses state-of-the-art baselines in data valuation with significantly low computational cost.",
+      "prediction": 1,
+      "confidence": 0.8054,
+      "source": "loop"
+    },
+    {
+      "title": "Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling",
+      "text": "Robust perception and dynamics modeling are fundamental to real-world robotic policy learning. Recent methods employ video diffusion models (VDMs) to enhance robotic policies, improving their understanding and modeling of the physical world. However, existing approaches overlook the coherent and physically consistent motion representations inherently encoded across frames in VDMs. To this end, we propose Video2Act, a framework that efficiently guides robotic action learning by explicitly integrating spatial and motion-aware representations. Building on the inherent representations of VDMs, we extract foreground boundaries and inter-frame motion variations while filtering out background noise and task-irrelevant biases. These refined representations are then used as additional conditioning inputs to a diffusion transformer (DiT) action head, enabling it to reason about what to manipulate and how to move. To mitigate inference inefficiency, we propose an asynchronous dual-system design, where the VDM functions as the slow System 2 and the DiT head as the fast System 1, working collaboratively to generate adaptive actions. By providing motion-aware conditions to System 1, Video2Act maintains stable manipulation even with low-frequency updates from the VDM. For evaluation, Video2Act surpasses previous state-of-the-art VLA methods by 7.7% in simulation and 21.7% in real-world tasks in terms of average success rate, further exhibiting strong generalization capabilities.",
+      "prediction": 1,
+      "confidence": 0.805,
+      "source": "loop"
+    },
+    {
+      "title": "OneThinker: All-in-one Reasoning Model for Image and Video",
+      "text": "Reinforcement learning (RL) has recently achieved remarkable success in eliciting visual reasoning within Multimodal Large Language Models (MLLMs). However, existing approaches typically train separate models for different tasks and treat image and video reasoning as disjoint domains. This results in limited scalability toward a multimodal reasoning generalist, which restricts practical versatility and hinders potential knowledge sharing across tasks and modalities. To this end, we propose OneThinker, an all-in-one reasoning model that unifies image and video understanding across diverse fundamental visual tasks, including question answering, captioning, spatial and temporal grounding, tracking, and segmentation. To achieve this, we construct the OneThinker-600k training corpus covering all these tasks and employ commercial models for CoT annotation, resulting in OneThinker-SFT-340k for SFT cold start. Furthermore, we propose EMA-GRPO to handle reward heterogeneity in multi-task RL by tracking task-wise moving averages of reward standard deviations for balanced optimization. Extensive experiments on diverse visual benchmarks show that OneThinker delivers strong performance on 31 benchmarks, across 10 fundamental visual understanding tasks. Moreover, it exhibits effective knowledge transfer between certain tasks and preliminary zero-shot generalization ability, marking a step toward a unified multimodal reasoning generalist. All code, model, and data are released.",
+      "prediction": 1,
+      "confidence": 0.8305,
+      "source": "loop"
+    },
+    {
+      "title": "Learning Physically Consistent Lagrangian Control Models Without Acceleration Measurements",
+      "text": "This article investigates the modeling and control of Lagrangian systems involving non-conservative forces using a hybrid method that does not require acceleration calculations. It focuses in particular on the derivation and identification of physically consistent models, which are essential for model-based control synthesis. Lagrangian or Hamiltonian neural networks provide useful structural guarantees but the learning of such models often leads to inconsistent models, especially on real physical systems where training data are limited, partial and noisy. Motivated by this observation and the objective to exploit these models for model-based nonlinear control, a learning algorithm relying on an original loss function is proposed to improve the physical consistency of Lagrangian systems. A comparative analysis of different learning-based modeling approaches with the proposed solution shows significant improvements in terms of physical consistency of the learned models, on both simulated and experimental systems. The model's consistency is then exploited to demonstrate, on an experimental benchmark, the practical relevance of the proposed methodology for feedback linearization and energy-based control techniques.",
+      "prediction": 1,
+      "confidence": 0.8029,
+      "source": "loop"
+    },
+    {
+      "title": "Information dynamics and symmetry breaking in generic monitored $\\mathbb{Z}_2$-symmetric open quantum systems",
+      "text": "We investigate the steady-state phases of generic $\\mathbb{Z}_2$-symmetric monitored, open quantum dynamics. We describe the phases systematically in terms of both information-theoretic diagnostics and spontaneous breaking of strong and weak symmetries of the dynamics. We find a completely broken phase where information is retained by the quantum system, a strong-to-weak broken phase where information is leaked to the environment, and an unbroken phase where information is learned by the observer. We find that weak measurement and dephasing alone constitute a minimal model for generic open systems with $\\mathbb{Z}_2$ symmetry, but we also explore perturbations by unitary gates. For a 1d set of qubits, we examine information-theoretic and symmetry-breaking observables in the path integral of the doubled state. This path integral reduces to the standard classical 2d random-bond Ising model in certain limits but generically involves negative weights, enabling a special self-dual random-bond Ising model at the critical point when only measurements are present. We obtain numerical evidence for the steady-state phases using efficient tensor network simulations of the doubled state.",
+      "prediction": 1,
+      "confidence": 0.8008,
+      "source": "loop"
+    },
+    {
+      "title": "SMP: Reusable Score-Matching Motion Priors for Physics-Based Character Control",
+      "text": "Data-driven motion priors that can guide agents toward producing naturalistic behaviors play a pivotal role in creating life-like virtual characters. Adversarial imitation learning has been a highly effective method for learning motion priors from reference motion data. However, adversarial priors, with few exceptions, need to be retrained for each new controller, thereby limiting their reusability and necessitating the retention of the reference motion data when training on downstream tasks. In this work, we present Score-Matching Motion Priors (SMP), which leverages pre-trained motion diffusion models and score distillation sampling (SDS) to create reusable task-agnostic motion priors. SMPs can be pre-trained on a motion dataset, independent of any control policy or task. Once trained, SMPs can be kept frozen and reused as general-purpose reward functions to train policies to produce naturalistic behaviors for downstream tasks. We show that a general motion prior trained on large-scale datasets can be repurposed into a variety of style-specific priors. Furthermore SMP can compose different styles to synthesize new styles not present in the original dataset. Our method produces high-quality motion comparable to state-of-the-art adversarial imitation learning methods through reusable and modular motion priors. We demonstrate the effectiveness of SMP across a diverse suite of control tasks with physically simulated humanoid characters. Video demo available at https://youtu.be/ravlZJteS20",
+      "prediction": 1,
+      "confidence": 0.8085,
+      "source": "loop"
+    },
+    {
+      "title": "GraphFusion3D: Dynamic Graph Attention Convolution with Adaptive Cross-Modal Transformer for 3D Object Detection",
+      "text": "Despite significant progress in 3D object detection, point clouds remain challenging due to sparse data, incomplete structures, and limited semantic information. Capturing contextual relationships between distant objects presents additional difficulties. To address these challenges, we propose GraphFusion3D, a unified framework combining multi-modal fusion with advanced feature learning. Our approach introduces the Adaptive Cross-Modal Transformer (ACMT), which adaptively integrates image features into point representations to enrich both geometric and semantic information. For proposal refinement, we introduce the Graph Reasoning Module (GRM), a novel mechanism that models neighborhood relationships to simultaneously capture local geometric structures and global semantic context. The module employs multi-scale graph attention to dynamically weight both spatial proximity and feature similarity between proposals. We further employ a cascade decoder that progressively refines detections through multi-stage predictions. Extensive experiments on SUN RGB-D (70.6\\% AP$_{25}$ and 51.2\\% AP$_{50}$) and ScanNetV2 (75.1\\% AP$_{25}$ and 60.8\\% AP$_{50}$) demonstrate a substantial performance improvement over existing approaches.",
+      "prediction": 1,
+      "confidence": 0.8035,
+      "source": "loop"
+    },
+    {
+      "title": "ProteinPNet: Prototypical Part Networks for Concept Learning in Spatial Proteomics",
+      "text": "Understanding the spatial architecture of the tumor microenvironment (TME) is critical to advance precision oncology. We present ProteinPNet, a novel framework based on prototypical part networks that discovers TME motifs from spatial proteomics data. Unlike traditional post-hoc explanability models, ProteinPNet directly learns discriminative, interpretable, faithful spatial prototypes through supervised training. We validate our approach on synthetic datasets with ground truth motifs, and further test it on a real-world lung cancer spatial proteomics dataset. ProteinPNet consistently identifies biologically meaningful prototypes aligned with different tumor subtypes. Through graphical and morphological analyses, we show that these prototypes capture interpretable features pointing to differences in immune infiltration and tissue modularity. Our results highlight the potential of prototype-based learning to reveal interpretable spatial biomarkers within the TME, with implications for mechanistic discovery in spatial omics.",
+      "prediction": 1,
+      "confidence": 0.8241,
+      "source": "loop"
+    },
+    {
+      "title": "Flexible Gravitational-Wave Parameter Estimation with Transformers",
+      "text": "Gravitational-wave data analysis relies on accurate and efficient methods to extract physical information from noisy detector signals, yet the increasing rate and complexity of observations represent a growing challenge. Deep learning provides a powerful alternative to traditional inference, but existing neural models typically lack the flexibility to handle variations in data analysis settings. Such variations accommodate imperfect observations or are required for specialized tests, and could include changes in detector configurations, overall frequency ranges, or localized cuts. We introduce a flexible transformer-based architecture paired with a training strategy that enables adaptation to diverse analysis settings at inference time. Applied to parameter estimation, we demonstrate that a single flexible model -- called Dingo-T1 -- can (i) analyze 48 gravitational-wave events from the third LIGO-Virgo-KAGRA Observing Run under a wide range of analysis configurations, (ii) enable systematic studies of how detector and frequency configurations impact inferred posteriors, and (iii) perform inspiral-merger-ringdown consistency tests probing general relativity. Dingo-T1 also improves median sample efficiency on real events from a baseline of 1.4% to 4.2%. Our approach thus demonstrates flexible and scalable inference with a principled framework for handling missing or incomplete data -- key capabilities for current and next-generation observatories.",
+      "prediction": 1,
+      "confidence": 0.8104,
+      "source": "loop"
+    },
+    {
+      "title": "Fast Gaussian Process Approximations for Autocorrelated Data",
+      "text": "This paper is concerned with the problem of how to speed up computation for Gaussian process models trained on autocorrelated data. The Gaussian process model is a powerful tool commonly used in nonlinear regression applications. Standard regression modeling assumes random samples and an independently, identically distributed noise. Various fast approximations that speed up Gaussian process regression work under this standard setting. But for autocorrelated data, failing to account for autocorrelation leads to a phenomenon known as temporal overfitting that deteriorates model performance on new test instances. To handle autocorrelated data, existing fast Gaussian process approximations have to be modified; one such approach is to segment the originally correlated data points into blocks in which the blocked data are de-correlated. This work explains how to make some of the existing Gaussian process approximations work with blocked data. Numerical experiments across diverse application datasets demonstrate that the proposed approaches can remarkably accelerate computation for Gaussian process regression on autocorrelated data without compromising model prediction performance.",
+      "prediction": 1,
+      "confidence": 0.8102,
+      "source": "loop"
+    },
+    {
+      "title": "Learning Multimodal Embeddings for Traffic Accident Prediction and Causal Estimation",
+      "text": "We consider analyzing traffic accident patterns using both road network data and satellite images aligned to road graph nodes. Previous work for predicting accident occurrences relies primarily on road network structural features while overlooking physical and environmental information from the road surface and its surroundings. In this work, we construct a large multimodal dataset across six U.S. states, containing nine million traffic accident records from official sources, and one million high-resolution satellite images for each node of the road network. Additionally, every node is annotated with features such as the region's weather statistics and road type (e.g., residential vs. motorway), and each edge is annotated with traffic volume information (i.e., Average Annual Daily Traffic). Utilizing this dataset, we conduct a comprehensive evaluation of multimodal learning methods that integrate both visual and network embeddings. Our findings show that integrating both data modalities improves prediction accuracy, achieving an average AUROC of $90.1\\%$, which is a $3.7\\%$ gain over graph neural network models that only utilize graph structures. With the improved embeddings, we conduct a causal analysis based on a matching estimator to estimate the key contributing factors influencing traffic accidents. We find that accident rates rise by $24\\%$ under higher precipitation, by $22\\%$ on higher-speed roads such as motorways, and by $29\\%$ due to seasonal patterns, after adjusting for other confounding factors. Ablation studies confirm that satellite imagery features are essential for achieving accurate prediction.",
+      "prediction": 1,
+      "confidence": 0.8054,
+      "source": "loop"
+    }
+  ],
+  "virtue_analysis": {
+    "context": {
+      "task_stage": "review",
+      "deadline_hours": 24,
+      "information_density": 0.5133333333333333,
+      "complexity": 0.6,
+      "total_papers": 154
+    },
+    "virtue_state": {
+      "wisdom": 0.4879,
+      "understanding": 0.1465,
+      "counsel": 0.0488,
+      "strength": 0.0488,
+      "knowledge": 0.169,
+      "reverence": 0.099
+    },
+    "recommended_actions": [
+      [
+        "evaluate_research_quality",
+        "연구 품질 평가"
+      ],
+      [
+        "analyse_causal_relationships",
+        "논문 간 인과 관계 분석"
+      ],
+      [
+        "compare_methodologies",
+        "연구 방법론 비교 분석"
+      ]
+    ]
+  }
+}

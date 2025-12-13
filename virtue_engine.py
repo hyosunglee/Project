@@ -187,6 +187,35 @@ class ResearchAssistantVirtueEngine(VirtueEngine):
 
         return base.normalised()
 
+    def _score_action(self, action: Tuple[str, Any], virtue_state: VirtueState) -> float:
+        """Calculates the score for a single action based on the virtue state."""
+        name, payload = action
+        score = 0.0
+        lname = name.lower()
+
+        # Assign heuristics: this is intentionally simplistic and serves
+        # illustrative purposes. Real systems might use ML models to
+        # score actions based on historical outcomes.
+        if "collect" in lname or "search" in lname:
+            score += virtue_state.knowledge * 0.6
+            score += virtue_state.understanding * 0.4
+        if "summarise" in lname or "synthesize" in lname:
+            score += virtue_state.wisdom * 0.5
+            score += virtue_state.counsel * 0.3
+            score += virtue_state.understanding * 0.2
+        if "plan" in lname or "decide" in lname:
+            score += virtue_state.counsel * 0.5
+            score += virtue_state.wisdom * 0.3
+        if "draft" in lname or "write" in lname:
+            score += virtue_state.strength * 0.6
+            score += virtue_state.wisdom * 0.4
+
+        # Penalise risky actions if reverence is high
+        if "auto" in lname or "unstable" in lname:
+            score -= virtue_state.reverence * 0.5
+
+        return max(0.0, score)
+
     def filter_actions(
         self,
         context: dict,
@@ -195,7 +224,7 @@ class ResearchAssistantVirtueEngine(VirtueEngine):
     ) -> List[Tuple[str, Any]]:
         """Filter and rank actions for a research assistant.
 
-        This implementation uses simple heuristics based on virtue weights:
+        This implementation uses simple heuristics based on virtue weights.
 
         * Actions related to **collecting new sources** are boosted by the
           knowledge and understanding virtues.
@@ -210,46 +239,72 @@ class ResearchAssistantVirtueEngine(VirtueEngine):
         Returns a sorted list of actions by score.
         """
         scored: List[Tuple[float, Tuple[str, Any]]] = []
-        for name, payload in actions:
-            score = 0.0
-            lname = name.lower()
-
-            # Assign heuristics: this is intentionally simplistic and serves
-            # illustrative purposes.  Real systems might use ML models to
-            # score actions based on historical outcomes.
-            if "collect" in lname or "search" in lname:
-                score += virtue_state.knowledge * 0.6
-                score += virtue_state.understanding * 0.4
-            if "summarise" in lname or "synthesize" in lname:
-                score += virtue_state.wisdom * 0.5
-                score += virtue_state.counsel * 0.3
-                score += virtue_state.understanding * 0.2
-            if "plan" in lname or "decide" in lname:
-                score += virtue_state.counsel * 0.5
-                score += virtue_state.wisdom * 0.3
-            if "draft" in lname or "write" in lname:
-                score += virtue_state.strength * 0.6
-                score += virtue_state.wisdom * 0.4
-
-            # Penalise risky actions if reverence is high
-            if "auto" in lname or "unstable" in lname:
-                score -= virtue_state.reverence * 0.5
-            # Always ensure score is non‑negative
-            score = max(0.0, score)
-            scored.append((score, (name, payload)))
+        for action in actions:
+            score = self._score_action(action, virtue_state)
+            scored.append((score, action))
 
         # Sort by descending score; preserve input order for tie breaking
         scored.sort(key=lambda pair: pair[0], reverse=True)
         return [pair for _, pair in scored]
 
 
-def demo() -> None:
-    """Demonstration of the ResearchAssistantVirtueEngine in action.
-
-    This function constructs a hypothetical research context and a list of
-    candidate actions and shows how the virtue engine scores and orders
-    them.  Run this function directly to see sample output.
+class WisdomResearchAssistantEngine(ResearchAssistantVirtueEngine):
+    """A VirtueEngine that extends the ResearchAssistantVirtueEngine
+    with a stronger emphasis on wisdom, particularly for complex tasks.
     """
+
+    def evaluate_context(self, context: dict) -> VirtueState:
+        """
+        Computes the VirtueState, adding a wisdom boost based on task complexity.
+
+        The context is expected to contain the same keys as the parent class,
+        plus an optional 'complexity' key (float in [0, 1]).
+        """
+        # 1. Get base virtue state from the parent implementation
+        base_state = super().evaluate_context(context)
+
+        # 2. Get complexity and clamp it to the valid range [0.0, 1.0]
+        complexity = float(context.get("complexity", 0.5))
+        complexity = max(0.0, min(1.0, complexity))
+
+        # 3. Calculate and apply the wisdom boost
+        wisdom_boost = 0.05 + 0.45 * complexity
+
+        # Create a new state with the boosted wisdom
+        boosted_state = VirtueState(
+            wisdom=base_state.wisdom + wisdom_boost,
+            understanding=base_state.understanding,
+            counsel=base_state.counsel,
+            strength=base_state.strength,
+            knowledge=base_state.knowledge,
+            reverence=base_state.reverence,
+        )
+
+        # 4. Return the normalised state
+        return boosted_state.normalised()
+
+    def _score_action(self, action: Tuple[str, Any], virtue_state: VirtueState) -> float:
+        """
+        Extends the parent scoring logic to add a boost for wisdom-driven actions.
+        """
+        # 1. Get the base score from the parent
+        score = super()._score_action(action, virtue_state)
+
+        # 2. Add wisdom-specific adjustments
+        name, _ = action
+        lname = name.lower()
+        if "analyse" in lname or "compare" in lname or "evaluate" in lname:
+            score += virtue_state.wisdom * 0.5  # Give a strong boost
+            score += virtue_state.knowledge * 0.2
+            score += virtue_state.understanding * 0.3
+
+        return score
+
+
+def demo() -> None:
+    """Demonstrates and compares the standard and wisdom-focused virtue engines."""
+
+    print("--- Running Demo for ResearchAssistantVirtueEngine ---")
     context = {
         "task_stage": "review",
         "deadline_hours": 5,
@@ -261,6 +316,8 @@ def demo() -> None:
         ("plan_next_steps", None),
         ("write_draft_outline", None),
         ("auto_generate_full_paper", None),
+        ("analyse_causal_relationships", None),
+        ("compare_methodologies", None),
     ]
     engine = ResearchAssistantVirtueEngine()
     state = engine.evaluate_context(context)
@@ -272,6 +329,26 @@ def demo() -> None:
     print(state)
     print("\nAction rankings:")
     for i, (name, _) in enumerate(ordered, start=1):
+        print(f"{i}. {name}")
+
+    print("\n\n--- Running Demo for WisdomResearchAssistantEngine ---")
+    wisdom_context = {
+        "task_stage": "synthesise",
+        "deadline_hours": 48,
+        "information_density": 0.9,
+        "complexity": 0.8,  # High complexity to boost wisdom
+    }
+    # Using the same action list to highlight the re-prioritisation
+    wisdom_engine = WisdomResearchAssistantEngine()
+    wisdom_state = wisdom_engine.evaluate_context(wisdom_context)
+    wisdom_ordered = wisdom_engine.filter_actions(wisdom_context, actions, wisdom_state)
+
+    print("Wisdom Context:")
+    print(wisdom_context)
+    print("\nComputed virtue state (Wisdom-boosted):")
+    print(wisdom_state)
+    print("\nAction rankings (Wisdom-boosted):")
+    for i, (name, _) in enumerate(wisdom_ordered, start=1):
         print(f"{i}. {name}")
 
 

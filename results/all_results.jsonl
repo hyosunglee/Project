@@ -62,3 +62,9 @@
 {"timestamp": "2025-12-07T12:24:03.485716", "type": "collection", "data": {"collected_count": 0, "papers": []}}
 {"timestamp": "2025-12-07T12:26:20.582568", "type": "training", "data": {"model": "models/reward_cls_20251207_122620.pkl", "timestamp": "20251207_122620", "data_count": 287, "train_size": 229, "test_size": 58, "accuracy": 0.9655, "f1_score": 0.975}}
 {"timestamp": "2025-12-07T12:26:23.727031", "type": "collection", "data": {"collected_count": 0, "papers": []}}
+{"timestamp": "2025-12-09T06:46:47.238154", "type": "training", "data": {"model": "models/reward_cls_20251209_064647.pkl", "timestamp": "20251209_064647", "data_count": 287, "train_size": 229, "test_size": 58, "accuracy": 0.9655, "f1_score": 0.975}}
+{"timestamp": "2025-12-09T06:46:52.337326", "type": "collection", "data": {"collected_count": 0, "papers": []}}
+{"timestamp": "2025-12-12T13:15:32.854726", "type": "training", "data": {"model": "models/reward_cls_20251212_131532.pkl", "timestamp": "20251212_131532", "data_count": 287, "train_size": 229, "test_size": 58, "accuracy": 0.9655, "f1_score": 0.975}}
+{"timestamp": "2025-12-12T13:15:37.251291", "type": "collection", "data": {"collected_count": 0, "papers": []}}
+{"timestamp": "2025-12-13T14:56:19.830602", "type": "training", "data": {"model": "models/reward_cls_20251213_145619.pkl", "timestamp": "20251213_145619", "data_count": 287, "train_size": 229, "test_size": 58, "accuracy": 0.9655, "f1_score": 0.975}}
+{"timestamp": "2025-12-13T14:56:23.774773", "type": "collection", "data": {"collected_count": 0, "papers": []}}

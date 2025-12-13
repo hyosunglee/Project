@@ -18,8 +18,7 @@ def generate():
 
     try:
         result = generate_paper_summary(prompt)
-        # 결과를 JSON 파일로 저장하고 싶다면 주석 해제
-        # save_result("generated", result)
+        save_result("generated", result)
         return jsonify(result), 200
     except Exception as e:
         return jsonify({"error": f"Generation error: {e}"}), 500

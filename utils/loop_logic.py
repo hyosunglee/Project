@@ -6,14 +6,14 @@ from utils.trainer import train_model
 from utils.predictor import predict_reward
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from virtue_engine import ResearchAssistantVirtueEngine, VirtueState
+from virtue_engine import WisdomResearchAssistantEngine, VirtueState
 
 LOW_CONF_THRESHOLD = 0.6
 HIGH_CONF_THRESHOLD = 0.8
 RETRAIN_TRIGGER_COUNT = 10
 RESULTS_DIR = "results"
 
-virtue_engine = ResearchAssistantVirtueEngine()
+virtue_engine = WisdomResearchAssistantEngine()
 
 def compute_research_context(logs, last_train_time=None):
     """현재 연구 상태를 기반으로 VirtueEngine 컨텍스트 계산"""
@@ -22,12 +22,15 @@ def compute_research_context(logs, last_train_time=None):
     if total_logs < 50:
         task_stage = "explore"
         info_density = total_logs / 100.0
+        complexity = 0.3
     elif total_logs < 200:
         task_stage = "review"
         info_density = min(0.7, total_logs / 300.0)
+        complexity = 0.6
     else:
         task_stage = "synthesise"
         info_density = min(1.0, total_logs / 500.0)
+        complexity = 0.9
     
     if last_train_time:
         hours_since_train = (datetime.now() - last_train_time).total_seconds() / 3600
@@ -39,6 +42,7 @@ def compute_research_context(logs, last_train_time=None):
         "task_stage": task_stage,
         "deadline_hours": deadline_hours,
         "information_density": info_density,
+        "complexity": complexity,
         "total_papers": total_logs
     }
 
@@ -50,6 +54,9 @@ def get_available_actions():
         ("plan_next_steps", {"description": "다음 연구 단계 계획"}),
         ("write_draft_outline", {"description": "연구 결과 초안 작성"}),
         ("auto_generate_predictions", {"description": "자동 예측 생성"}),
+        ("analyse_causal_relationships", {"description": "논문 간 인과 관계 분석"}),
+        ("compare_methodologies", {"description": "연구 방법론 비교 분석"}),
+        ("evaluate_research_quality", {"description": "연구 품질 평가"}),
     ]
 
 def virtue_state_to_dict(state: VirtueState) -> dict:

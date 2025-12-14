@@ -1,6 +1,7 @@
 # api_predict.py  ── Flask Blueprint 라우트 모음
 from flask import Blueprint, request, jsonify
 from utils.predictor import predict_reward
+from utils.generator import generate_paper_summary
 from utils.result_logger import save_result
 import json
 
@@ -17,16 +18,29 @@ def predict():
     try:
         payload = request.get_json(force=True) or {}
         text = (payload.get("text") or "").strip()
+        generate_if_positive = payload.get("generate_if_positive", False)
+
         if not text:
             return jsonify({"error": "Missing 'text' field"}), 400
 
         result = predict_reward(text)
         
+        # 긍정 예측(1)이고 generate_if_positive가 참일 경우, 생성 로직 실행
+        if result.get("prediction") == 1 and generate_if_positive:
+            try:
+                # 텍스트의 처음 50단어를 프롬프트로 사용 (성능 최적화)
+                prompt = " ".join(text.split()[:50])
+                generated_result = generate_paper_summary(prompt)
+                result["generated_summary"] = generated_result.get("generated_summary")
+            except Exception as gen_e:
+                result["generation_error"] = str(gen_e)
+
         # 예측 결과 저장
         prediction_data = {
             "text": text[:100],  # 처음 100자만 저장
             "prediction": result.get("prediction"),
-            "confidence": result.get("confidence")
+            "confidence": result.get("confidence"),
+            "generated": "generated_summary" in result
         }
         save_result("prediction", prediction_data)
         

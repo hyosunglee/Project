@@ -1,6 +1,7 @@
 # api_predict.py  ── Flask Blueprint 라우트 모음
 from flask import Blueprint, request, jsonify
 from utils.predictor import predict_reward
+from utils.generator import generate_paper_summary
 from utils.result_logger import save_result
 import json
 
@@ -21,6 +22,22 @@ def predict():
             return jsonify({"error": "Missing 'text' field"}), 400
 
         result = predict_reward(text)
+
+        # 고신뢰도(80%+) 예측 시 자동 생성
+        if result.get("prediction") == 1 and result.get("confidence", 0) >= 0.8:
+            try:
+                # 'text'를 프롬프트로 사용하여 요약 생성
+                generated_data = generate_paper_summary(text)
+                # 생성된 요약을 결과에 추가
+                result["generated_summary"] = generated_data.get("generated_summary")
+                # 생성된 결과도 로그에 저장
+                save_result("generated_from_predict", {
+                    "prompt": text[:100],
+                    "summary": result["generated_summary"][:100]
+                })
+            except Exception as e:
+                # 생성 중 오류가 발생해도 예측 결과는 반환하도록 처리
+                result["generation_error"] = str(e)
         
         # 예측 결과 저장
         prediction_data = {

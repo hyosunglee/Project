@@ -8,6 +8,8 @@ import time
 import requests
 import json
 
+from utils.paths import LOG_PATH, RESULTS_DIR
+
 BASE_URL = f"http://localhost:{os.getenv('PORT', 3000)}"
 
 def wait_for_server(max_wait=30):
@@ -25,7 +27,7 @@ def wait_for_server(max_wait=30):
 
 def check_logs_exist():
     """로그 파일이 있는지 확인"""
-    return os.path.exists("logs.jsonl") and os.path.getsize("logs.jsonl") > 0
+    return LOG_PATH.exists() and LOG_PATH.stat().st_size > 0
 
 def initialize_system():
     """시스템 초기화"""
@@ -80,10 +82,8 @@ def initialize_system():
     print("  - 논문 수집: 1시간마다")
     print("  - 모델 재학습: 6시간마다")
     print("\n결과 저장 위치:")
-    print("  - results/collection_*.json (논문 수집 결과)")
-    print("  - results/training_*.json (학습 결과)")
-    print("  - results/prediction_*.json (예측 결과)")
-    print("  - results/all_results.jsonl (통합 결과)")
+    print(f"  - {RESULTS_DIR}/YYYY-MM-DD.jsonl (일별 수집/예측 로그)")
+    print(f"  - {RESULTS_DIR}/summary_latest.json (마지막 요약)")
     print("\nAPI 엔드포인트: http://localhost:3000")
     print("=" * 60)
     

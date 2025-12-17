@@ -1,6 +1,7 @@
 import os
 from flask import Flask, jsonify, request
 import threading
+from utils.paths import ALL_RESULTS_FILE, LOG_PATH
 
 # ==============================================================================
 # App Initialization
@@ -42,16 +43,12 @@ if not SAFE_BOOT:
     from apscheduler.schedulers.background import BackgroundScheduler
     from utils.trainer import train_model
     from utils.logger import log_experiment, get_all_logged_titles
-    from utils.loop_logic import loop_logic, predict_after_training
+    from utils.loop_logic import predict_after_training
     from utils.predictor import predict_reward
     from utils.result_logger import save_result
     from api_predict import bp as predict_bp
     from api_generate import bp_generate
-
-    try:
-        from utils.paper_fetcher import fetch_arxiv_papers
-    except Exception:
-        fetch_arxiv_papers = None
+    from utils.loop_runner import run_loop_once
 
     # --------------------------------------------------------------------------
     # Register Blueprints
@@ -79,7 +76,7 @@ if not SAFE_BOOT:
         # 2. 이미 예측한 텍스트 집합 만들기
         predicted_set = set()
         try:
-            with open('results/all_results.jsonl', 'r', encoding='utf-8') as f:
+            with open(ALL_RESULTS_FILE, 'r', encoding='utf-8') as f:
                 for line in f:
                     try:
                         obj = json.loads(line)
@@ -169,63 +166,11 @@ if not SAFE_BOOT:
             log_experiment(log_entry)
         return jsonify({"message": f"Seeded {n} logs"}), 200
 
-    # 키워드 순환을 위한 전역 변수
-    SEARCH_KEYWORDS = [
-        "reinforcement learning", "deep learning", "neural networks",
-        "computer vision", "natural language processing", "transformer models",
-        "generative AI", "machine learning optimization", "graph neural networks",
-        "meta learning"
-    ]
-    keyword_counter = [0]  # 리스트로 감싸서 클로저 내에서 수정 가능하게
-    
     @app.route("/loop", methods=["POST"])
-    def run_loop_once():
-        print("\n🌀 [LOOP] 논문 수집 및 실험 실행 시작")
-        collected_papers = []
-        papers = []
-        if fetch_arxiv_papers:
-            try:
-                # 키워드 순환
-                current_index = keyword_counter[0]
-                current_keyword = SEARCH_KEYWORDS[current_index % len(SEARCH_KEYWORDS)]
-                
-                # 정렬 방식: 짝수 인덱스는 관련성순 (중요한 논문), 홀수는 최신순
-                sort_mode = "relevance" if current_index % 2 == 0 else "submitted"
-                
-                keyword_counter[0] += 1
-                print(f"🔍 검색 키워드: '{current_keyword}' (정렬: {sort_mode})")
-                papers = fetch_arxiv_papers(current_keyword, max_results=30, sort_by=sort_mode)
-            except Exception as e:
-                print(f"⚠️ fetch_arxiv_papers 실패: {e}")
-        
-        if papers:
-            logged_titles = get_all_logged_titles()
-            for paper in papers:
-                title = paper.get('title', 'untitled')
-                summary = paper.get("summary", "No summary")
-                if title not in logged_titles:
-                    log_entry = {
-                        "title": title,
-                        "text": summary,  # summary를 text로 저장
-                        "summary": summary,
-                        "source": "loop",
-                        "label": 1
-                    }
-                    log_experiment(log_entry)
-                    collected_papers.append({"title": title, "summary": summary[:100]})
-                    print(f"✅ [LOOP] {title} 실험 및 로그 저장 완료")
-        
-        loop_logic()
-        
-        # 결과 저장
-        result_data = {
-            "collected_count": len(collected_papers),
-            "papers": collected_papers
-        }
-        result_file = save_result("collection", result_data)
-        print(f"📁 수집 결과 저장: {result_file}")
-        
-        return jsonify({"message": "Loop 실행 완료", "collected": len(collected_papers)}), 200
+    def run_loop_endpoint():
+        result = run_loop_once()
+        status = 200 if "error" not in result else 500
+        return jsonify(result), status
 
     @app.route("/train", methods=["POST"])
     def trigger_training():
@@ -283,8 +228,7 @@ if not SAFE_BOOT:
                 print("\n🚀 [INIT] 배포 환경 초기화 시작")
                 
                 # 로그가 없으면 초기 모델 학습
-                import os as _os
-                if _os.path.exists("logs.jsonl") and _os.path.getsize("logs.jsonl") > 0:
+                if LOG_PATH.exists() and LOG_PATH.stat().st_size > 0:
                     print("✅ [INIT] 기존 로그 데이터 발견")
                     # 초기 모델 학습
                     print("🎓 [INIT] 초기 모델 학습 시작...")

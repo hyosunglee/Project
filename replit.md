@@ -3,8 +3,15 @@
 ## Overview
 This project is an AI-powered self-learning feedback loop system that automatically collects research papers from ArXiv, trains machine learning models, and makes predictions. The system continuously improves itself through a feedback loop.
 
-## Recent Changes (November 17, 2025)
-- ✅ **정렬 방식 번갈아 사용 시스템** (최신 업데이트!)
+## Recent Changes (December 17, 2025)
+- ✅ **자동 예측→생성 파이프라인** (최신 업데이트!)
+  - 학습 완료 후 자동으로 전체 데이터 예측 실행
+  - 고신뢰도(80%+) 예측 상위 5개에 GPT-2 요약 자동 생성
+  - 결과 저장: results/prediction_*.json, results/generated_*.json
+  - VirtueEngine 연동: 복잡성 기반 덕목(wisdom) 부스팅
+
+## Changes (November 17, 2025)
+- ✅ **정렬 방식 번갈아 사용 시스템**
   - 키워드마다 관련성순 ↔ 최신순 자동 전환
   - 짝수 번째: 관련성순 → 중요한 이전 논문 수집
   - 홀수 번째: 최신순 → 최신 논문 수집

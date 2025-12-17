@@ -5,6 +5,8 @@ import os
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+from utils.paths import model_symlink_path
+
 # --- 전역 변수 설정 ---
 # 모델과 벡터라이저를 메모리에 캐싱하여 반복적인 로드를 방지
 cached_model = None
@@ -12,9 +14,7 @@ cached_vectorizer = None
 cached_model_path = None
 cached_model_mtime = None
 
-ROOT = Path(__file__).resolve().parents[1]
-MODELS_DIR = ROOT / "models"
-MODEL_SYMLINK = MODELS_DIR / "reward_latest.pkl"
+MODEL_SYMLINK = model_symlink_path()
 
 def load_model():
     """

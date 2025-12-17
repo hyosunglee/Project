@@ -2,9 +2,13 @@ import json
 import os
 import sys
 from datetime import datetime
+from pathlib import Path
 from utils.trainer import train_model
 from utils.predictor import predict_reward
 from utils.generator import generate_paper_summary
+from utils.meta import increment_stat
+from utils.paths import LOG_PATH, RESULTS_DIR, RETRAIN_BUFFER_PATH
+from utils.result_logger import save_result
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from virtue_engine import WisdomResearchAssistantEngine, VirtueState
@@ -12,7 +16,6 @@ from virtue_engine import WisdomResearchAssistantEngine, VirtueState
 LOW_CONF_THRESHOLD = 0.6
 HIGH_CONF_THRESHOLD = 0.8
 RETRAIN_TRIGGER_COUNT = 10
-RESULTS_DIR = "results"
 
 virtue_engine = WisdomResearchAssistantEngine()
 
@@ -71,23 +74,22 @@ def virtue_state_to_dict(state: VirtueState) -> dict:
         "reverence": round(state.reverence, 4)
     }
 
-def load_logs(file_path="logs.jsonl"):
-    if not os.path.exists(file_path):
+def load_logs(file_path: Path = LOG_PATH):
+    if not Path(file_path).exists():
         return []
-    with open(file_path, "r") as f:
+    with open(file_path, "r", encoding="utf-8") as f:
         return [json.loads(line) for line in f]
 
-def save_for_retraining(logs, file_path="retrain_buffer.jsonl"):
-    with open(file_path, "a") as f:
+
+def save_for_retraining(logs, file_path: Path = RETRAIN_BUFFER_PATH):
+    file_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(file_path, "a", encoding="utf-8") as f:
         for log in logs:
-            f.write(json.dumps(log) + "\n")
+            f.write(json.dumps(log, ensure_ascii=False) + "\n")
 
 def save_prediction_results(predictions, low_conf_count, total_count, high_conf_details, virtue_info=None):
-    os.makedirs(RESULTS_DIR, exist_ok=True)
-    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-    
     high_conf_count = len(high_conf_details)
-    
+
     result = {
         "timestamp": datetime.now().isoformat(),
         "type": "batch_prediction",
@@ -98,24 +100,23 @@ def save_prediction_results(predictions, low_conf_count, total_count, high_conf_
             "low_confidence": low_conf_count,
             "avg_confidence": round(sum(p["confidence"] for p in predictions) / len(predictions), 4) if predictions else 0,
             "low_threshold": LOW_CONF_THRESHOLD,
-            "high_threshold": HIGH_CONF_THRESHOLD
+            "high_threshold": HIGH_CONF_THRESHOLD,
         },
         "predictions": predictions,
-        "high_confidence_details": high_conf_details
+        "high_confidence_details": high_conf_details,
     }
-    
+
     if virtue_info:
         result["virtue_analysis"] = virtue_info
-    
-    filepath = os.path.join(RESULTS_DIR, f"prediction_{ts}.json")
-    with open(filepath, "w") as f:
-        json.dump(result, f, indent=2, ensure_ascii=False)
-    
+
+    filepath = save_result("prediction", result)
+    increment_stat("predictions", "batches")
+
     print(f"📊 [예측] 결과 저장: {filepath}")
     print(f"   - 총 {total_count}개 예측")
     print(f"   - 높은 신뢰도(80%+): {high_conf_count}개 (상세 내용 포함)")
     print(f"   - 낮은 신뢰도(<60%): {low_conf_count}개")
-    
+
     return filepath
 
 def run_predictions_on_logs():
@@ -211,10 +212,7 @@ def auto_generate_from_predictions(high_conf_details, max_generate=5):
     if not high_conf_details:
         print("📝 [자동생성] 고신뢰도 예측 없음, 생성 스킵")
         return []
-    
-    os.makedirs(RESULTS_DIR, exist_ok=True)
-    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-    
+
     top_items = sorted(high_conf_details, key=lambda x: x["confidence"], reverse=True)[:max_generate]
     generated_results = []
     
@@ -242,18 +240,17 @@ def auto_generate_from_predictions(high_conf_details, max_generate=5):
             print(f"   ❌ [{i}/{len(top_items)}] 생성 실패: {str(e)[:50]}")
     
     if generated_results:
-        filepath = os.path.join(RESULTS_DIR, f"generated_{ts}.json")
         output = {
             "timestamp": datetime.now().isoformat(),
             "type": "auto_generated_summaries",
             "total_generated": len(generated_results),
             "source": "predict_after_training",
-            "results": generated_results
+            "results": generated_results,
         }
-        with open(filepath, "w") as f:
-            json.dump(output, f, indent=2, ensure_ascii=False)
+        filepath = save_result("generated", output)
+        increment_stat("generation", "runs")
         print(f"📁 [자동생성] 결과 저장: {filepath}")
-    
+
     return generated_results
 
 def predict_after_training():

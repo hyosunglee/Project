@@ -85,6 +85,13 @@ logs.jsonl
 server.log
 feedback.jsonl
 
+# Data artifacts
+data/
+results/
+models/
+backups/
+*.zip
+
 # Runtime state files
 .keyword_index.json
 retrain_buffer.jsonl

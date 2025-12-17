@@ -4,6 +4,7 @@ import sys
 from datetime import datetime
 from utils.trainer import train_model
 from utils.predictor import predict_reward
+from utils.generator import generate_paper_summary
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from virtue_engine import WisdomResearchAssistantEngine, VirtueState
@@ -205,6 +206,56 @@ def loop_logic():
         "low_conf_count": len(low_conf_samples)
     }
 
+def auto_generate_from_predictions(high_conf_details, max_generate=5):
+    """고신뢰도 예측에 대해 자동으로 텍스트 생성"""
+    if not high_conf_details:
+        print("📝 [자동생성] 고신뢰도 예측 없음, 생성 스킵")
+        return []
+    
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    
+    top_items = sorted(high_conf_details, key=lambda x: x["confidence"], reverse=True)[:max_generate]
+    generated_results = []
+    
+    print(f"📝 [자동생성] 상위 {len(top_items)}개 고신뢰도 항목 텍스트 생성 시작...")
+    
+    for i, item in enumerate(top_items, 1):
+        try:
+            title = item.get("title", "")[:100]
+            text_snippet = item.get("text", "")[:300]
+            prompt = f"Research summary: {title}. {text_snippet}"
+            
+            result = generate_paper_summary(prompt, max_length=200)
+            
+            gen_record = {
+                "original_title": item.get("title", ""),
+                "confidence": item["confidence"],
+                "prediction": item["prediction"],
+                "prompt": prompt[:200],
+                "generated_text": result["generated_summary"]
+            }
+            generated_results.append(gen_record)
+            print(f"   ✅ [{i}/{len(top_items)}] 생성 완료: {title[:50]}...")
+            
+        except Exception as e:
+            print(f"   ❌ [{i}/{len(top_items)}] 생성 실패: {str(e)[:50]}")
+    
+    if generated_results:
+        filepath = os.path.join(RESULTS_DIR, f"generated_{ts}.json")
+        output = {
+            "timestamp": datetime.now().isoformat(),
+            "type": "auto_generated_summaries",
+            "total_generated": len(generated_results),
+            "source": "predict_after_training",
+            "results": generated_results
+        }
+        with open(filepath, "w") as f:
+            json.dump(output, f, indent=2, ensure_ascii=False)
+        print(f"📁 [자동생성] 결과 저장: {filepath}")
+    
+    return generated_results
+
 def predict_after_training():
     print("🔮 [학습 후 예측] 전체 데이터 예측 시작...")
     predictions, low_conf_samples, total, high_conf_details = run_predictions_on_logs()
@@ -229,6 +280,10 @@ def predict_after_training():
         print(f"   주요 덕목: {', '.join(f'{v[0]}({v[1]:.2f})' for v in top_virtues)}")
         
         save_prediction_results(predictions, len(low_conf_samples), total, high_conf_details, virtue_info)
+        
+        generated = auto_generate_from_predictions(high_conf_details, max_generate=5)
+        print(f"🎯 [학습 후 예측] 완료! 예측 {total}개, 자동생성 {len(generated)}개")
+        
         return True
     else:
         print("[예측] 예측할 데이터 없음")

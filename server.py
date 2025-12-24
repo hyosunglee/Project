@@ -39,7 +39,9 @@ if not SAFE_BOOT:
     # --------------------------------------------------------------------------
     import json
     import random
+    import time
     from datetime import datetime
+    from queue import Queue, Empty
     from apscheduler.schedulers.background import BackgroundScheduler
     from utils.trainer import train_model
     from utils.logger import log_experiment, get_all_logged_titles
@@ -144,6 +146,53 @@ if not SAFE_BOOT:
         return summary
 
     # --------------------------------------------------------------------------
+    # Continuous training queue
+    # --------------------------------------------------------------------------
+    training_queue: Queue[str] = Queue()
+    training_thread_started = False
+    training_lock = threading.Lock()
+    train_min_interval = int(os.getenv("TRAIN_MIN_INTERVAL", "0"))
+
+    def enqueue_training(reason: str):
+        training_queue.put(reason)
+
+    def _run_training_once(reason: str):
+        with training_lock:
+            print(f"\n🔄 [AUTO-TRAIN] 신규 데이터 감지: {reason}")
+            result = train_model()
+            if result:
+                save_result("training", result)
+                print("📁 학습 결과 저장 완료")
+            predict_after_training()
+
+    def training_worker():
+        last_train_time = 0.0
+        while True:
+            reason = training_queue.get()
+            if reason is None:
+                break
+            while True:
+                try:
+                    training_queue.get_nowait()
+                except Empty:
+                    break
+            if train_min_interval > 0:
+                elapsed = time.monotonic() - last_train_time
+                if elapsed < train_min_interval:
+                    time.sleep(train_min_interval - elapsed)
+            with app.app_context():
+                _run_training_once(reason)
+            last_train_time = time.monotonic()
+
+    def start_training_worker():
+        global training_thread_started
+        if training_thread_started:
+            return
+        thread = threading.Thread(target=training_worker, daemon=True)
+        thread.start()
+        training_thread_started = True
+
+    # --------------------------------------------------------------------------
     # Route Definitions
     # --------------------------------------------------------------------------
     @app.route("/api")
@@ -174,17 +223,9 @@ if not SAFE_BOOT:
 
     @app.route("/train", methods=["POST"])
     def trigger_training():
-        print("\n🚀 [TRAIN] 로그 기반 모델 학습 트리거됨 (비동기 시작)")
-
-        def train_and_save():
-            result = train_model()
-            if result:
-                save_result("training", result)
-                print(f"📁 학습 결과 저장 완료")
-            predict_after_training()
-
-        threading.Thread(target=train_and_save).start()
-        return jsonify({"message": "Training started in background"}), 200
+        print("\n🚀 [TRAIN] 로그 기반 모델 학습 트리거됨 (큐 등록)")
+        enqueue_training("manual")
+        return jsonify({"message": "Training enqueued"}), 200
 
     @app.route("/ingest", methods=["POST"])
     def ingest_data():
@@ -194,6 +235,7 @@ if not SAFE_BOOT:
         try:
             log_experiment(data)
             print(f"📥 [INGEST] 데이터 수신 및 저장 완료: {data.get('title', 'N/A')[:50]}...")
+            enqueue_training("ingest")
             return jsonify({"message": "Data ingested successfully"}), 201
         except Exception as e:
             print(f"🔥 [INGEST] 데이터 저장 실패: {e}")
@@ -213,14 +255,9 @@ if not SAFE_BOOT:
         """자동화 스케줄러 시작"""
         def scheduled_loop():
             with app.app_context():
-                run_loop_once()
-        
-        def scheduled_train():
-            """주기적으로 모델 재학습"""
-            with app.app_context():
-                print("\n🔄 [AUTO-TRAIN] 자동 재학습 시작")
-                train_model()
-                predict_after_training()
+                result = run_loop_once()
+                if result.get("collected", 0) > 0:
+                    enqueue_training("scheduled_collection")
         
         def one_time_init():
             """배포 시 초기화 작업 (한 번만 실행)"""
@@ -243,11 +280,8 @@ if not SAFE_BOOT:
         
         scheduler = BackgroundScheduler()
         
-        # 논문 수집: 1시간마다
-        scheduler.add_job(scheduled_loop, 'interval', hours=1, id='paper_collection')
-        
-        # 모델 재학습: 6시간마다
-        scheduler.add_job(scheduled_train, 'interval', hours=6, id='model_training')
+        # 논문 수집: 10분마다
+        scheduler.add_job(scheduled_loop, 'interval', minutes=10, id='paper_collection')
         
         # 배포 환경에서만 초기화 작업 실행 (서버 시작 후 60초 뒤)
         if os.getenv("REPLIT_DEPLOYMENT") == "1":
@@ -258,10 +292,11 @@ if not SAFE_BOOT:
         
         scheduler.start()
         print("⏰ 자동 스케줄러 시작됨")
-        print("   - 논문 수집: 1시간마다")
-        print("   - 모델 학습: 6시간마다")
+        print("   - 논문 수집: 10분마다")
+        print("   - 모델 학습: 신규 데이터 수신 시")
 
     # 스케줄러 시작
+    start_training_worker()
     start_scheduler()
 
 # ==============================================================================

@@ -1,4 +1,4 @@
-"""24/7 루프 실행기: 30분 간격으로 run_loop_once 수행"""
+"""24/7 루프 실행기: 10분 간격으로 run_loop_once 수행"""
 from __future__ import annotations
 
 import os
@@ -9,7 +9,7 @@ from utils.loop_runner import run_loop_once
 from utils.meta import record_checkpoint
 
 
-def run_forever(interval_seconds: int = 1800):
+def run_forever(interval_seconds: int = 600):
     while True:
         start = datetime.utcnow()
         result = run_loop_once()
@@ -24,5 +24,5 @@ def run_forever(interval_seconds: int = 1800):
 
 
 if __name__ == "__main__":
-    interval = int(float(os.getenv("LOOP_INTERVAL", 1800)))
+    interval = int(float(os.getenv("LOOP_INTERVAL", 600)))
     run_forever(interval)

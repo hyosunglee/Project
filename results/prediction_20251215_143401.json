@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-12-15T14:34:01.054982",
-  "type": "prediction",
-  "data": {
-    "text": "This paper presents a novel approach to machine learning.",
-    "prediction": 1,
-    "confidence": 0.7115
-  }
-}

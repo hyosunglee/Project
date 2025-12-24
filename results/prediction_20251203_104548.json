@@ -1,9 +1,0 @@
-{
-  "timestamp": "2025-12-03T10:45:48.564339",
-  "type": "prediction",
-  "data": {
-    "text": "Simple calculator app for basic math operations",
-    "prediction": 1,
-    "confidence": 0.7248
-  }
-}

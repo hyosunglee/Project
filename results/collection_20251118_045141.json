@@ -1,0 +1,129 @@
+{
+  "timestamp": "2025-11-18T04:51:41.115493",
+  "type": "collection",
+  "data": {
+    "collected_count": 30,
+    "papers": [
+      {
+        "title": "Scaling Spatial Intelligence with Multimodal Foundation Models",
+        "summary": "Despite remarkable progress, multimodal foundation models still exhibit surprising deficiencies in s"
+      },
+      {
+        "title": "UnSAMv2: Self-Supervised Learning Enables Segment Anything at Any Granularity",
+        "summary": "The Segment Anything Model (SAM) family has become a widely adopted vision foundation model, but its"
+      },
+      {
+        "title": "Free-Form Scene Editor: Enabling Multi-Round Object Manipulation like in a 3D Engine",
+        "summary": "Recent advances in text-to-image (T2I) diffusion models have significantly improved semantic image e"
+      },
+      {
+        "title": "From Black Box to Insight: Explainable AI for Extreme Event Preparedness",
+        "summary": "As climate change accelerates the frequency and severity of extreme events such as wildfires, the ne"
+      },
+      {
+        "title": "From Power to Precision: Learning Fine-grained Dexterity for Multi-fingered Robotic Hands",
+        "summary": "Human grasps can be roughly categorized into two types: power grasps and precision grasps. Precision"
+      },
+      {
+        "title": "OpenRoboCare: A Multimodal Multi-Task Expert Demonstration Dataset for Robot Caregiving",
+        "summary": "We present OpenRoboCare, a multimodal dataset for robot caregiving, capturing expert occupational th"
+      },
+      {
+        "title": "Rare Genomic Subtype Discovery from RNA-seq via Autoencoder Embeddings and Stability-Aware Clustering",
+        "summary": "Unsupervised learning on high-dimensional RNA-seq data can reveal molecular subtypes beyond standard"
+      },
+      {
+        "title": "Generalist Foundation Models Are Not Clinical Enough for Hospital Operations",
+        "summary": "Hospitals and healthcare systems rely on operational decisions that determine patient flow, cost, an"
+      },
+      {
+        "title": "ST-ProC: A Graph-Prototypical Framework for Robust Semi-Supervised Travel Mode Identification",
+        "summary": "Travel mode identification (TMI) from GPS trajectories is critical for urban intelligence, but is ha"
+      },
+      {
+        "title": "Learning stochasticity: a nonparametric framework for intrinsic noise estimation",
+        "summary": "Understanding the principles that govern dynamical systems is a central challenge across many scient"
+      },
+      {
+        "title": "Efficient Calibration for Decision Making",
+        "summary": "A decision-theoretic characterization of perfect calibration is that an agent seeking to minimize a "
+      },
+      {
+        "title": "Crossing Borders: A Multimodal Challenge for Indian Poetry Translation and Image Generation",
+        "summary": "Indian poetry, known for its linguistic complexity and deep cultural resonance, has a rich and varie"
+      },
+      {
+        "title": "Protein Secondary Structure Prediction Using 3D Graphs and Relation-Aware Message Passing Transformers",
+        "summary": "In this study, we tackle the challenging task of predicting secondary structures from protein primar"
+      },
+      {
+        "title": "Training-Free Multi-View Extension of IC-Light for Textual Position-Aware Scene Relighting",
+        "summary": "We introduce GS-Light, an efficient, textual position-aware pipeline for text-guided relighting of 3"
+      },
+      {
+        "title": "Quantum Advantage in Learning Mixed Unitary Channels",
+        "summary": "We study the task of learning mixed unitary channels using Fisher information, under different quant"
+      },
+      {
+        "title": "Cross-Learning from Scarce Data via Multi-Task Constrained Optimization",
+        "summary": "A learning task, understood as the problem of fitting a parametric model from supervised data, funda"
+      },
+      {
+        "title": "QUILL: An Algorithm-Architecture Co-Design for Cache-Local Deformable Attention",
+        "summary": "Deformable transformers deliver state-of-the-art detection but map poorly to hardware due to irregul"
+      },
+      {
+        "title": "T-SAR: A Full-Stack Co-design for CPU-Only Ternary LLM Inference via In-Place SIMD ALU Reorganization",
+        "summary": "Recent advances in LLMs have outpaced the computational and memory capacities of edge platforms that"
+      },
+      {
+        "title": "Scientific Data Compression and Super-Resolution Sampling",
+        "summary": "Modern scientific simulations, observations, and large-scale experiments generate data at volumes th"
+      },
+      {
+        "title": "Cost-Driven Synthesis of Sound Abstract Interpreters",
+        "summary": "Constructing abstract interpreters that provide global soundness guarantees remains a major obstacle"
+      },
+      {
+        "title": "Why is \"Chicago\" Predictive of Deceptive Reviews? Using LLMs to Discover Language Phenomena from Lexical Cues",
+        "summary": "Deceptive reviews mislead consumers, harm businesses, and undermine trust in online marketplaces. Ma"
+      },
+      {
+        "title": "Architectural Approaches to Fault-Tolerant Distributed Quantum Computing and Their Entanglement Overheads",
+        "summary": "Fault tolerant quantum computation over distributed quantum computing (DQC) platforms requires caref"
+      },
+      {
+        "title": "OlmoEarth: Stable Latent Image Modeling for Multimodal Earth Observation",
+        "summary": "Earth observation data presents a unique challenge: it is spatial like images, sequential like video"
+      },
+      {
+        "title": "Tuning for Two Adversaries: Enhancing the Robustness Against Transfer and Query-Based Attacks using Hyperparameter Tuning",
+        "summary": "In this paper, we present the first detailed analysis of how optimization hyperparameters -- such as"
+      },
+      {
+        "title": "Weight-sparse transformers have interpretable circuits",
+        "summary": "Finding human-understandable circuits in language models is a central goal of the field of mechanist"
+      },
+      {
+        "title": "Distribution Matching Distillation Meets Reinforcement Learning",
+        "summary": "Distribution Matching Distillation (DMD) distills a pre-trained multi-step diffusion model to a few-"
+      },
+      {
+        "title": "PhysX-Anything: Simulation-Ready Physical 3D Assets from Single Image",
+        "summary": "3D modeling is shifting from static visual representations toward physical, articulated assets that "
+      },
+      {
+        "title": "Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?",
+        "summary": "Large Language Models (LLMs) are reshaping almost all industries, including software engineering. In"
+      },
+      {
+        "title": "FuseSampleAgg: Fused Neighbor Sampling and Aggregation for Mini-batch GNNs",
+        "summary": "We present FuseSampleAgg, a CUDA operator that fuses neighbor sampling and mean aggregation into a s"
+      },
+      {
+        "title": "Data Value in the Age of Scaling: Understanding LLM Scaling Dynamics Under Real-Synthetic Data Mixtures",
+        "summary": "The rapid progress of large language models (LLMs) is fueled by the growing reliance on datasets tha"
+      }
+    ]
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "timestamp": "2025-11-17T13:30:20.292648",
+  "type": "collection",
+  "data": {
+    "collected_count": 30,
+    "papers": [
+      {
+        "title": "ARLBench: Flexible and Efficient Benchmarking for Hyperparameter Optimization in Reinforcement Learning",
+        "summary": "Hyperparameters are a critical factor in reliably training well-performing reinforcement learning (R"
+      },
+      {
+        "title": "Causal-Paced Deep Reinforcement Learning",
+        "summary": "Designing effective task sequences is crucial for curriculum reinforcement learning (CRL), where age"
+      },
+      {
+        "title": "Exploring Hierarchy-Aware Inverse Reinforcement Learning",
+        "summary": "We introduce a new generative model for human planning under the Bayesian Inverse Reinforcement Lear"
+      },
+      {
+        "title": "A Tutorial on Meta-Reinforcement Learning",
+        "summary": "While deep reinforcement learning (RL) has fueled multiple high-profile successes in machine learnin"
+      },
+      {
+        "title": "Anderson Acceleration for Reinforcement Learning",
+        "summary": "Anderson acceleration is an old and simple method for accelerating the computation of a fixed point."
+      },
+      {
+        "title": "Stabilizing Extreme Q-learning by Maclaurin Expansion",
+        "summary": "In offline reinforcement learning, in-sample learning methods have been widely used to prevent perfo"
+      },
+      {
+        "title": "MERL: Multi-Head Reinforcement Learning",
+        "summary": "A common challenge in reinforcement learning is how to convert the agent's interactions with an envi"
+      },
+      {
+        "title": "Compression and Localization in Reinforcement Learning for ATARI Games",
+        "summary": "Deep neural networks have become commonplace in the domain of reinforcement learning, but are often "
+      },
+      {
+        "title": "Accelerating Training in Pommerman with Imitation and Reinforcement Learning",
+        "summary": "The Pommerman simulation was recently developed to mimic the classic Japanese game Bomberman, and fo"
+      },
+      {
+        "title": "Will it Blend? Composing Value Functions in Reinforcement Learning",
+        "summary": "An important property for lifelong-learning agents is the ability to combine existing skills to solv"
+      },
+      {
+        "title": "Memory-Efficient Episodic Control Reinforcement Learning with Dynamic Online k-means",
+        "summary": "Recently, neuro-inspired episodic control (EC) methods have been developed to overcome the data-inef"
+      },
+      {
+        "title": "Reinforcement Learning with Stepwise Fairness Constraints",
+        "summary": "AI methods are used in societally important settings, ranging from credit to employment to housing, "
+      },
+      {
+        "title": "Sample-Efficient Reinforcement Learning with Maximum Entropy Mellowmax Episodic Control",
+        "summary": "Deep networks have enabled reinforcement learning to scale to more complex and challenging domains, "
+      },
+      {
+        "title": "Biologically inspired architectures for sample-efficient deep reinforcement learning",
+        "summary": "Deep reinforcement learning requires a heavy price in terms of sample efficiency and overparameteriz"
+      },
+      {
+        "title": "A Demonstration of Issues with Value-Based Multiobjective Reinforcement Learning Under Stochastic State Transitions",
+        "summary": "We report a previously unidentified issue with model-free, value-based approaches to multiobjective "
+      },
+      {
+        "title": "Classifying Options for Deep Reinforcement Learning",
+        "summary": "In this paper we combine one method for hierarchical reinforcement learning - the options framework "
+      },
+      {
+        "title": "Learning Multimodal Transition Dynamics for Model-Based Reinforcement Learning",
+        "summary": "In this paper we study how to learn stochastic, multimodal transition dynamics in reinforcement lear"
+      },
+      {
+        "title": "Time Adaptive Reinforcement Learning",
+        "summary": "Reinforcement learning (RL) allows to solve complex tasks such as Go often with a stronger performan"
+      },
+      {
+        "title": "An Optimistic Perspective on Offline Reinforcement Learning",
+        "summary": "Off-policy reinforcement learning (RL) using a fixed offline dataset of logged interactions is an im"
+      },
+      {
+        "title": "Directed Policy Gradient for Safe Reinforcement Learning with Human Advice",
+        "summary": "Many currently deployed Reinforcement Learning agents work in an environment shared with humans, be "
+      },
+      {
+        "title": "Comparing Deep Reinforcement Learning and Evolutionary Methods in Continuous Control",
+        "summary": "Reinforcement Learning and the Evolutionary Strategy are two major approaches in addressing complica"
+      },
+      {
+        "title": "Deep Reinforcement Learning: An Overview",
+        "summary": "We give an overview of recent exciting achievements of deep reinforcement learning (RL). We discuss "
+      },
+      {
+        "title": "Learning to Navigate in Mazes with Novel Layouts using Abstract Top-down Maps",
+        "summary": "Learning navigation capabilities in different environments has long been one of the major challenges"
+      },
+      {
+        "title": "Multi-agent Deep Reinforcement Learning with Extremely Noisy Observations",
+        "summary": "Multi-agent reinforcement learning systems aim to provide interacting agents with the ability to col"
+      },
+      {
+        "title": "FairDICE: Fairness-Driven Offline Multi-Objective Reinforcement Learning",
+        "summary": "Multi-objective reinforcement learning (MORL) aims to optimize policies in the presence of conflicti"
+      },
+      {
+        "title": "Pre-trained Word Embeddings for Goal-conditional Transfer Learning in Reinforcement Learning",
+        "summary": "Reinforcement learning (RL) algorithms typically start tabula rasa, without any prior knowledge of t"
+      },
+      {
+        "title": "Impoola: The Power of Average Pooling for Image-Based Deep Reinforcement Learning",
+        "summary": "As image-based deep reinforcement learning tackles more challenging tasks, increasing model size has"
+      },
+      {
+        "title": "Rating-based Reinforcement Learning",
+        "summary": "This paper develops a novel rating-based reinforcement learning approach that uses human ratings to "
+      },
+      {
+        "title": "Vanishing Bias Heuristic-guided Reinforcement Learning Algorithm",
+        "summary": "Reinforcement Learning has achieved tremendous success in the many Atari games. In this paper we exp"
+      },
+      {
+        "title": "ChainerRL: A Deep Reinforcement Learning Library",
+        "summary": "In this paper, we introduce ChainerRL, an open-source deep reinforcement learning (DRL) library buil"
+      }
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "timestamp": "2025-11-17T07:46:00.137656",
+  "type": "collection",
+  "data": {
+    "collected_count": 25,
+    "papers": [
+      {
+        "title": "Drone Swarm Energy Management",
+        "summary": "This note presents an analytical framework for decision-making in drone swarm systems operating unde"
+      },
+      {
+        "title": "Multistability of Self-Attention Dynamics in Transformers",
+        "summary": "In machine learning, a self-attention dynamics is a continuous-time multiagent-like model of the att"
+      },
+      {
+        "title": "Aligning Machiavellian Agents: Behavior Steering via Test-Time Policy Shaping",
+        "summary": "The deployment of decision-making AI agents presents a critical challenge in maintaining alignment w"
+      },
+      {
+        "title": "HetDAPAC: Leveraging Attribute Heterogeneity in Distributed Attribute-Based Private Access Control",
+        "summary": "Verifying user attributes to provide fine-grained access control to databases is fundamental to attr"
+      },
+      {
+        "title": "Incremental Data-Driven Policy Synthesis via Game Abstractions",
+        "summary": "We address the synthesis of control policies for unknown discrete-time stochastic dynamical systems "
+      },
+      {
+        "title": "Generalizing Fair Clustering to Multiple Groups: Algorithms and Applications",
+        "summary": "Clustering is a fundamental task in machine learning and data analysis, but it frequently fails to p"
+      },
+      {
+        "title": "Terrain Costmap Generation via Scaled Preference Conditioning",
+        "summary": "Successful autonomous robot navigation in off-road domains requires the ability to generate high-qua"
+      },
+      {
+        "title": "CVChess: A Deep Learning Framework for Converting Chessboard Images to Forsyth-Edwards Notation",
+        "summary": "Chess has experienced a large increase in viewership since the pandemic, driven largely by the acces"
+      },
+      {
+        "title": "Scalable Policy Evaluation with Video World Models",
+        "summary": "Training generalist policies for robotic manipulation has shown great promise, as they enable langua"
+      },
+      {
+        "title": "Experience-Guided Adaptation of Inference-Time Reasoning Strategies",
+        "summary": "Enabling agentic AI systems to adapt their problem-solving approaches based on post-training interac"
+      },
+      {
+        "title": "W2S-AlignTree: Weak-to-Strong Inference-Time Alignment for Large Language Models via Monte Carlo Tree Search",
+        "summary": "Large Language Models (LLMs) demonstrate impressive capabilities, yet their outputs often suffer fro"
+      },
+      {
+        "title": "Distributed Optimization of Pairwise Polynomial Graph Spectral Functions via Subgraph Optimization",
+        "summary": "We study distributed optimization of finite-degree polynomial Laplacian spectral objectives under fi"
+      },
+      {
+        "title": "Collaborative Representation Learning for Alignment of Tactile, Language, and Vision Modalities",
+        "summary": "Tactile sensing offers rich and complementary information to vision and language, enabling robots to"
+      },
+      {
+        "title": "OpenUS: A Fully Open-Source Foundation Model for Ultrasound Image Analysis via Self-Adaptive Masked Contrastive Learning",
+        "summary": "Ultrasound (US) is one of the most widely used medical imaging modalities, thanks to its low cost, p"
+      },
+      {
+        "title": "FarSkip-Collective: Unhobbling Blocking Communication in Mixture of Experts Models",
+        "summary": "Blocking communication presents a major hurdle in running MoEs efficiently in distributed settings. "
+      },
+      {
+        "title": "Honesty over Accuracy: Trustworthy Language Models through Reinforced Hesitation",
+        "summary": "Modern language models fail a fundamental requirement of trustworthy intelligence: knowing when not "
+      },
+      {
+        "title": "Learning and Testing Convex Functions",
+        "summary": "We consider the problems of \\emph{learning} and \\emph{testing} real-valued convex functions over Gau"
+      },
+      {
+        "title": "Photonic-integrated quantum sensor array for microscale magnetic localisation",
+        "summary": "Nitrogen-vacancy centres (NVs) are promising solid-state nanoscale quantum sensors for applications "
+      },
+      {
+        "title": "Intrinsic Dimension Estimation for Radio Galaxy Zoo using Diffusion Models",
+        "summary": "In this work, we estimate the intrinsic dimension (iD) of the Radio Galaxy Zoo (RGZ) dataset using a"
+      },
+      {
+        "title": "Power law attention biases for molecular transformers",
+        "summary": "Transformers are the go-to architecture for most data modalities due to their scalability. While the"
+      },
+      {
+        "title": "Data-efficient U-Net for Segmentation of Carbide Microstructures in SEM Images of Steel Alloys",
+        "summary": "Understanding reactor-pressure-vessel steel microstructure is crucial for predicting mechanical prop"
+      },
+      {
+        "title": "Risk-Aware Deep Reinforcement Learning for Dynamic Portfolio Optimization",
+        "summary": "This paper presents a deep reinforcement learning (DRL) framework for dynamic portfolio optimization"
+      },
+      {
+        "title": "Inferring response times of perceptual decisions with Poisson variational autoencoders",
+        "summary": "Many properties of perceptual decision making are well-modeled by deep neural networks. However, suc"
+      },
+      {
+        "title": "Context-aware Adaptive Visualizations for Critical Decision Making",
+        "summary": "Effective decision-making often relies on timely insights from complex visual data. While Informatio"
+      },
+      {
+        "title": "Quantifying and Improving Adaptivity in Conformal Prediction through Input Transformations",
+        "summary": "Conformal prediction constructs a set of labels instead of a single point prediction, while providin"
+      }
+    ]
+  }
+}

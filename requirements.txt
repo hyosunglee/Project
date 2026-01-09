@@ -12,5 +12,5 @@ arxiv
 gunicorn
 transformers>=4.31.0
 torch
-torch
-transformers
+fastapi
+uvicorn

@@ -3,8 +3,16 @@
 ## Overview
 This project is an AI-powered self-learning feedback loop system that automatically collects research papers from ArXiv, trains machine learning models, and makes predictions. The system continuously improves itself through a feedback loop.
 
-## Recent Changes (December 17, 2025)
-- ✅ **자동 예측→생성 파이프라인** (최신 업데이트!)
+## Recent Changes (January 9, 2026)
+- ✅ **시스템 재구축 완료** (최신 업데이트!)
+  - Flask → FastAPI/uvicorn 마이그레이션 완료
+  - models/ 패키지 구조화 (classifier.py, summarizer.py, feedback_trainer.py)
+  - generate_paper_summary() 함수 수정: max_length + max_new_tokens 지원
+  - 자동 생성 파이프라인 정상 작동 확인 (5/5 성공)
+  - 최신 결과: 196개 예측, 136개 고신뢰도(80%+), 5개 GPT-2 요약 생성
+
+## Changes (December 17, 2025)
+- ✅ **자동 예측→생성 파이프라인**
   - 학습 완료 후 자동으로 전체 데이터 예측 실행
   - 고신뢰도(80%+) 예측 상위 5개에 GPT-2 요약 자동 생성
   - 결과 저장: results/prediction_*.json, results/generated_*.json
@@ -30,18 +38,19 @@ This project is an AI-powered self-learning feedback loop system that automatica
 - ✅ 중복 체크 시스템 정상 작동 (이미 수집된 논문은 자동으로 필터링)
 
 ## Project Architecture
-- **Backend**: Flask-based REST API
-- **ML Stack**: scikit-learn with TF-IDF vectorization and Logistic Regression
+- **Backend**: FastAPI + uvicorn (포트 3000)
+- **ML Stack**: scikit-learn (TF-IDF + Logistic Regression) + GPT-2 (텍스트 생성)
 - **Data Storage**: JSONL format for logs and experiments
 - **Model Management**: Versioned models with symlink to latest
 
 ### Key Components
-- `server.py` - Main Flask application with API endpoints
-- `utils/trainer.py` - Model training logic
-- `utils/logger.py` - Experiment logging and duplicate checking
-- `utils/paper_fetcher.py` - ArXiv paper collection
-- `api_predict.py` - Prediction API blueprint
-- `collector.py` - Standalone script for paper collection
+- `server.py` - FastAPI 서버 실행 (uvicorn)
+- `api/main.py` - FastAPI 앱 및 라우터 설정
+- `api/routes/legacy.py` - 모든 API 엔드포인트
+- `models/classifier.py` - 분류 모델 로직
+- `models/summarizer.py` - GPT-2 텍스트 생성
+- `utils/loop_logic.py` - 피드백 루프 + 자동 생성 파이프라인
+- `utils/paper_fetcher.py` - ArXiv 논문 수집
 
 ## API Endpoints
 - `GET /` - Health check

@@ -18,6 +18,14 @@ from utils.paths import ALL_RESULTS_FILE, LOG_PATH
 
 router = APIRouter()
 
+@router.get("/")
+async def root():
+    return {"status": "ok", "message": "Research Support API Running"}
+
+@router.get("/healthz")
+async def healthz():
+    return {"status": "healthy"}
+
 training_queue: Queue[str] = Queue()
 training_thread_started = False
 training_lock = threading.Lock()

@@ -3,9 +3,9 @@ import os
 import sys
 from datetime import datetime
 from pathlib import Path
-from utils.trainer import train_model
-from utils.predictor import predict_reward
-from utils.generator import generate_paper_summary
+from models.feedback_trainer import train_model
+from models.classifier import predict_reward
+from models.summarizer import generate_paper_summary
 from utils.meta import increment_stat
 from utils.paths import LOG_PATH, RESULTS_DIR, RETRAIN_BUFFER_PATH
 from utils.result_logger import save_result

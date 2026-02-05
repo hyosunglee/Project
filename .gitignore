@@ -92,6 +92,15 @@ models/
 backups/
 *.zip
 
+# Keep eval baseline assets
+!data/
+!data/eval_sets/
+!data/eval_sets/baseline.jsonl
+!data/eval_runs/
+!data/eval_runs/.gitkeep
+!data/logs/
+!data/logs/.gitkeep
+
 # Runtime state files
 .keyword_index.json
 retrain_buffer.jsonl

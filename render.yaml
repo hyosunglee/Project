@@ -11,13 +11,3 @@ services:
         value: "1"
     healthCheckPath: /healthz
     autoDeploy: true
-
-  - type: worker
-    name: self-learning-loop
-    runtime: docker
-    dockerfilePath: ./Dockerfile.worker
-    plan: free
-    envVars:
-      - key: PYTHONUNBUFFERED
-        value: "1"
-    autoDeploy: true

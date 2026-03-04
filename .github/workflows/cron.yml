@@ -1,0 +1,25 @@
+name: Auto Learning Cron
+
+on:
+  schedule:
+    - cron: '0 * * * *'   # 매 1시간마다 논문 수집
+    - cron: '0 */6 * * *' # 매 6시간마다 재학습
+  workflow_dispatch:       # 수동 실행 가능
+
+jobs:
+  collect-papers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 논문 수집 트리거
+        run: |
+          curl -s -X POST "${{ secrets.RENDER_API_URL }}/loop" \
+            -H "x-api-key: ${{ secrets.API_KEY }}"
+
+  retrain:
+    runs-on: ubuntu-latest
+    if: github.event.schedule == '0 */6 * * *'
+    steps:
+      - name: 모델 재학습 트리거
+        run: |
+          curl -s -X POST "${{ secrets.RENDER_API_URL }}/train" \
+            -H "x-api-key: ${{ secrets.API_KEY }}"
